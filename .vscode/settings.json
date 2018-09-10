@@ -13,10 +13,10 @@
   "workbench.colorTheme": "Night Owl",
   "workbench.iconTheme": "vs-minimal",
   "workbench.view.alwaysShowHeaderActions": true,
-  "extensions.ignoreRecommendations": true,
   "terminal.integrated.fontFamily": "'Inconsolata', monospace",
   "editor.fontFamily": "'Inconsolata', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontLigatures": true,
   "better-comments.highlightPlainText": true,
-  "eslint.autoFixOnSave": true
+  "eslint.autoFixOnSave": true,
+  "extensions.autoUpdate": true
 }
