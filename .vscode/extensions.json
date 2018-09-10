@@ -18,5 +18,6 @@
     "smelukov.vscode-csstree",
     "shinnn.stylelint",
     "dbaeumer.vscode-eslint",
+    "pkief.material-icon-theme"
   ]
 }
