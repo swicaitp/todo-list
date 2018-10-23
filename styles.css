@@ -1,9 +1,21 @@
+body{
+  background-color: #818181;
+}
+@font-face{
+  font-family: foxLite;
+  src: url("/fonts/Foxlite Script.otf") format("opentype");
+}
+@font-face{
+  font-family: handWritten;
+  src: url("/fonts/Handletterink.otf") format("opentype");
+}
 .password {
   color: red;
 }
 .headerbar{
   display: inline;
 text-align: center;
+background-color: #f1f1f1;
 }
 .headerbar #ghost{
   float: left;
@@ -14,4 +26,27 @@ text-align: center;
 .headerbar #banner{
   max-width: 120px;
   height: 40px;
+}
+.column{
+  padding: 20px;
+  margin: 20px;
+}
+.column .taskList{
+  background-color: #f1f1f1;
+  border-radius: 20px;
+  list-style-type: none;
+}
+.column .taskList li{
+font-size: 200%;
+font-family: 'Courier New', Courier, monospace;
+padding: 20px 20px 20px 0px;
+border-bottom: 2px solid #111;
+}
+.progress{
+display: block;
+text-align: center;
+font-size: 300%;
+}
+footer{
+  text-align: center;
 }
