@@ -1,3 +1,17 @@
 .password {
   color: red;
 }
+.headerbar{
+  display: inline;
+text-align: center;
+}
+.headerbar #ghost{
+  float: left;
+}
+.headerbar #plus{
+  float: right;
+}
+.headerbar #banner{
+  max-width: 120px;
+  height: 40px;
+}
