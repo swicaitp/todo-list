@@ -1,5 +1,6 @@
 body{
   background-color: #818181;
+  margin: 0;
 }
 @font-face{
   font-family: foxLite;
@@ -13,19 +14,21 @@ body{
   color: red;
 }
 .headerbar{
+  border: 1px solid #111;
   display: inline;
 text-align: center;
-background-color: #f1f1f1;
+background-color: #4b4b4b;
 }
 .headerbar #ghost{
+  display: inline;
   float: left;
 }
 .headerbar #plus{
   float: right;
 }
 .headerbar #banner{
-  max-width: 120px;
-  height: 40px;
+  max-width: 200px;
+  height: 60px;
 }
 .column{
   padding: 20px;
@@ -49,4 +52,8 @@ font-size: 300%;
 }
 footer{
   text-align: center;
+  padding: 20px;
+  background-color: #4b4b4b;
+  color: white;
+  margin: 0;
 }
