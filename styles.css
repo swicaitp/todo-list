@@ -1,5 +1,5 @@
 body{
-  background-color: #818181;
+  background-color: #EAEFF1;
   margin: 0;
   padding: 0;
 }
@@ -10,19 +10,15 @@ body{
 font-size: 500%;
 Position: sticky;
 text-align: center;
-background-color: #4b4b4b;
+background-color: #333E48;
 top: 0;
+border: 1px solid #333E48;
 }
 .headerbar #ghost{
   float: left;
   padding: 5px 0 0 10px;
+  color: white;
 }
-/*.headerbar {
-  text-align: center;
-  float: right;
-  padding: 5px 10px 0 0;
-
-}*/
 .headerbar #banner{
   max-width: 200px;
   height: 60px;
@@ -62,7 +58,7 @@ font-size: 300%;
 footer{
   text-align: center;
   padding: 20px;
-  background-color: #4b4b4b;
+  background-color: #333E48;
   color: white;
   margin: 0;
 }
@@ -75,15 +71,16 @@ footer{
 }
 .dropdownbtn{
   font-size: 100%;
-  background-color: #4b4b4b;
+  background-color: #333E48;
   border:none;
   padding: 0 0 0 10px;
+  color: white;
 }
 .dropdown-content{
   font-size: 14px;
   display: none;
   position: absolute;
-  background-color: rgb(48, 48, 48);
+  background-color: #237FAA;
   min-width: 450px;
   z-index: 1;
   right: 0;
@@ -111,8 +108,8 @@ footer{
   display: block;
 }
 .dropdown:hover .dropdownbtn{
-  background-color: rgb(48, 48, 48);
-  color: #f1f1f1;
+  background-color: #237FAA;
+  border-bottom: 1px solid #237FAA;
 }
 @font-face{
   font-family: foxLite;
