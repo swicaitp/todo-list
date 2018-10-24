@@ -2,6 +2,7 @@ body{
   background-color: #EAEFF1;
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 .password {
   color: red;
@@ -33,19 +34,21 @@ text-align: center;
 font-size: 300%;
 border-bottom: 3px soli #111;
 }
-.column .taskList{
+.column .taskList ul{
   border-radius: 10px;
   list-style-type: none;
 }
 .column .taskList li{
-background-color: #f1f1f1;
-font-size: 200%;
+background-color: #8d8d8d;
+font-size: 100%;
+color: #EAEFF1;
 font-family: 'Courier New', Courier, monospace;
 padding: 10px 10px 10px 0px;
 border-bottom: 2px solid #111;
 border-radius: 10px;
 border-bottom-right-radius: 10px;
 text-indent: 10px;
+text-align: left;
 }
 .column .taskList li span{
   float: right;
@@ -111,6 +114,36 @@ footer{
   background-color: #237FAA;
   border-bottom: 1px solid #237FAA;
 }
+.notVisible #fas_fa-times{
+  display: none;
+  visibility: hidden;
+}
+li > button {
+	font-weight: normal;
+  background-color: #333E48;
+  border-radius: 4px;
+	border: none;
+	float: right;
+	color: white;
+	font-weight: 800;
+}
+input {
+	border-radius: 5px;
+	min-width: 50%;
+	padding: 10px;
+  border: none;
+}
+input[type=text]{
+  transition-property: width;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+}
+input[type=text]:focus{
+  width: 70%;
+}
+.delete{
+  display:none;
+}
 @font-face{
   font-family: foxLite;
   src: url("/fonts/Foxlite Script.otf") format("opentype");
@@ -124,13 +157,12 @@ footer{
     margin: 0;
     padding: 0;
   }
-  .column .taskList {
+  .column .taskList ul{
     margin: 0;
     padding: 0;
 
   }
-  .column .taskList li{
+  .column ul li{
     font-size: 150%;
   }
-
 }

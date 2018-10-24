@@ -38,43 +38,15 @@
       <h2>
         Daily Tasks
       </h2>
-      <ul class="taskList">
-        <li>
-          Eat Pizza
-          <span>
-            11AM - 12PM
-          </span>
-        </li>
-
-        <li>
-          Play Fortnite
-          <span>
-            12PM - 11PM
-          </span>
-        </li>
-
-        <li>
-          Check FB
-          <span>
-            12AM - 1AM
-          </span>
-        </li>
-
-        <li>
-          Eat Taco Bell
-          <span>
-            1AM - 2AM
-          </span>
-        </li>
-
-        <li>
-          zzzz
-          <span>
-            2AM - 10AM
-          </span>
-        </li>
+      <!--User Inputs New Task-->
+      <div>
+      <input type="text" name="newTask" id="userInput" placeholder="New task..." maxlength="27">
+      <button id="enter"><i class="fas fa-pen"></i></button>
+      <div class="taskList">
+          <div class="listItems">
+      <ul>
       </ul>
-
+      </div>
       <p class="progress">
         2 / 5 Completed
       </p>
@@ -84,6 +56,11 @@
       <p>Created by SWIC AITP</p>
     </footer>
     <script src="scripts.js"></script>
+    <!--
+    <div class="notVisible">
+    <i id="deleteIcon" class="fas fa-times"></i>
+  </div>
+-->
   </body>
 
 </html>
