@@ -15,7 +15,22 @@
     <header class="headerbar">
       <span id="ghost" class="fas fa-ghost"></span>
         <img id="banner"src="Todo_Logo.png" alt="Todo_Logo.png">
+        <div class="add">
+        <div class="dropdown">
+        <button class="dropdownbtn">
         <span id="plus" class="fas fa-plus"></span>
+        </button>
+        <div class="dropdown-content">
+          <form class="addTask" action="/action.php">
+            Task Description:
+            <input type="text" name="taskDescription"><br><br>
+            Scheduled Time:
+            <input type="text" name="scheduledTime"><br><br>
+            <input type="submit" name="submitButton" value="Submit">
+          </form>
+        </div>
+        </div>
+      </div>
     </header>
 
     <main class="column">
