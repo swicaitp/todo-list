@@ -38,29 +38,26 @@ function showInput(){
 
 function createListElement(){
   var li = document.createElement("li"); //creates an element "li"
-  li.appendChild(document.createTextNode(taskInput.value + " @ " + timeInput.value)); //makes text from the 'input field' the text of the li
+  li.appendChild(document.createTextNode(taskInput.value + " @ " + timeInput.value));//makes text from the 'input field' the text of the li
   ul.appendChild(li);//adds li to the ul
   taskInput.value=""; //resets the text field
   timeInput.value="";
+  displayProgress();
 
 //Start Strikethrough
 function crossOut(){
 li.classList.toggle("done");
-if(li.classList.contains("done") == true){
-  progress++;
-  displayProgress(progress);
-} else {
-  progress--;
-  displayProgress(progress);
-}
+  displayProgress();
 }
 li.addEventListener("click", crossOut);
 
 //End Strikethrough
 //Display Progress
-function displayProgress(progress){
-  var progressReport = document.getElementsByClassName("progress").innerHTML;
-  progressReport = progress.toString() + " of " + listLength.toString() + " Tasks Completed";
+function displayProgress(){
+  var liLength = document.querySelectorAll("li").length;
+  var tasksDone = document.querySelectorAll(".done").length;
+  var progressReport = document.getElementById("progress");
+  progressReport.innerHTML = tasksDone + " of " + liLength + " Tasks Completed";
 }
 //START ADD DELETE BUTTON
 var deleteBtn = document.createElement("button");
