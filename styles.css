@@ -182,6 +182,9 @@ input:hover{
 #title{
 
 }
+.time{
+  float: right;
+}
 @font-face{
   font-family: foxLite;
   src: url(foxlite_script.otf);

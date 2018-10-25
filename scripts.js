@@ -37,8 +37,12 @@ function showInput(){
 }
 
 function createListElement(){
-  var li = document.createElement("li"); //creates an element "li"
-  li.appendChild(document.createTextNode(taskInput.value + " @ " + timeInput.value));//makes text from the 'input field' the text of the li
+  var span = document.createElement("span");
+  var li = document.createElement("li");
+  var liText = li.innerHTML; //creates an element "li"
+  span.appendChild(document.createTextNode(timeInput));
+  li.appendChild(document.createTextNode(taskInput.value + " @ "+ span));
+  //makes text from the 'input field' the text of the li
   ul.appendChild(li);//adds li to the ul
   taskInput.value=""; //resets the text field
   timeInput.value="";
