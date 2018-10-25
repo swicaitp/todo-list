@@ -4,7 +4,7 @@ var timeInput = document.getElementById("timeInput");
 var ul = document.querySelector("ul");
 var item = document.getElementsByTagName("li");
 //var listLength = item.length;
-//var progress = 0;
+var progress = 0;
 
 function inputLength(){
   return taskInput.value.length;
@@ -46,22 +46,22 @@ function createListElement(){
 //Start Strikethrough
 function crossOut(){
 li.classList.toggle("done");
-}
-/*if(li.classList.toggle("done") == true){
+if(li.classList.contains("done") == true){
   progress++;
-  displayProgress();
+  displayProgress(progress);
 } else {
-  progress = progress - 1;
-  displayProgress();
-}*/
+  progress--;
+  displayProgress(progress);
+}
+}
 li.addEventListener("click", crossOut);
 
 //End Strikethrough
 //Display Progress
-/*function displayProgress(){
-  var progressReport = document.getElementsByClassName("progress");
-  progressReport.innerHTML = progress.toString() + " of " + listLength.toString() + " Tasks Completed";
-}*/
+function displayProgress(progress){
+  var progressReport = document.getElementsByClassName("progress").innerHTML;
+  progressReport = progress.toString() + " of " + listLength.toString() + " Tasks Completed";
+}
 //START ADD DELETE BUTTON
 var deleteBtn = document.createElement("button");
 deleteBtn.appendChild(document.createTextNode("X"));
