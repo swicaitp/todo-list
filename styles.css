@@ -32,7 +32,9 @@ border: 1px solid #333E48;
 .column h2{
 text-align: center;
 font-size: 300%;
-border-bottom: 3px soli #111;
+border-bottom: 3px solid #111;
+display: inline;
+font-family: foxLite;
 }
 .column .taskList ul{
   border-radius: 10px;
@@ -168,11 +170,11 @@ input:hover{
 }
 @font-face{
   font-family: foxLite;
-  src: url("/fonts/Foxlite Script.otf") format("opentype");
+  src: url(foxlite_script.otf);
 }
 @font-face{
   font-family: handWritten;
-  src: url("/fonts/Handletterink.otf") format("opentype");
+  src: url(Handletterink.otf);
 }
 @media screen and (max-width: 600px){
   .column{

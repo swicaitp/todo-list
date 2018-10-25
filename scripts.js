@@ -28,7 +28,7 @@ function showInput(){
   if(taskInput.style.visibility === "hidden" && timeInput.style.visibility === "hidden" && enterButton.style.visibility === "hidden"){
     taskInput.style.visibility = "visible";
     timeInput.style.visibility = "visible";
-    enterButton.style.visibility = "visible"
+    enterButton.style.visibility = "visible";
   } else {
     taskInput.style.visibility = "hidden";
     timeInput.style.visibility = "hidden";
