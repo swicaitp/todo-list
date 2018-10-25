@@ -3,13 +3,37 @@ var taskInput = document.getElementById("taskInput");
 var timeInput = document.getElementById("timeInput");
 var ul = document.querySelector("ul");
 var item = document.getElementsByTagName("li");
-
+//var listLength = item.length;
+//var progress = 0;
 
 function inputLength(){
   return taskInput.value.length;
 }
 function listLength(){
   return item.length;
+}
+function updateProgress(){
+  //Insert code that increments var progress every time function 'crossOut' toggles True//
+}
+function showInput(){
+  if(taskInput.style.display === "none" && timeInput.style.display === "none" && enterButton.style.display === "none"){
+      taskInput.style.display = "inline";
+      timeInput.style.display = "inline";
+      enterButton.style.display = "inline";
+  } else {
+    taskInput.style.display = "none";
+    timeInput.style.display = "none";
+    enterButton.style.display = "none";
+  }
+  if(taskInput.style.visibility === "hidden" && timeInput.style.visibility === "hidden" && enterButton.style.visibility === "hidden"){
+    taskInput.style.visibility = "visible";
+    timeInput.style.visibility = "visible";
+    enterButton.style.visibility = "visible"
+  } else {
+    taskInput.style.visibility = "hidden";
+    timeInput.style.visibility = "hidden";
+    enterButton.style.visibility = "hidden";
+  }
 }
 
 function createListElement(){
@@ -23,9 +47,21 @@ function createListElement(){
 function crossOut(){
 li.classList.toggle("done");
 }
+/*if(li.classList.toggle("done") == true){
+  progress++;
+  displayProgress();
+} else {
+  progress = progress - 1;
+  displayProgress();
+}*/
 li.addEventListener("click", crossOut);
-//End Strikethrough
 
+//End Strikethrough
+//Display Progress
+/*function displayProgress(){
+  var progressReport = document.getElementsByClassName("progress");
+  progressReport.innerHTML = progress.toString() + " of " + listLength.toString() + " Tasks Completed";
+}*/
 //START ADD DELETE BUTTON
 var deleteBtn = document.createElement("button");
 deleteBtn.appendChild(document.createTextNode("X"));
