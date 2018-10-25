@@ -59,8 +59,8 @@ li.addEventListener("click", crossOut);
 //End Strikethrough
 //Display Progress
 /*function displayProgress(){
-  var progressReport = document.getElementsByClassName("progress");
-  progressReport.innerHTML = progress.toString() + " of " + listLength.toString() + " Tasks Completed";
+  var progressReport = document.getElementsByClassName("progress").innerHTML;
+  progressReport = progress.toString() + " of " + listLength.toString() + " Tasks Completed";
 }*/
 //START ADD DELETE BUTTON
 var deleteBtn = document.createElement("button");
@@ -88,3 +88,4 @@ if(inputLength() > 0 && event.which === 13){
 }
 enterButton.addEventListener("click", addListAfterClick);
 taskInput.addEventListener("keypress", addListAfterEvent);
+timeInput.addEventListener("keypress", addListAfterEvent);

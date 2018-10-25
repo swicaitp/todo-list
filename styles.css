@@ -67,6 +67,10 @@ footer{
   background-color: #333E48;
   color: white;
   margin: 0;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
 }
 .add{
   float: right;
