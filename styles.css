@@ -129,17 +129,9 @@ li > button {
 }
 input {
 	border-radius: 5px;
-	min-width: 50%;
+	min-width: 30%;
 	padding: 10px;
   border: none;
-}
-input[type=text]{
-  transition-property: width;
-  transition-duration: 1s;
-  transition-timing-function: ease;
-}
-input[type=text]:focus{
-  width: 70%;
 }
 .delete{
   display:none;

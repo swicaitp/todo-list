@@ -1,11 +1,12 @@
 var enterButton = document.getElementById("enter");
-var input = document.getElementById("userInput");
+var taskInput = document.getElementById("taskInput");
+var timeInput = document.getElementById("timeInput");
 var ul = document.querySelector("ul");
 var item = document.getElementsByTagName("li");
 
 
 function inputLength(){
-  return input.value.length;
+  return taskInput.value.length;
 }
 function listLength(){
   return item.length;
@@ -13,9 +14,10 @@ function listLength(){
 
 function createListElement(){
   var li = document.createElement("li"); //creates an element "li"
-  li.appendChild(document.createTextNode(input.value)); //makes text from the 'input field' the text of the li
+  li.appendChild(document.createTextNode(taskInput.value + " @ " + timeInput.value)); //makes text from the 'input field' the text of the li
   ul.appendChild(li);//adds li to the ul
-  input.value=""; //resets the text field
+  taskInput.value=""; //resets the text field
+  timeInput.value="";
 
 //Start Strikethrough
 function crossOut(){
@@ -49,4 +51,4 @@ if(inputLength() > 0 && event.which === 13){
 }
 }
 enterButton.addEventListener("click", addListAfterClick);
-input.addEventListener("keypress", addListAfterEvent);
+taskInput.addEventListener("keypress", addListAfterEvent);
