@@ -1,5 +1,12 @@
+:root {
+  --bannerDarkGreyColor: #333E48;
+  --bodyColor: #EAEFF1;
+  --taskListColor: #8d8d8d;
+  --darkerBlueHighlightColor: #237FAA;
+  --blueHighLightBorderColor:
+}
 body{
-  background-color: #EAEFF1;
+  background-color: var(--bodyColor);
   margin: 0;
   padding: 0;
   text-align: center;
@@ -11,9 +18,9 @@ body{
 font-size: 500%;
 Position: sticky;
 text-align: center;
-background-color: #333E48;
+background-color: var(--bannerDarkGreyColor);
 top: 0;
-border: 1px solid #333E48;
+border: 1px solid var(--bannerDarkGreyColor);
 }
 .headerbar #ghost{
   float: left;
@@ -41,9 +48,9 @@ font-family: foxLite;
   list-style-type: none;
 }
 .column .taskList li{
-background-color: #8d8d8d;
+background-color: var(--taskListColor);
 font-size: 100%;
-color: #EAEFF1;
+color: var(--bodyColor);
 font-family: 'Courier New', Courier, monospace;
 padding: 10px 10px 10px 0px;
 border-bottom: 2px solid #111;
@@ -64,12 +71,18 @@ font-size: 300%;
 footer{
   text-align: center;
   padding: 20px;
-  background-color: #333E48;
+  background-color: var(--bannerDarkGreyColor);
   color: white;
   margin: 0;
+<<<<<<< HEAD
   left: 0;
   bottom: 0;
   position: fixed;
+=======
+  position: fixed;
+  left: 0;
+  bottom: 0;
+>>>>>>> 631d4dfa8867427b5cbb2669d7791380e1340d99
   width: 100%;
 }
 .add{
@@ -81,7 +94,7 @@ footer{
 }
 .dropdownbtn{
   font-size: 100%;
-  background-color: #333E48;
+  background-color: var(--bannerDarkGreyColor);
   border:none;
   padding: 0 0 0 10px;
   color: white;
@@ -90,7 +103,7 @@ footer{
   font-size: 14px;
   display: none;
   position: absolute;
-  background-color: #237FAA;
+  background-color: var(--darkerBlueHighlightColor);
   min-width: 450px;
   z-index: 1;
   right: 0;
@@ -118,12 +131,12 @@ footer{
   display: block;
 }
 .dropdown:hover .dropdownbtn{
-  background-color: #237FAA;
-  border-bottom: 1px solid #237FAA;
+  background-color: var(--blueHighlightColor);
+  border-bottom: 1px solid var(--blueHighlightColor);
 }
 li > button {
 	font-weight: normal;
-  background-color: #333E48;
+  background-color: var(--bannerDarkGreyColor);
   border-radius: 4px;
 	border: none;
 	float: right;
@@ -136,7 +149,7 @@ input {
 	border-radius: 5px;
 	min-width: 30%;
 	padding: 10px;
-  border: 1px solid #333E48;
+  border: 1px solid var(--blueHighlightColor);
   transition: all;
   transition-duration: 0.4s;
   visibility: hidden;
@@ -172,6 +185,12 @@ input:hover{
 .delete{
   display:none;
 }
+#title{
+
+}
+.time{
+  float: right;
+}
 @font-face{
   font-family: foxLite;
   src: url(foxlite_script.otf);
@@ -184,6 +203,7 @@ input:hover{
   .column{
     margin: 0;
     padding: 0;
+    font-size: .9em
   }
   .column .taskList ul{
     margin: 0;
@@ -191,6 +211,5 @@ input:hover{
 
   }
   .column ul li{
-    font-size: 150%;
   }
 }
