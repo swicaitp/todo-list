@@ -37,7 +37,7 @@ function showInput(){
 }
 
 function createListElement(){
-  var li = document.createElement("li"); //creates an element "li"
+  var span = document.createElement("span");
   var li = document.createElement("li");
   var liText = li.innerHTML; //creates an element "li"
   span.appendChild(document.createTextNode(timeInput));
