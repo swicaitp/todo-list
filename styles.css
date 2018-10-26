@@ -215,6 +215,15 @@ background-color: var(--bannerDarkGreyColor);
   transition-duration: 0.5s;
   transition-timing-function: ease-in-out;
 }
+.trumpets{
+  display: inline;
+}
+#rightFacingTrumpet{
+
+}
+#leftFacingTrumpet{
+
+}
 @font-face{
   font-family: foxLite;
   src: url('foxlite_script.otf');
