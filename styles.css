@@ -50,13 +50,14 @@ background-color: var(--taskListColor);
 font-size: 1.5em;
 color: var(--bodyColor);
 font-family: 'Permanent Marker', cursive;
-padding: 5px 5px 5px 0px;
+padding: 5px 45px 5px 0px;
 border-bottom: 2px solid #111;
 border-radius: 10px;
 border-bottom-right-radius: 5px;
 text-indent: 10px;
 text-align: left;
 transition: all 0.75s ease;
+position: relative;
 }
 .column .taskList li span{
   float: right;
@@ -138,6 +139,8 @@ li > button {
   font-weight: 800;
   transition-property: all;
   transition-duration: 0.4s;
+  position: absolute;
+  right: 5px;
 }
 .done > button:hover{
   background-color: var(--darkestBlueColor);
@@ -151,6 +154,7 @@ input {
   transition-duration: 0.4s;
   visibility: hidden;
   display: none;
+  max-width: 1.5in;
 }
 input:hover{
   border-color: var(--darkerBlueBorderColor);
@@ -207,6 +211,9 @@ background-color: var(--bannerDarkGreyColor);
   width: 0%;
   height: 10px;
   background-color: var(--goldenHighlightColor);
+  transition-property: width;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
 }
 @font-face{
   font-family: foxLite;
