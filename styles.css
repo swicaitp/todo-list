@@ -3,7 +3,8 @@
   --bodyColor: #EAEFF1;
   --taskListColor: #8d8d8d;
   --darkerBlueHighlightColor: #237FAA;
-  --blueHighLightBorderColor:
+  --darkerBlueBorderColor: rgb(7, 135, 209);
+  --lighterBlueHighLightColor: rgb(0, 146, 231);
 }
 body{
   background-color: var(--bodyColor);
@@ -74,15 +75,9 @@ footer{
   background-color: var(--bannerDarkGreyColor);
   color: white;
   margin: 0;
-<<<<<<< HEAD
-  left: 0;
-  bottom: 0;
-  position: fixed;
-=======
   position: fixed;
   left: 0;
   bottom: 0;
->>>>>>> 631d4dfa8867427b5cbb2669d7791380e1340d99
   width: 100%;
 }
 .add{
@@ -156,7 +151,7 @@ input {
   display: none;
 }
 input:hover{
-  border-color: rgb(0, 146, 231);
+  border-color: var(--darkerBlueBorderColor);
 }
 #enter{
   border-radius: 5px;
@@ -190,6 +185,7 @@ input:hover{
 }
 .time{
   float: right;
+  text-align: right;
 }
 @font-face{
   font-family: foxLite;

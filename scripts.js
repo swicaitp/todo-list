@@ -38,11 +38,14 @@ function showInput(){
 
 function createListElement(){
   var span = document.createElement("span");
-  var li = document.createElement("li");
-  var liText = li.innerHTML; //creates an element "li"
-  span.appendChild(document.createTextNode(timeInput));
-  li.appendChild(document.createTextNode(taskInput.value + " @ "+ span));
+  var li = document.createElement("li");//creates an element "li"
+  span.classList.add("time");
+  const timeItem = `@${timeInput.value}`;
+  span.insertAdjacentHTML('beforeend', timeItem);
+  li.appendChild(document.createTextNode(taskInput.value + span.innerHTML));
+  //const newItem = `<li> ${taskInput.value} @ <span class="time"> ${timeInput.value} </span></li>`;
   //makes text from the 'input field' the text of the li
+  //ul.insertAdjacentHTML('beforeend', newItem);
   ul.appendChild(li);//adds li to the ul
   taskInput.value=""; //resets the text field
   timeInput.value="";
@@ -57,19 +60,12 @@ li.addEventListener("click", crossOut);
 
 //End Strikethrough
 //Display Progress
-<<<<<<< HEAD
-/*function displayProgress(){
-  var progressReport = document.getElementsByClassName("progress").innerHTML;
-  progressReport = progress.toString() + " of " + listLength.toString() + " Tasks Completed";
-}*/
-=======
 function displayProgress(){
   var liLength = document.querySelectorAll("li").length;
   var tasksDone = document.querySelectorAll(".done").length;
   var progressReport = document.getElementById("progress");
   progressReport.innerHTML = tasksDone + " of " + liLength + " Tasks Completed";
 }
->>>>>>> 631d4dfa8867427b5cbb2669d7791380e1340d99
 //START ADD DELETE BUTTON
 var deleteBtn = document.createElement("button");
 deleteBtn.appendChild(document.createTextNode("X"));
