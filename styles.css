@@ -5,8 +5,9 @@
   --bodyColor: #EAEFF1;
   --taskListColor: #8d8d8d;
   --darkerBlueHighlightColor: #237FAA;
-  --darkerBlueBorderColor: rgb(7, 135, 209);
-  --lighterBlueHighLightColor: rgb(0, 146, 231);
+  --darkerBlueBorderColor: #0787d1;
+  --lighterBlueHighLightColor: #0092e7;
+  --goldenHighlightColor: #ffbb00;
 }
 body{
   background-color: var(--bodyColor);
@@ -122,8 +123,8 @@ footer{
   display: block;
 }
 .dropdown:hover .dropdownbtn{
-  background-color: var(--blueHighlightColor);
-  border-bottom: 1px solid var(--blueHighlightColor);
+  background-color: var(--lighterBlueHighLightColor);
+  border-bottom: 1px solid var(--lighterBlueHighLightColor);
 }
 li > button {
 	font-weight: normal;
@@ -140,7 +141,7 @@ input {
 	border-radius: 5px;
   margin-top: 5px;
 	padding: 10px;
-  border: 1px solid var(--blueHighlightColor);
+  border: 1px solid var(--lighterBlueHighLightColor);
   transition: all;
   transition-duration: 0.4s;
   visibility: hidden;
@@ -151,9 +152,9 @@ input:hover{
 }
 #enter{
   border-radius: 5px;
-  border: 1px solid #333E48;
-  background-color: #333E48;
-  color: #EAEFF1;
+  border: 1px solid var(--bannerDarkGreyColor);
+  background-color: var(--bannerDarkGreyColor);
+  color: var(--bodyColor);
   padding: 10px;
   transition: all;
   transition-duration: 0.4s;
@@ -161,16 +162,16 @@ input:hover{
   display: none;
 }
 #enter:hover{
-  color: rgb(255, 187, 0) !important;
-  background-color: rgb(0, 146, 231) !important;
-  border-color: rgb(0, 146, 231);
+  color: var(--goldenHighlightColor) !important;
+  background-color: var(--lighterBlueHighLightColor) !important;
+  border-color: var(--lighterBlueHighLightColor);
 }
 .done{
-  border-bottom-color: rgb(255, 187, 0) !important;
-  background-color: rgb(0, 146, 231) !important;
+  border-bottom-color: var(--goldenHighlightColor) !important;
+  background-color: var(--lighterBlueHighLightColor) !important;
 }
 .done button{
-  background-color: #237FAA !important;
+  background-color: var(--darkerBlueHighlightColor) !important;
 
 }
 .delete{
