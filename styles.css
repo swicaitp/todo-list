@@ -198,6 +198,7 @@ float: right;
 font-family: 'Permanent Marker', cursive;
 }
 #progressBar{
+  text-align: center;
   width: 100%;
 background-color: var(--bannerDarkGreyColor);
 }
