@@ -4,7 +4,8 @@
   --bannerDarkGreyColor: #333E48;
   --bodyColor: #EAEFF1;
   --taskListColor: #8d8d8d;
-  --darkerBlueHighlightColor: #237FAA;
+  --darkerBlueHighlightColor: #237FCA;
+  --darkestBlueColor: #1063a7;
   --darkerBlueBorderColor: #0787d1;
   --lighterBlueHighLightColor: #0092e7;
   --goldenHighlightColor: #ffbb00;
@@ -138,6 +139,9 @@ li > button {
   transition-property: all;
   transition-duration: 0.4s;
 }
+.done > button:hover{
+  background-color: var(--darkestBlueColor);
+}
 input {
 	border-radius: 5px;
   margin-top: 5px;
@@ -172,7 +176,7 @@ input:hover{
   background-color: var(--lighterBlueHighLightColor) !important;
 }
 .done button{
-  background-color: var(--darkerBlueHighlightColor) !important;
+  background-color: var(--darkerBlueHighlightColor);
 
 }
 /*.delete{
