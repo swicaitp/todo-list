@@ -196,6 +196,7 @@ input:hover{
 .time{
 float: right;
 font-family: 'Permanent Marker', cursive;
+padding-right: 10px;
 }
 #progressBar{
   text-align: center;
