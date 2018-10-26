@@ -197,6 +197,15 @@ input:hover{
 float: right;
 font-family: 'Permanent Marker', cursive;
 }
+#progressBar{
+  width: 100%;
+background-color: var(--bannerDarkGreyColor);
+}
+#progressBarFill{
+  width: 0%;
+  height: 10px;
+  background-color: var(--goldenHighlightColor);
+}
 @font-face{
   font-family: foxLite;
   src: url('foxlite_script.otf');

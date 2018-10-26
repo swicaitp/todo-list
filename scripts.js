@@ -58,6 +58,18 @@ function createListElement(){
     var tasksDone = document.querySelectorAll(".done").length;
     var progressReport = document.getElementById("progress");
     progressReport.innerHTML = tasksDone + " of " + liLength + " Tasks Completed";
+    var progressBar = document.getElementById("progressBar");
+    var progressBarFill = document.getElementById("progressBarFill");
+    var width = progressBarFill.style.width.value;
+    var id = setInterval(frame(),(liLength));
+      function frame(){
+        if(width >= (liLength*100)){
+          clearInterval(id);
+        } else {
+          width++;
+          progressBarFill.style.width = ((tasksDone/liLength)*100) +"%";
+        }
+      }
   }
 
   //Start Strikethrough
@@ -72,10 +84,10 @@ function createListElement(){
   displayProgress();
   }
 //End Ass Class Delete
-const newItem = `<li> ${taskInput.value} <span class="time">@ ${timeInput.value}</span> <button><i class="fas fa-times"></i></button></li>`;
+const newItem = `<li> ${taskInput.value} <span class="time">@ ${timeInput.value}</span> <button class="deleteButton"><i class="fas fa-times"></i></button></li>`;
   ul.insertAdjacentHTML('beforeend', newItem);//adds li to the ul
-  taskInput.value=""; //resets the text field
-  timeInput.value="";
+  //taskInput.value=""; //resets the text field
+  //timeInput.value="";
 
   //Add Event Listeners
 const lastLi = document.querySelectorAll('li');
