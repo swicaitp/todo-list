@@ -193,11 +193,11 @@ font-family: 'Permanent Marker', cursive;
 }
 @font-face{
   font-family: foxLite;
-  src: url(foxlite_script.otf);
+  src: url('foxlite_script.otf');
 }
 @font-face{
   font-family: handWritten;
-  src: url(Handletterink.otf);
+  src: url('Handletterink.otf');
 }
 
 @media screen and (max-width: 600px){

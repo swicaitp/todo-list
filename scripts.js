@@ -13,6 +13,7 @@ function inputLength(){
 function listLength(){
   return item.length;
 }
+
 function updateProgress(){
   //Insert code that increments var progress every time function 'crossOut' toggles True//
 }
@@ -40,48 +41,60 @@ function showInput(){
 }
 
 function createListElement(){
-  var span = document.createElement("span");
+  /*var span = document.createElement("span");
   var li = document.createElement("li");//creates an element "li"
   span.classList.add("time");
   const timeItem = `@${timeInput.value}`;
   span.insertAdjacentHTML('beforeend', timeItem);
 
   li.appendChild(document.createTextNode(taskInput.value));
+  */
 
-  //const newItem = `<li> ${taskInput.value} @ <span class="time"> ${timeInput.value} </span></li>`;
-  //makes text from the 'input field' the text of the li
-  //ul.insertAdjacentHTML('beforeend', newItem);
-  ul.appendChild(li);//adds li to the ul
+  //ul.appendChild(li);
+
+  //displayProgress();
+  //Display Progress
+  function displayProgress(){
+    var liLength = document.querySelectorAll("li").length;
+    var tasksDone = document.querySelectorAll(".done").length;
+    var progressReport = document.getElementById("progress");
+    progressReport.innerHTML = tasksDone + " of " + liLength + " Tasks Completed";
+  }
+
+  //Start Strikethrough
+  function crossOut(){
+  this.classList.toggle("done");
+    displayProgress();
+  }
+  //End Strikethrough
+  //Add Class Delete (display:none)
+  function deleteListItem(){
+  thisLi.remove();
+  displayProgress();
+  }
+//End Ass Class Delete
+const newItem = `<li> ${taskInput.value} <span class="time">@ ${timeInput.value}</span> <button>X</button></li>`;
+  ul.insertAdjacentHTML('beforeend', newItem);//adds li to the ul
   taskInput.value=""; //resets the text field
   timeInput.value="";
-  displayProgress();
 
-//Start Strikethrough
-function crossOut(){
-li.classList.toggle("done");
-  displayProgress();
-}
-li.addEventListener("click", crossOut);
+  //Add Event Listeners
+const lastLi = document.querySelectorAll('li');
+const thisLi = lastLi[lastLi.length - 1];
+const lastBtn = document.querySelectorAll('li > button');
+const thisBtn = lastBtn[lastBtn.length - 1];
 
-//End Strikethrough
-//Display Progress
-function displayProgress(){
-  var liLength = document.querySelectorAll("li").length;
-  var tasksDone = document.querySelectorAll(".done").length;
-  var progressReport = document.getElementById("progress");
-  progressReport.innerHTML = tasksDone + " of " + liLength + " Tasks Completed";
-}
+thisLi.addEventListener('click', crossOut);
+thisBtn.addEventListener('click', deleteListItem);
+taskInput.value="";
+timeInput.value="";
+displayProgress();
 //START ADD DELETE BUTTON
-var deleteBtn = document.createElement("button");
+/*var deleteBtn = document.createElement("button");
 deleteBtn.appendChild(document.createTextNode("X"));
 li.appendChild(deleteBtn);
 deleteBtn.addEventListener("click", deleteListItem);
-li.appendChild(span);
-//Add Class Delete (display:none)
-function deleteListItem(){
-li.classList.add("delete");
-}
-//End Ass Class Delete
+li.appendChild(span);*/
 
 }
 
@@ -98,3 +111,4 @@ if(inputLength() > 0 && event.which === 13){
 enterButton.addEventListener("click", addListAfterClick);
 taskInput.addEventListener("keypress", addListAfterEvent);
 timeInput.addEventListener("keypress", addListAfterEvent);
+li.addEventListener("click", crossOut);
