@@ -72,7 +72,7 @@ function createListElement(){
   displayProgress();
   }
 //End Ass Class Delete
-const newItem = `<li> ${taskInput.value} <span class="time">@ ${timeInput.value}</span> <button>X</button></li>`;
+const newItem = `<li> ${taskInput.value} <span class="time">@ ${timeInput.value}</span> <button><i class="fas fa-times"></i></button></li>`;
   ul.insertAdjacentHTML('beforeend', newItem);//adds li to the ul
   taskInput.value=""; //resets the text field
   timeInput.value="";
