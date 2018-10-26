@@ -36,7 +36,6 @@ function showInput(){
     taskInput.style.visibility = "hidden";
     timeInput.style.visibility = "hidden";
     enterButton.style.visibility = "hidden";
-    title.style.visibility = "visible";
   }
 }
 
