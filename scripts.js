@@ -3,6 +3,7 @@ var taskInput = document.getElementById("taskInput");
 var timeInput = document.getElementById("timeInput");
 var ul = document.querySelector("ul");
 var item = document.getElementsByTagName("li");
+var title = document.getElementById("title");
 //var listLength = item.length;
 var progress = 0;
 
@@ -29,10 +30,12 @@ function showInput(){
     taskInput.style.visibility = "visible";
     timeInput.style.visibility = "visible";
     enterButton.style.visibility = "visible";
+    title.style.visibility = "visible";
   } else {
     taskInput.style.visibility = "hidden";
     timeInput.style.visibility = "hidden";
     enterButton.style.visibility = "hidden";
+    title.style.visibility = "visible";
   }
 }
 
@@ -42,7 +45,9 @@ function createListElement(){
   span.classList.add("time");
   const timeItem = `@${timeInput.value}`;
   span.insertAdjacentHTML('beforeend', timeItem);
-  li.appendChild(document.createTextNode(taskInput.value + span.innerHTML));
+
+  li.appendChild(document.createTextNode(taskInput.value));
+
   //const newItem = `<li> ${taskInput.value} @ <span class="time"> ${timeInput.value} </span></li>`;
   //makes text from the 'input field' the text of the li
   //ul.insertAdjacentHTML('beforeend', newItem);
@@ -71,7 +76,7 @@ var deleteBtn = document.createElement("button");
 deleteBtn.appendChild(document.createTextNode("X"));
 li.appendChild(deleteBtn);
 deleteBtn.addEventListener("click", deleteListItem);
-
+li.appendChild(span);
 //Add Class Delete (display:none)
 function deleteListItem(){
 li.classList.add("delete");
