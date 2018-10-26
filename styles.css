@@ -211,6 +211,10 @@ font-family: 'Permanent Marker', cursive;
     padding: 0;
 
   }
-  .column ul li{
+  #title{
+    font-size: 2em;
+  }
+  #progress{
+    font-size: 2em;
   }
 }

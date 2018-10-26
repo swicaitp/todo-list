@@ -111,4 +111,4 @@ if(inputLength() > 0 && event.which === 13){
 enterButton.addEventListener("click", addListAfterClick);
 taskInput.addEventListener("keypress", addListAfterEvent);
 timeInput.addEventListener("keypress", addListAfterEvent);
-li.addEventListener("click", crossOut);
+
