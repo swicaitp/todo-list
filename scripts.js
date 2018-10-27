@@ -1,6 +1,7 @@
 var enterButton = document.getElementById("enter");
 var taskInput = document.getElementById("taskInput");
 var timeInput = document.getElementById("timeInput");
+var dateInput = document.getElementById("dateInput");
 var ul = document.querySelector("ul");
 var item = document.getElementsByTagName("li");
 var title = document.getElementById("title");
@@ -25,20 +26,24 @@ function showInput(){
   if(taskInput.style.display === "none" && timeInput.style.display === "none" && enterButton.style.display === "none"){
       taskInput.style.display = "inline";
       timeInput.style.display = "inline";
+      dateInput.style.display = "inline";
       enterButton.style.display = "inline";
   } else {
     taskInput.style.display = "none";
     timeInput.style.display = "none";
+    dateInput.style.display = "none";
     enterButton.style.display = "none";
   }
   if(taskInput.style.visibility === "hidden" && timeInput.style.visibility === "hidden" && enterButton.style.visibility === "hidden"){
     taskInput.style.visibility = "visible";
     timeInput.style.visibility = "visible";
+    dateInput.style.visibility = "visible";
     enterButton.style.visibility = "visible";
     title.style.visibility = "visible";
   } else {
     taskInput.style.visibility = "hidden";
     timeInput.style.visibility = "hidden";
+    dateInput.style.visibility = "hidden";
     enterButton.style.visibility = "hidden";
   }
 }
@@ -100,7 +105,7 @@ function createListElement(){
   displayProgress();
   }
 //End Ass Class Delete
-const newItem = `<li> ${taskInput.value}<button class="deleteButton"> <i class="fas fa-times"></i></button><span class="time">@ ${timeInput.value}</span></li>`;
+const newItem = `<li> ${taskInput.value}<button class="deleteButton"> <i class="fas fa-times"></i></button><span class="time">@ ${timeInput.value} ${dateInput.value}</span></li>`;
   ul.insertAdjacentHTML('beforeend', newItem);//adds li to the ul
   //taskInput.value=""; //resets the text field
   //timeInput.value="";

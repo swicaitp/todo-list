@@ -156,6 +156,17 @@ input {
   display: none;
   max-width: 1.5in;
 }
+#dateInput{
+  border-radius: 5px;
+  margin-top: 5px;
+	padding: 8px;
+  border: 1px solid var(--lighterBlueHighLightColor);
+  transition: all;
+  transition-duration: 0.4s;
+  visibility: hidden;
+  display: none;
+  max-width: 1.5in;
+}
 input:hover{
   border-color: var(--darkerBlueBorderColor);
 }
@@ -286,7 +297,14 @@ background-color: var(--bannerDarkGreyColor);
   .column .taskList ul{
     margin: 0;
     padding: 0;
-
+  }
+  input{
+    max-width: 1in;
+    margin: 5px 0 0 0;
+  }
+  #dateInput{
+    max-width: 1in;
+    margin: 5px 0 0 0;
   }
   #title{
     font-size: 2em;
@@ -310,16 +328,26 @@ background-color: var(--bannerDarkGreyColor);
   }
   @keyframes fanfareLeft{
     0% {visibility: visible; width: 0%;}
-    25% {width: 40%;}
-    50% {width: 25%;}
-    75% {width: 40%;}
+    5% {width: 40%;}
+    7% {width: 25%;}
+    10% {width: 40%;}
+    12% {width: 25%;}
+    14% {width: 40%;}
+    16% {width: 25%;}
+    17% {width: 40%;}
+    90% {width: 0%;}
     100% {visibility: hidden; width: 0%;}
   }
   @keyframes fanfareRight{
     0% {visibility: visible; width: 0%;}
-    25% {width: 40%;}
-    50% {width: 25%;}
-    75% {width: 40%;}
+    5% {width: 40%;}
+    7% {width: 25%;}
+    10% {width: 40%;}
+    12% {width: 25%;}
+    14% {width: 40%;}
+    16% {width: 25%;}
+    17% {width: 40%;}
+    90% {width: 0%;}
     100% {visibility: hidden; width: 0%;}
   }
 }
