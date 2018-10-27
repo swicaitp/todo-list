@@ -242,6 +242,7 @@ background-color: var(--bannerDarkGreyColor);
   14% {width: 25%;}
   16% {width: 15%;}
   17% {width: 25%;}
+  90% {width: 0%;}
   100% {visibility: hidden; width: 0%;}
 }
 @keyframes fanfareRight{
@@ -253,6 +254,7 @@ background-color: var(--bannerDarkGreyColor);
   14% {width: 25%;}
   16% {width: 15%;}
   17% {width: 25%;}
+  90% {width: 0%;}
   100% {visibility: hidden; width: 0%;}
 }
 
