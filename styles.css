@@ -250,11 +250,11 @@ background-color: var(--bannerDarkGreyColor);
 }
 .leftTrumpet{
   animation-name: fanfareLeft;
-  animation-duration: 2s;
+  animation-duration: 1.5s;
 }
 .rightTrumpet{
   animation-name: fanfareRight;
-  animation-duration: 2s;
+  animation-duration: 1.5s;
 }
 @font-face{
   font-family: foxLite;
