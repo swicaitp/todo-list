@@ -235,28 +235,36 @@ background-color: var(--bannerDarkGreyColor);
 }
 @keyframes fanfareLeft{
   0% {visibility: visible; width: 0%;}
-  25% {width: 25%;}
-  50% {width: 15%;}
-  75% {width: 25%;}
+  5% {width: 25%;}
+  7% {width: 15%;}
+  10% {width: 25%;}
+  12% {width: 15%;}
+  14% {width: 25%;}
+  16% {width: 15%;}
+  17% {width: 25%;}
   100% {visibility: hidden; width: 0%;}
 }
 @keyframes fanfareRight{
   0% {visibility: visible; width: 0%;}
-  25% {width: 25%;}
-  50% {width: 15%;}
-  75% {width: 25%;}
+  5% {width: 25%;}
+  7% {width: 15%;}
+  10% {width: 25%;}
+  12% {width: 15%;}
+  14% {width: 25%;}
+  16% {width: 15%;}
+  17% {width: 25%;}
   100% {visibility: hidden; width: 0%;}
 }
 
 .rightTrumpet{
   visibility: visible;
   animation-name: fanfareRight;
-  animation-duration: 3s;
+  animation-duration: 4s;
 }
 .leftTrumpet{
   visibility: visible;
   animation-name: fanfareLeft;
-  animation-duration: 3s;
+  animation-duration: 4s;
 }
 @font-face{
   font-family: foxLite;

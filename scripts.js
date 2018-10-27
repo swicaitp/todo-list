@@ -6,6 +6,7 @@ var item = document.getElementsByTagName("li");
 var title = document.getElementById("title");
 var leftTrumpet = document.getElementById("rightFacingTrumpet");
 var rightTrumpet = document.getElementById("leftFacingTrumpet");
+var funnyTrumpetSound = document.getElementById("funnyTrumpetSound");
 //var listLength = item.length;
 var progress = 0;
 
@@ -64,13 +65,17 @@ function createListElement(){
     var progressBar = document.getElementById("progressBar");
     var progressBarFill = document.getElementById("progressBarFill");
     var width = progressBarFill.style.width.value;
+
     var id = setInterval(frame(),(liLength));
     if(liLength == tasksDone){
       rightTrumpet.classList.add("rightTrumpet");
       leftTrumpet.classList.add("leftTrumpet");
+      funnyTrumpetSound.play();
     } else{
       rightTrumpet.classList.remove("rightTrumpet");
       leftTrumpet.classList.remove("leftTrumpet");
+      funnyTrumpetSound.load();
+      funnyTrumpetSound.pause();
     }
       function frame(){
         if(width >= (liLength*100)){
