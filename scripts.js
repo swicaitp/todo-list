@@ -12,6 +12,7 @@ var progress = 0;
 function inputLength(){
   return taskInput.value.length;
 }
+
 function listLength(){
   return item.length;
 }
