@@ -223,11 +223,13 @@ background-color: var(--bannerDarkGreyColor);
 #rightFacingTrumpet{
   position: fixed;
   left: 0;
+  bottom: 20%;
   max-width: 25%;
 }
 #leftFacingTrumpet{
   position: fixed;
   right: 0;
+  bottom: 20%;
   max-width: 25%;
 }
 @font-face{
