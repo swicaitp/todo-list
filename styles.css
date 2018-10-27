@@ -215,16 +215,24 @@ background-color: var(--bannerDarkGreyColor);
   transition-duration: 0.5s;
   transition-timing-function: ease-in-out;
 }
-<<<<<<< HEAD
 .trumpets{
-  display: inline;
+  padding: 0;
+  margin: 0;
 }
 #rightFacingTrumpet{
-
+  position: fixed;
+  left: 0;
+  bottom: 20%;
+  max-width: 40%;
+  visibility: hidden;
 }
 #leftFacingTrumpet{
-
-=======
+  position: fixed;
+  right: 0;
+  bottom: 20%;
+  max-width: 40%;
+  visibility: hidden;
+}
 @keyframes fanfareLeft{
   0% {visibility: visible; width: 0%;}
   25% {width: 25%;}
@@ -239,6 +247,16 @@ background-color: var(--bannerDarkGreyColor);
   75% {width: 25%;}
   100% {visibility: hidden; width: 0%;}
 }
+
+.rightTrumpet{
+  visibility: visible;
+  animation-name: fanfareRight;
+  animation-duration: 3s;
+}
+.leftTrumpet{
+  visibility: visible;
+  animation-name: fanfareLeft;
+  animation-duration: 3s;
 }
 @font-face{
   font-family: foxLite;
