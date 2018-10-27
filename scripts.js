@@ -4,6 +4,8 @@ var timeInput = document.getElementById("timeInput");
 var ul = document.querySelector("ul");
 var item = document.getElementsByTagName("li");
 var title = document.getElementById("title");
+var leftTrumpet = document.getElementById("rightFacingTrumpet");
+var rightTrumpet = document.getElementById("leftFacingTrumpet");
 //var listLength = item.length;
 var progress = 0;
 
@@ -63,6 +65,13 @@ function createListElement(){
     var progressBarFill = document.getElementById("progressBarFill");
     var width = progressBarFill.style.width.value;
     var id = setInterval(frame(),(liLength));
+    if(liLength == tasksDone){
+      rightTrumpet.classList.add("rightTrumpet");
+      leftTrumpet.classList.add("leftTrumpet");
+    } else{
+      rightTrumpet.classList.remove("rightTrumpet");
+      leftTrumpet.classList.remove("leftTrumpet");
+    }
       function frame(){
         if(width >= (liLength*100)){
           clearInterval(id);
@@ -77,6 +86,7 @@ function createListElement(){
   function crossOut(){
   this.classList.toggle("done");
     displayProgress();
+
   }
   //End Strikethrough
   //Add Class Delete (display:none)
