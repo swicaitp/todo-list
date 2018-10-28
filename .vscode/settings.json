@@ -11,7 +11,7 @@
   "files.trimTrailingWhitespace": true,
   "workbench.enableExperiments": false,
   "workbench.colorTheme": "Night Owl",
-  "workbench.iconTheme": "vs-minimal",
+  "workbench.iconTheme": "material-icon-theme",
   "workbench.view.alwaysShowHeaderActions": true,
   "terminal.integrated.fontFamily": "'Inconsolata', monospace",
   "editor.fontFamily": "'Fira Code', 'Inconsolata', Menlo, Monaco, 'Courier New', monospace",

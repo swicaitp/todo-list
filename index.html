@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    <header class="headerbar">
+    <header id="headerbar">
       <a href="http://swicaitp.com"><span id="ghost" class="fas fa-ghost"></span></a>
         <img id="banner" src="Todo_Logo.png" alt="Todo_Logo.png">
         <div class="add">
@@ -32,7 +32,7 @@
       <div>
         <input type="text" autocomplete="on" id="taskInput" placeholder="New task...">
         <input type="text" autocomplete="on" id="timeInput" placeholder="Scheduled time...">
-        <input type="date" autocomplete="on" id="dateInput" placeholder="Scheduled data...">
+        <input type="date" id="dateInput">
         <button id="enter"><i class="fas fa-pen"></i></button>
       </div>
       <div class="taskList">
@@ -51,15 +51,26 @@
 
 
       </div>
+
     </main>
 
-    <footer>
+    <footer id="footer">
       <div class="trumpets">
-      <img src="Right_Facing_Trumpet.png" id="rightFacingTrumpet" alt="Right_Facing_Trumpet">
-      <img src="Left_Facing_Trumpet.png" id="leftFacingTrumpet" alt="Left_Facing_Trumpet">
-      <audio src="194624__harbour11__trumpet2.wav" id="funnyTrumpetSound"></audio>
-    </div>
+        <img src="Right_Facing_Trumpet.png" id="rightFacingTrumpet" alt="Right_Facing_Trumpet">
+        <img src="Left_Facing_Trumpet.png" id="leftFacingTrumpet" alt="Left_Facing_Trumpet">
+        <audio src="194624__harbour11__trumpet2.wav" id="funnyTrumpetSound"></audio>
+      </div>
       <p>Created by SWIC AITP</p>
+      <div class="container">
+      <form>
+        <select id="colorPickerSelect" onchange="colorPicker()">
+          <option id="defaultColor" value="#333E48">Default Color</option>
+          <option id="lightBlue" value="#0092e7">Light Blue</option>
+          <option id="darkRed" value="#c00000">Dark Red</option>
+          <option id="green" value="#00c62e">Light Green</option>
+          </select>
+      </form>
+      </div>
     </footer>
     <script src="scripts.js"></script>
   </body>
