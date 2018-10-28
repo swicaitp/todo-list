@@ -5,19 +5,25 @@ var dateInput = document.getElementById("dateInput");
 var ul = document.querySelector("ul");
 var item = document.getElementsByTagName("li");
 var title = document.getElementById("title");
-var leftTrumpet = document.getElementById("rightFacingTrumpet");
-var rightTrumpet = document.getElementById("leftFacingTrumpet");
-var funnyTrumpetSound = document.getElementById("funnyTrumpetSound");
-var colorPickerValue = document.getElementById("colorPickerSelect").value;
+var colorPickerValue = document.getElementById("colorPickerSelect");
 var headerbarElement = document.getElementById("headerbar");
-var headerColor = window.getComputedStyle(headerbarElement);
-var headerColorValue = headerColor.getPropertyValue("--bannerColor");
+var headerbarStyle = document.getElementById("headerbar").style;
+var headerBC = document.getElementById("headerbar").style.getPropertyValue("backgroundColor");
+console.log(headerBC);
 var footerElement = document.getElementById("footer");
-var footerColor = window.getComputedStyle(footerElement);
-var footerColorValue = footerColor.getPropertyValue("--bannerColor");
-var colorPickerSubmitButton = document.getElementById("colorPickerSubmitButton");
-//var listLength = item.length;
+var footerStyle = document.getElementById("footer").style;
+var titleElement = document.getElementById("title");
+
 var progress = 0;
+//START TIME-OUT CORNER//
+  var headerColor = window.getComputedStyle(headerbarElement);
+  var headerColorValue = headerColor.getPropertyValue("--bannerColor");
+  console.log(headerColorValue);
+  //var footerColor = window.getComputedStyle(footerElement);
+  //var footerColorValue = footerColor.getPropertyValue("--bannerColor");
+  //var listLength = item.length;
+//END TIME-OUT CORNER//
+
 
 function inputLength(){
   return taskInput.value.length;
@@ -28,19 +34,61 @@ function listLength(){
 }
 
 function colorPicker(){
-  var optionBlue = document.getElementById("lightBlue").value;
-  var optionRed = document.getElementById("darkRed").value;
-  var optionGreen = document.getElementById("green").value;
-  if(colorPickerValue == optionBlue){
-    headerColorValue.setProperty("--bannerColor", "#0092e7");
-    footerColorValue.setProperty("--bannerColor", "#0092e7");
-  } else if(colorPickerValue == optionRed){
-    headerColorValue.setProperty("--bannerColor", "#c00000");
-    footerColorValue.setProperty("--bannerColor", "#c00000");
-  } else if (colorPickerValue == optionGreen){
-    headerColorValue.setProperty("--bannerColor", "#00c62e");
-    footerColorValue.setProperty("--bannerColor", "#00c62e");
+  var defaultOption = document.getElementById("defaultColor");
+  var optionBlue = document.getElementById("lightBlue");
+  var optionRed = document.getElementById("darkRed");
+  var optionGreen = document.getElementById("green");
+  switch(colorPickerValue.value){
+    case optionBlue.value:
+    headerbarStyle.backgroundColor = "#0092e7";
+    headerbarElement.style.borderColor = "#0092e7";
+    footerElement.style.backgroundColor = "#0092e7";
+    progressBar.style.backgroundColor = "#0092e7";
+    titleElement.style.color = "#0092e7";
+    titleElement.style.borderBottomColor = "#0092e7";
+    break;
+    case optionRed.value:
+    headerbarElement.style.backgroundColor = "#c00000";
+    headerbarElement.style.borderColor = "#c00000";
+    footerElement.style.backgroundColor = "#c00000";
+    progressBar.style.backgroundColor = "#c00000";
+    titleElement.style.color = "#c00000";
+    titleElement.style.borderBottomColor = "#c00000";
+    break;
+    case optionGreen.value:
+    headerbarElement.style.backgroundColor = "#00c62e";
+    headerbarElement.style.borderColor = "#00c62e";
+    footerElement.style.backgroundColor = "#00c62e";
+    progressBar.style.backgroundColor = "#00c62e";
+    titleElement.style.color = "#00c62e";
+    titleElement.style.borderBottomColor = "#00c62e";
+    break;
+    case defaultOption.value:
+    headerbarElement.style.backgroundColor = headerColorValue;
+    headerbarElement.style.borderColor = "#333E48";
+    footerElement.style.backgroundColor = "#333E48";
+    progressBar.style.backgroundColor = "#333E48";
+    titleElement.style.color = "#333E48";
+    titleElement.style.borderBottomColor = "#333E48";
+    break;
+    default:
+    alert("That's not gonna fly, bucko");
   }
+  /*if(colorPickerValue == optionBlue){
+    headerbarElement.style.backgroundColor = "#0092e7";
+    headerbarElement.style.backgroundColor = optionBlue.value;
+    console.log("optionBlue is being run");
+  } else if(colorPickerValue == optionRed){
+    headerbarElement.style.backgroundColor = optionRed.value;
+    footerElement.style.backgroundColor = optionRed.value;
+    console.log("optionRed is being run");
+  } else if (colorPickerValue == optionGreen){
+    headerbarElement.style.backgroundColor = optionGreen.value;
+    footerElement.style.backgroundColor = optionGreen.value;
+    console.log("optionGreen is being run");
+  }*/
+  console.log(colorPickerValue.value);
+
   console.log("I am being run");
 }
 function updateProgress(){
@@ -94,7 +142,9 @@ function createListElement(){
     var progressBar = document.getElementById("progressBar");
     var progressBarFill = document.getElementById("progressBarFill");
     var width = progressBarFill.style.width.value;
-
+    var leftTrumpet = document.getElementById("rightFacingTrumpet");
+    var rightTrumpet = document.getElementById("leftFacingTrumpet");
+    var funnyTrumpetSound = document.getElementById("funnyTrumpetSound");
     var id = setInterval(frame(),(liLength));
     if(liLength == tasksDone && liLength != 0){
       rightTrumpet.classList.add("rightTrumpet");
