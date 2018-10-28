@@ -37,6 +37,16 @@ border: 1px solid var(--bannerDarkGreyColor);
   height: 60px;
   padding: 0 0 0 10px;
 }
+.darkRed{
+  background-color: rgb(192, 0, 0);
+}
+.lightBlue{
+  background-color: var(--lighterBlueHighLightColor);
+}
+.green{
+  background-color:#00c62e;
+}
+
 .column{
   padding: 20px;
   margin: 20px 20px 20px 0px;

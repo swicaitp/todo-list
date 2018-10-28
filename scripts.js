@@ -8,6 +8,9 @@ var title = document.getElementById("title");
 var leftTrumpet = document.getElementById("rightFacingTrumpet");
 var rightTrumpet = document.getElementById("leftFacingTrumpet");
 var funnyTrumpetSound = document.getElementById("funnyTrumpetSound");
+var colorPicker = document.getElementById("colorPicker");
+var headerColor = document.getElementsByClassName("headerbar");
+var footerColor = document.getElementsByTagName("footer");
 var colorPickerSubmitButton = document.getElementById("colorPickerSubmitButton");
 //var listLength = item.length;
 var progress = 0;
@@ -19,7 +22,20 @@ function inputLength(){
 function listLength(){
   return item.length;
 }
-
+function colorPicker(){
+  if(colorPicker.value == "#0092e7"){
+    headerColor.classList.add("lightBlue");
+    footerColor.classList.add("lightBlue");
+  } else if(colorPicker.value == "rgb(192, 0, 0)"){
+    headerColor.classList.add("darkRed");
+    footerColor.classList.add("darkRed");
+  } else if (colorPicker.value == "#00c62e"){
+    headerColor.classList.add("green");
+    footerColor.classList.add("green");
+  }
+  console.log("I am being run");
+}
+colorPickerSubmitButton.addEventListener("click", colorPicker);
 function updateProgress(){
   //Insert code that increments var progress every time function 'crossOut' toggles True//
 }
@@ -141,16 +157,10 @@ if(inputLength() > 0 && event.which === 13){
   createListElement();
 }
 }
-function colorPicker(){
-  var colorPicker = document.getElementById("colorPicker");
-  var headerColor = document.getElementsByClassName("headerbar");
-  var footerColor = document.getElementsByTagName("footer");
-  headerColor.style.backgroundColor = colorPicker.value;
-  footerColor.style.backgroundColor = colorPicker.value;
-}
+
+
 enterButton.addEventListener("click", addListAfterClick);
 taskInput.addEventListener("keypress", addListAfterEvent);
 timeInput.addEventListener("keypress", addListAfterEvent);
-colorPickerSubmitButton.addEventListener("click", colorPicker);
 
 
