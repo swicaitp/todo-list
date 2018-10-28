@@ -17,7 +17,7 @@ body{
   text-align: center;
 }
 .password {
-  color: red;
+  color: rgb(192, 0, 0);
 }
 .headerbar{
 font-size: 500%;
@@ -279,9 +279,15 @@ background-color: var(--bannerDarkGreyColor);
   animation-name: fanfareLeft;
   animation-duration: 4s;
 }
+.container{
+  display: flex;
+  align-items: center;
+}
 #colorPicker{
-position: fixed;
-right: 0;
+float: right;
+}
+#colorPickerSubmitButton{
+  float: right;
 }
 @font-face{
   font-family: foxLite;

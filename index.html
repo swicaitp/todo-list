@@ -32,7 +32,7 @@
       <div>
         <input type="text" autocomplete="on" id="taskInput" placeholder="New task...">
         <input type="text" autocomplete="on" id="timeInput" placeholder="Scheduled time...">
-        <input type="date" autocomplete="on" id="dateInput" placeholder="Scheduled data...">
+        <input type="date" id="dateInput">
         <button id="enter"><i class="fas fa-pen"></i></button>
       </div>
       <div class="taskList">
@@ -51,17 +51,25 @@
 
 
       </div>
+      <div class="container">
+      <form>
+        <select id="colorPicker">
+          <option value="#333E48">Default Color</option>
+          <option value="#0092e7">Light Blue</option>
+          <option value="rgb(192, 0, 0)">Dark Red</option>
+          <option value="#00c62e">Light Green</option>
+          </select>
+        <input type="submit" id="colorPickerSubmitButton" value="Submit">
+      </form>
+      </div>
     </main>
 
     <footer>
       <div class="trumpets">
-      <img src="Right_Facing_Trumpet.png" id="rightFacingTrumpet" alt="Right_Facing_Trumpet">
-      <img src="Left_Facing_Trumpet.png" id="leftFacingTrumpet" alt="Left_Facing_Trumpet">
-      <audio src="194624__harbour11__trumpet2.wav" id="funnyTrumpetSound"></audio>
-      <form>
-        <input type="color" id="colorPicker">
-      </form>
-    </div>
+        <img src="Right_Facing_Trumpet.png" id="rightFacingTrumpet" alt="Right_Facing_Trumpet">
+        <img src="Left_Facing_Trumpet.png" id="leftFacingTrumpet" alt="Left_Facing_Trumpet">
+        <audio src="194624__harbour11__trumpet2.wav" id="funnyTrumpetSound"></audio>
+      </div>
       <p>Created by SWIC AITP</p>
     </footer>
     <script src="scripts.js"></script>

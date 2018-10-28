@@ -8,6 +8,7 @@ var title = document.getElementById("title");
 var leftTrumpet = document.getElementById("rightFacingTrumpet");
 var rightTrumpet = document.getElementById("leftFacingTrumpet");
 var funnyTrumpetSound = document.getElementById("funnyTrumpetSound");
+var colorPickerSubmitButton = document.getElementById("colorPickerSubmitButton");
 //var listLength = item.length;
 var progress = 0;
 
@@ -140,10 +141,6 @@ if(inputLength() > 0 && event.which === 13){
   createListElement();
 }
 }
-enterButton.addEventListener("click", addListAfterClick);
-taskInput.addEventListener("keypress", addListAfterEvent);
-timeInput.addEventListener("keypress", addListAfterEvent);
-
 function colorPicker(){
   var colorPicker = document.getElementById("colorPicker");
   var headerColor = document.getElementsByClassName("headerbar");
@@ -151,3 +148,9 @@ function colorPicker(){
   headerColor.style.backgroundColor = colorPicker.value;
   footerColor.style.backgroundColor = colorPicker.value;
 }
+enterButton.addEventListener("click", addListAfterClick);
+taskInput.addEventListener("keypress", addListAfterEvent);
+timeInput.addEventListener("keypress", addListAfterEvent);
+colorPickerSubmitButton.addEventListener("click", colorPicker);
+
+
