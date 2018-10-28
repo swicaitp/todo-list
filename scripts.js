@@ -8,11 +8,13 @@ var title = document.getElementById("title");
 var leftTrumpet = document.getElementById("rightFacingTrumpet");
 var rightTrumpet = document.getElementById("leftFacingTrumpet");
 var funnyTrumpetSound = document.getElementById("funnyTrumpetSound");
-var colorPicker = document.getElementById("colorPicker");
-var headerColor = getComputedStyle(document.getElementById("headerbar"));
-var headerColorValue = styles.getPropertyValue("--bannerDarkGreyColor");
-var footerColor = getComputedStyle(document.getElementsByClassName("footer"));
-var footerColorValue = styles.getPropertyValue("--bannerDarkGreyColor");
+var colorPickerSelect = document.getElementById("colorPicker");
+var headerbar = document.getElementById("headerbar");
+var headerColor = window.getComputedStyle(headerbar);
+var headerColorValue = styles.getPropertyValue("--bannerColor");
+var footer = document.getElementsByClassName(footer);
+var footerColor = window.getComputedStyle("footer");
+var footerColorValue = styles.getPropertyValue("--bannerColor");
 var colorPickerSubmitButton = document.getElementById("colorPickerSubmitButton");
 //var listLength = item.length;
 var progress = 0;
@@ -26,15 +28,18 @@ function listLength(){
 }
 colorPicker.addEventListener("onchange", colorPicker);
 function colorPicker(){
-  if(colorPicker.option.value == "#0092e7"){
-    headerColor.classList.add("lightBlue");
-    footerColor.classList.add("lightBlue");
-  } else if(colorPicker.option.value == "rgb(192, 0, 0)"){
-    headerColor.classList.add("darkRed");
-    footerColor.classList.add("darkRed");
-  } else if (colorPicker.option.value == "#00c62e"){
-    headerColor.classList.add("green");
-    footerColor.classList.add("green");
+  var optionBlue = document.getElementById("lightBlue");
+  var optionRed = document.getElementById("darkRed");
+  var optionGreen = document.getElementById("green");
+  if(colorPickerSelect.children.optionBlue){
+    headerColorValue.setProperty("--bannerColor", "#0092e7");
+    footerColorValue.setProperty("--bannerColor", "#0092e7");
+  } else if(colorPickerSelect.children.optionRed){
+    headerColorValue.setProperty("--bannerColor", "#c00000");
+    footerColorValue.setProperty("--bannerColor", "#c00000");
+  } else if (colorPickerSelect.children.optionGreen){
+    headerColorValue.setProperty("--bannerColor", "#00c62e");
+    footerColorValue.setProperty("--bannerColor", "#00c62e");
   }
   console.log("I am being run");
 }

@@ -29,9 +29,9 @@ body{
 font-size: 500%;
 Position: sticky;
 text-align: center;
-background-color: var(--bannerDarkGreyColor);
+background-color: var(--bannerColor);
 top: 0;
-border: 1px solid var(--bannerDarkGreyColor);
+border: 1px solid var(--bannerColor);
 }
 .headerbar #ghost{
   float: left;
@@ -87,7 +87,7 @@ position: relative;
 footer{
   text-align: center;
   padding: 20px;
-  background-color: var(--bannerDarkGreyColor);
+  background-color: var(--bannerColor);
   color: white;
   margin: 0;
   position: fixed;
@@ -104,7 +104,7 @@ footer{
 }
 .dropdownbtn{
   font-size: 100%;
-  background-color: var(--bannerDarkGreyColor);
+  background-color: var(--bannerColor);
   border:none;
   padding: 0 0 0 10px;
   color: white;
