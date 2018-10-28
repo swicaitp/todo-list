@@ -9,8 +9,10 @@ var leftTrumpet = document.getElementById("rightFacingTrumpet");
 var rightTrumpet = document.getElementById("leftFacingTrumpet");
 var funnyTrumpetSound = document.getElementById("funnyTrumpetSound");
 var colorPicker = document.getElementById("colorPicker");
-var headerColor = document.getElementsByClassName("headerbar");
-var footerColor = document.getElementsByTagName("footer");
+var headerColor = getComputedStyle(document.getElementById("headerbar"));
+var headerColorValue = styles.getPropertyValue("--bannerDarkGreyColor");
+var footerColor = getComputedStyle(document.getElementsByClassName("footer"));
+var footerColorValue = styles.getPropertyValue("--bannerDarkGreyColor");
 var colorPickerSubmitButton = document.getElementById("colorPickerSubmitButton");
 //var listLength = item.length;
 var progress = 0;
@@ -22,20 +24,21 @@ function inputLength(){
 function listLength(){
   return item.length;
 }
+colorPicker.addEventListener("onchange", colorPicker);
 function colorPicker(){
-  if(colorPicker.value == "#0092e7"){
+  if(colorPicker.option.value == "#0092e7"){
     headerColor.classList.add("lightBlue");
     footerColor.classList.add("lightBlue");
-  } else if(colorPicker.value == "rgb(192, 0, 0)"){
+  } else if(colorPicker.option.value == "rgb(192, 0, 0)"){
     headerColor.classList.add("darkRed");
     footerColor.classList.add("darkRed");
-  } else if (colorPicker.value == "#00c62e"){
+  } else if (colorPicker.option.value == "#00c62e"){
     headerColor.classList.add("green");
     footerColor.classList.add("green");
   }
   console.log("I am being run");
 }
-colorPickerSubmitButton.addEventListener("click", colorPicker);
+
 function updateProgress(){
   //Insert code that increments var progress every time function 'crossOut' toggles True//
 }

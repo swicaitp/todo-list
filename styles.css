@@ -1,7 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
 :root {
+  --green: #00c62e;
+  --darkRed: #c00000;
   --darkestBlack: #111;
-  --bannerDarkGreyColor: #333E48;
+  --bannerColor: #333E48;
+  --liButtonColor: #333E48;
+  --progressBarColor: #333E48;
+  --enterButtonColor: #333E48;
+  --titleColor: #333E48;
   --bodyColor: #EAEFF1;
   --taskListColor: #8d8d8d;
   --darkerBlueHighlightColor: #237FCA;
@@ -38,13 +44,13 @@ border: 1px solid var(--bannerDarkGreyColor);
   padding: 0 0 0 10px;
 }
 .darkRed{
-  background-color: rgb(192, 0, 0);
+  background-color: var(--darkRed);
 }
 .lightBlue{
   background-color: var(--lighterBlueHighLightColor);
 }
 .green{
-  background-color:#00c62e;
+  background-color: var(--green);
 }
 
 .column{
@@ -75,7 +81,7 @@ position: relative;
 #progress{
   font-size: 2.5em;
   padding: 0px;
-  color: var(--bannerDarkGreyColor);
+  color: var(--progressBarColor);
   font-family: 'Permanent Marker', cursive;
 }
 footer{
@@ -141,7 +147,7 @@ footer{
 li > button {
   font-size: 1em;
 	font-weight: normal;
-  background-color: var(--bannerDarkGreyColor);
+  background-color: var(--liButtonColor);
   border-radius: 4px;
 	border: none;
 	float: right;
@@ -182,8 +188,8 @@ input:hover{
 }
 #enter{
   border-radius: 5px;
-  border: 1px solid var(--bannerDarkGreyColor);
-  background-color: var(--bannerDarkGreyColor);
+  border: 1px solid var(--enterButtonColor);
+  background-color: var(--enterButtonColor);
   color: var(--bodyColor);
   padding: 10px;
   transition: all;
@@ -212,10 +218,10 @@ input:hover{
   transition-property: visibility;
   transition-duration: 1s;
   font-family: 'Permanent Marker', cursive;
-  color: var(--bannerDarkGreyColor);
+  color: var(--titleColor);
   text-align: center;
   font-size: 3em;
-  border-bottom: 3px solid var(--bannerDarkGreyColor);
+  border-bottom: 3px solid var(--titleColor);
   display: inline;
 }
 .time{
@@ -226,7 +232,7 @@ padding-right: 10px;
 #progressBar{
   text-align: center;
   width: 100%;
-background-color: var(--bannerDarkGreyColor);
+background-color: var(--progressBarColor);
 }
 #progressBarFill{
   width: 0%;
