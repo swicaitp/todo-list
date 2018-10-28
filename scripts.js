@@ -144,3 +144,10 @@ enterButton.addEventListener("click", addListAfterClick);
 taskInput.addEventListener("keypress", addListAfterEvent);
 timeInput.addEventListener("keypress", addListAfterEvent);
 
+function colorPicker(){
+  var colorPicker = document.getElementById("colorPicker");
+  var headerColor = document.getElementsByClassName("headerbar");
+  var footerColor = document.getElementsByTagName("footer");
+  headerColor.style.backgroundColor = colorPicker.value;
+  footerColor.style.backgroundColor = colorPicker.value;
+}
