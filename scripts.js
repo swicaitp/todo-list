@@ -72,14 +72,13 @@ function createListElement(){
     var width = progressBarFill.style.width.value;
 
     var id = setInterval(frame(),(liLength));
-    if(liLength == tasksDone){
+    if(liLength == tasksDone && liLength != 0){
       rightTrumpet.classList.add("rightTrumpet");
       leftTrumpet.classList.add("leftTrumpet");
       funnyTrumpetSound.play();
     } else{
       rightTrumpet.classList.remove("rightTrumpet");
       leftTrumpet.classList.remove("leftTrumpet");
-      funnyTrumpetSound.load();
       funnyTrumpetSound.pause();
     }
       function frame(){
