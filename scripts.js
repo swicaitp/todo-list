@@ -79,7 +79,6 @@ function createListElement(){
     } else{
       rightTrumpet.classList.remove("rightTrumpet");
       leftTrumpet.classList.remove("leftTrumpet");
-      funnyTrumpetSound.load();
       funnyTrumpetSound.pause();
     }
       function frame(){
