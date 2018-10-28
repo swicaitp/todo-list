@@ -25,7 +25,7 @@ body{
 .password {
   color: rgb(192, 0, 0);
 }
-.headerbar{
+#headerbar{
 font-size: 500%;
 Position: sticky;
 text-align: center;
@@ -33,12 +33,12 @@ background-color: var(--bannerColor);
 top: 0;
 border: 1px solid var(--bannerColor);
 }
-.headerbar #ghost{
+#headerbar #ghost{
   float: left;
   padding: 5px 0 0 10px;
   color: white;
 }
-.headerbar #banner{
+#headerbar #banner{
   max-width: 200px;
   height: 60px;
   padding: 0 0 0 10px;
@@ -84,7 +84,7 @@ position: relative;
   color: var(--progressBarColor);
   font-family: 'Permanent Marker', cursive;
 }
-footer{
+#footer{
   text-align: center;
   padding: 20px;
   background-color: var(--bannerColor);

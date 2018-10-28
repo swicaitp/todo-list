@@ -8,13 +8,13 @@ var title = document.getElementById("title");
 var leftTrumpet = document.getElementById("rightFacingTrumpet");
 var rightTrumpet = document.getElementById("leftFacingTrumpet");
 var funnyTrumpetSound = document.getElementById("funnyTrumpetSound");
-var colorPickerSelect = document.getElementById("colorPicker");
-var headerbar = document.getElementById("headerbar");
-var headerColor = window.getComputedStyle(headerbar);
-var headerColorValue = styles.getPropertyValue("--bannerColor");
-var footer = document.getElementsByClassName(footer);
-var footerColor = window.getComputedStyle("footer");
-var footerColorValue = styles.getPropertyValue("--bannerColor");
+var colorPickerValue = document.getElementById("colorPickerSelect").value;
+var headerbarElement = document.getElementById("headerbar");
+var headerColor = window.getComputedStyle(headerbarElement);
+var headerColorValue = headerColor.getPropertyValue("--bannerColor");
+var footerElement = document.getElementById("footer");
+var footerColor = window.getComputedStyle(footerElement);
+var footerColorValue = footerColor.getPropertyValue("--bannerColor");
 var colorPickerSubmitButton = document.getElementById("colorPickerSubmitButton");
 //var listLength = item.length;
 var progress = 0;
@@ -26,24 +26,23 @@ function inputLength(){
 function listLength(){
   return item.length;
 }
-colorPicker.addEventListener("onchange", colorPicker);
+
 function colorPicker(){
-  var optionBlue = document.getElementById("lightBlue");
-  var optionRed = document.getElementById("darkRed");
-  var optionGreen = document.getElementById("green");
-  if(colorPickerSelect.children.optionBlue){
+  var optionBlue = document.getElementById("lightBlue").value;
+  var optionRed = document.getElementById("darkRed").value;
+  var optionGreen = document.getElementById("green").value;
+  if(colorPickerValue == optionBlue){
     headerColorValue.setProperty("--bannerColor", "#0092e7");
     footerColorValue.setProperty("--bannerColor", "#0092e7");
-  } else if(colorPickerSelect.children.optionRed){
+  } else if(colorPickerValue == optionRed){
     headerColorValue.setProperty("--bannerColor", "#c00000");
     footerColorValue.setProperty("--bannerColor", "#c00000");
-  } else if (colorPickerSelect.children.optionGreen){
+  } else if (colorPickerValue == optionGreen){
     headerColorValue.setProperty("--bannerColor", "#00c62e");
     footerColorValue.setProperty("--bannerColor", "#00c62e");
   }
   console.log("I am being run");
 }
-
 function updateProgress(){
   //Insert code that increments var progress every time function 'crossOut' toggles True//
 }

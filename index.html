@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    <header class="headerbar">
+    <header id="headerbar">
       <a href="http://swicaitp.com"><span id="ghost" class="fas fa-ghost"></span></a>
         <img id="banner" src="Todo_Logo.png" alt="Todo_Logo.png">
         <div class="add">
@@ -53,7 +53,7 @@
       </div>
       <div class="container">
       <form>
-        <select id="colorPickerSelect">
+        <select id="colorPickerSelect" onchange="colorPicker()">
           <option id="defaultColor" value="#333E48">Default Color</option>
           <option id="lightBlue" value="#0092e7">Light Blue</option>
           <option id="darkRed" value="rgb(192, 0, 0)">Dark Red</option>
@@ -63,7 +63,7 @@
       </div>
     </main>
 
-    <footer>
+    <footer id="footer">
       <div class="trumpets">
         <img src="Right_Facing_Trumpet.png" id="rightFacingTrumpet" alt="Right_Facing_Trumpet">
         <img src="Left_Facing_Trumpet.png" id="leftFacingTrumpet" alt="Left_Facing_Trumpet">
