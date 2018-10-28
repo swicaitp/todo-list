@@ -44,7 +44,7 @@ function colorPicker(){
     footerStyle.backgroundColor = "#0092e7";
     progressBar.style.backgroundColor = "#0092e7";
     titleStyle.color = "#0092e7";
-    titleStyle.borderBottomColor = "#0092e7";
+    titleStyle.borderBo4ttomColor = "#0092e7";
     break;
     case optionRed.value:
     headerbarStyle.backgroundColor = "#c00000";
