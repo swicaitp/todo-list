@@ -131,7 +131,7 @@ function createListElement(){
     } else{
       rightTrumpet.classList.remove("rightTrumpet");
       leftTrumpet.classList.remove("leftTrumpet");
-      funnyTrumpetSound.pause();
+      funnyTrumpetSound.load();
     }
       function frame(){
         if(width >= (liLength*100)){
