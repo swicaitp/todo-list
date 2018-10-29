@@ -181,6 +181,7 @@ li > button {
 }
 .editButton{
   float: right;
+  padding: 0 2px 2px 5px;
 }
 .done > button:hover{
   background-color: var(--darkestBlueColor);
