@@ -184,7 +184,7 @@ function createListElement(){
   }
   //End Edit Task via Input Element//
 
-const newItem = `<li> ${taskInput.value}<button class="deleteButton"> <i class="fas fa-times"></i></button> <button class="editButton"><i class="far fa-edit"></i></button><span class="time">${dateInput.value} @ ${timeInput.value}</span></li>`;
+const newItem = `<li> ${taskInput.value}<button class="deleteButton"> <i class="fas fa-times"></i></button> <button class="editButton"><i class="far fa-edit"></i></button> <span class="time">${dateInput.value} @ ${timeInput.value}</span> </li>`;
   ul.insertAdjacentHTML('beforeend', newItem);//adds li to the ul
   //taskInput.value=""; //resets the text field
   //timeInput.value="";
