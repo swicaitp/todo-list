@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
 :root {
   --green: #00c62e;
   --darkRed: #c00000;
   --darkestBlack: #111;
-  --bannerColor: #333E48;
+  --themeColor: #333E48;
   --liButtonColor: #333E48;
   --progressBarColor: #333E48;
   --enterButtonColor: #333E48;
@@ -16,6 +17,17 @@
   --lighterBlueHighLightColor: #0092e7;
   --goldenHighlightColor: #ffbb00;
 }
+@font-face {
+  font-family: 'foxlite_scriptregular';
+  src: url('foxlite_script-webfont.woff2') format('woff2'),
+       url('foxlite_script-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face{
+  font-family: handWritten;
+  src: url('Handletterink.otf');
+}
 body{
   background-color: var(--bodyColor);
   margin: 0;
@@ -26,22 +38,32 @@ body{
   color: rgb(192, 0, 0);
 }
 #headerbar{
-font-size: 500%;
+font-size: 5em;
 Position: sticky;
 text-align: center;
-background-color: var(--bannerColor);
+background-color: var(--themeColor);
 top: 0;
-border: 1px solid var(--bannerColor);
+height: 90px;
+border: 1px solid var(--themeColor);
+display: flex;
+flex-shrink: 0;
+align-items: center;
+justify-content: space-between;
+font-family: 'foxlite_scriptregular', normal;
 }
 #headerbar #ghost{
-  float: left;
-  padding: 5px 0 0 10px;
   color: white;
+  padding: 10px 0 0 10px;
 }
 #headerbar #banner{
-  max-width: 200px;
-  height: 60px;
-  padding: 0 0 0 10px;
+font-size: 1.20em;
+height: 82px;
+align-self: flex-end;
+color: var(--bodyColor);
+}
+#headerbar #plus{
+  color: var(--bodyColor);
+  padding-right: 10px;
 }
 .darkRed{
   background-color: var(--darkRed);
@@ -52,10 +74,17 @@ border: 1px solid var(--bannerColor);
 .green{
   background-color: var(--green);
 }
-
+#colorPickerSelect{
+  padding: 5px;
+  border-radius: 3px;
+  border: 1px solid var(--darkestBlack);
+  background-color: var(--themeColor);
+}
+ul{
+  padding-inline-start: 0;
+}
 .column{
   padding: 20px;
-  margin: 20px 20px 20px 0px;
 }
 .column .taskList ul{
   border-radius: 10px;
@@ -81,30 +110,20 @@ position: relative;
 #progress{
   font-size: 2.5em;
   padding: 0px;
-  color: var(--progressBarColor);
+  color: var(--themeColor);
   font-family: 'Permanent Marker', cursive;
 }
 #footer{
   text-align: center;
   padding: 20px;
-  background-color: var(--bannerColor);
+  background-color: var(--themeColor);
   color: white;
   margin: 0;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-}
-.add{
-  float: right;
-}
-.dropdown{
-  position: relative;
-  display: inline-block;
+
 }
 .dropdownbtn{
   font-size: 100%;
-  background-color: var(--bannerColor);
+  background-color: var(--themeColor);
   border:none;
   padding: 0 0 0 10px;
   color: white;
@@ -147,7 +166,7 @@ position: relative;
 li > button {
   font-size: 1em;
 	font-weight: normal;
-  background-color: var(--liButtonColor);
+  background-color: var(--themeColor);
   border-radius: 4px;
 	border: none;
 	float: right;
@@ -163,7 +182,6 @@ li > button {
 }
 input {
 	border-radius: 5px;
-  margin-top: 5px;
 	padding: 10px;
   border: 1px solid var(--lighterBlueHighLightColor);
   transition: all;
@@ -188,8 +206,8 @@ input:hover{
 }
 #enter{
   border-radius: 5px;
-  border: 1px solid var(--enterButtonColor);
-  background-color: var(--enterButtonColor);
+  border: 1px solid var(--themeColor);
+  background-color: var(--themeColor);
   color: var(--bodyColor);
   padding: 10px;
   transition: all;
@@ -218,10 +236,10 @@ input:hover{
   transition-property: visibility;
   transition-duration: 1s;
   font-family: 'Permanent Marker', cursive;
-  color: var(--titleColor);
+  color: var(--themeColor);
   text-align: center;
   font-size: 3em;
-  border-bottom: 3px solid var(--titleColor);
+  border-bottom: 3px solid var(--themeColor);
   display: inline;
 }
 .time{
@@ -232,7 +250,7 @@ padding-right: 10px;
 #progressBar{
   text-align: center;
   width: 100%;
-background-color: var(--progressBarColor);
+  background-color: var(--themeColor);
 }
 #progressBarFill{
   width: 0%;
@@ -296,24 +314,16 @@ background-color: var(--progressBarColor);
   animation-duration: 4s;
 }
 .container{
-  display: flex;
-  align-items: center;
-}
-#colorPicker{
-float: right;
-}
-#colorPickerSubmitButton{
-  float: right;
-}
-@font-face{
-  font-family: foxLite;
-  src: url('foxlite_script.otf');
-}
-@font-face{
-  font-family: handWritten;
-  src: url('Handletterink.otf');
+  display: inline-block;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 
+.inputContainer{
+  display: block;
+}
 @media screen and (max-width: 600px){
   .column{
     margin: 0;
@@ -333,6 +343,7 @@ float: right;
     margin: 5px 0 0 0;
   }
   #title{
+    display: block;
     font-size: 2em;
   }
   #progress{
