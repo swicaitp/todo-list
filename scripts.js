@@ -182,14 +182,14 @@ const newItem = `<li> ${taskInput.value}<button class="deleteButton"> <i class="
   //taskInput.value=""; //resets the text field
   //timeInput.value="";
 
-  //Add Event Listeners
+  //Point to Elements//
 const lastLi = document.querySelectorAll('li');
 const thisLi = lastLi[lastLi.length - 1];
 const deleteBtn = document.querySelectorAll('.deleteButton');
 const thisDeleteBtn = deleteBtn[deleteBtn.length - 1];
 const editButton = document.querySelectorAll('.editButton');
 const thisEditButton = editButton[editButton.length - 1];
-
+//Add Event Listeners
 thisLi.addEventListener('click', crossOut);
 thisDeleteBtn.addEventListener('click', deleteListItem);
 thisEditButton.addEventListener('click', editTaskInput);
