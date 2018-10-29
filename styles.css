@@ -88,11 +88,11 @@ ul{
 .column{
   padding: 20px;
 }
-.column .taskList ul{
+.taskList ul{
   border-radius: 10px;
   list-style-type: none;
 }
-.column .taskList li{
+.taskList li{
   /*display: flex;
   flex-direction: row;
   justify-content: space-between;*/
@@ -108,9 +108,6 @@ text-indent: 10px;
 text-align: left;
 transition: all 0.75s ease;
 position: relative;
-}
-.column .taskList li span{
-
 }
 #progress{
   font-size: 2.5em;
@@ -128,50 +125,8 @@ position: relative;
   transition-property: background-color;
   transition-duration: 0.4s;
   margin: 0;
+}
 
-}
-.dropdownbtn{
-  font-size: 100%;
-  background-color: var(--themeColor);
-  border:none;
-  padding: 0 0 0 10px;
-  color: white;
-}
-.dropdown-content{
-  font-size: 14px;
-  display: none;
-  position: absolute;
-  background-color: var(--darkerBlueHighlightColor);
-  min-width: 450px;
-  z-index: 1;
-  right: 0;
-  border-radius: 2px;
-}
-.dropdown-content .addTask{
-  display: block;
-  padding: 12px 10px;
-  color: white;
-  font-family: 'Courier New', Courier, monospace;
-}
-.dropdown-content .addTask input{
-  border-radius: 2px;
-  border: 1px solid #111;
-  width: 20%;
-}
-.dropdown-content .addTask input[type=text]{
-  transition-property: width;
-  transition-duration: 0.4s;
-}
-.dropdown-content .addTask input[type=text]:focus{
-  width: 50%;
-}
-.dropdown:hover .dropdown-content{
-  display: block;
-}
-.dropdown:hover .dropdownbtn{
-  background-color: var(--lighterBlueHighLightColor);
-  border-bottom: 1px solid var(--lighterBlueHighLightColor);
-}
 li > button {
   font-size: 1em;
 	font-weight: normal;
@@ -193,8 +148,22 @@ li > button {
   align-self: flex-end;
   padding: 0 2px 2px 5px;
 }
-.done > button:hover{
-  background-color: var(--darkestBlueColor);
+.editInputTask{
+
+}
+
+.editInputTime{
+
+}
+.taskContainer{
+display: inline-flex;
+justify-content: flex-start;
+}
+.taskInputValue{
+align-self: flex-start;
+}
+.timeInputValue{
+
 }
 input {
 	border-radius: 5px;
@@ -243,15 +212,11 @@ input:hover{
 .done button{
   background-color: var(--darkerBlueHighlightColor);
 }
-.editInputTask{
-
+.done > button:hover{
+  background-color: var(--darkestBlueColor);
 }
-.editInputTime{
 
-}
-/*.delete{
-  display:none;
-}*/
+
 #title{
   visibility: hidden;
   transition-property: visibility, background-color;

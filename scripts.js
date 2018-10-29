@@ -1,5 +1,7 @@
 var enterButton = document.getElementById("enter");
 var taskInput = document.getElementById("taskInput");
+var taskInputValue = document.getElementById('taskInputValue');
+var timeInputValue = document.getElementById('timeInputValue')
 var timeInput = document.getElementById("timeInput");
 var dateInput = document.getElementById("dateInput");
 var ul = document.querySelector("ul");
@@ -160,31 +162,18 @@ function createListElement(){
   }
   //End Ass Class Delete//
 
-  //Start Append Edit Task Input Element//
-  function editTaskInput(){
-    var editInputTask = document.createElement('input');
-    const editInputTime = document.createElement('input');
-    var timeData = thisLi.querySelectorAll('span');
-    var dateTime = timeData[timeData.length - 1];
-    thisLi.removeChild(dateTime);
-    thisLi.appendChild(editInputTask);
-    thisLi.appendChild(editInputTime);
-    editInputTask.classList.add(".editInputTask");
-    editInputTime.classList.add('.editInputTask');
-    thisEditButton.addEventListener('click', editTask);
-    console.log("I am running.");
-  }
-  //End Append Edit Task Input Element//
+
 
   //Start Edit Task via Input Element//
-  function editTask(){
+/*  function editTask(){
     var newInput = editInput.value;
-    thisLi.appendChild(newInput);
+    thisLi.removeChild(editInputTask);
+    thisLi.removeChild(editInputTime);
 
   }
   //End Edit Task via Input Element//
-
-const newItem = `<li> ${taskInput.value}<button class="deleteButton"> <i class="fas fa-times"></i></button> <button class="editButton"><i class="far fa-edit"></i></button> <span class="time">${dateInput.value} @ ${timeInput.value}</span> </li>`;
+*/
+const newItem = `<li> <div class="taskContainer"> <span id="taskInputValue">${taskInput.value}</span> <button class="deleteButton"><i class="fas fa-times"></i></button> <button class="editButton"><i class="far fa-edit"></i></button> <span class="timeInputValue">${dateInput.value} @ ${timeInput.value}</span> </div> </li>`;
   ul.insertAdjacentHTML('beforeend', newItem);//adds li to the ul
   //taskInput.value=""; //resets the text field
   //timeInput.value="";
@@ -211,7 +200,23 @@ deleteBtn.addEventListener("click", deleteListItem);
 li.appendChild(span);*/
 
 }
+//Start Append Edit Task Input Element//
+/*function editTaskInput(){
+  const editInputTask = document.createElement('input');
+  const editInputTime = document.createElement('input');
+  taskInputValue.value.append(editInputTask.value);
+  timeValue.value.append(editInputTime.value);
 
+  var timeData = thisLi.querySelectorAll('timeInputValue');
+  var dateTime = timeData[timeData.length - 1];
+  thisLi.appendChild(editInputTask);
+  thisLi.appendChild(editInputTime);
+  editInputTask.classList.add(".editInputTask");
+  editInputTime.classList.add('.editInputTask');
+  thisEditButton.addEventListener('click', editTask);
+  console.log("I am running.");
+}*/
+//End Append Edit Task Input Element//
 function addListAfterClick(){
   if(inputLength()>0){
     createListElement();
