@@ -156,15 +156,13 @@ li > button {
 
 }
 .taskContainer{
-display: inline-flex;
-justify-content: flex-start;
+display: flex;
+justify-content: space-between;
 }
 .taskInputValue{
 align-self: flex-start;
 }
-.timeInputValue{
 
-}
 input {
 	border-radius: 5px;
 	padding: 10px;
@@ -228,7 +226,7 @@ input:hover{
   border-bottom: 3px solid var(--themeColor);
   display: inline;
 }
-.time{
+.timeInputValue{
 float: right;
 font-family: 'Permanent Marker', cursive;
 padding-right: 10px;

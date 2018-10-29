@@ -188,7 +188,7 @@ const thisEditButton = editButton[editButton.length - 1];
 //Add Event Listeners
 thisLi.addEventListener('click', crossOut);
 thisDeleteBtn.addEventListener('click', deleteListItem);
-thisEditButton.addEventListener('click', editTaskInput);
+//thisEditButton.addEventListener('click', editTaskInput);
 taskInput.value="";
 timeInput.value="";
 displayProgress();
