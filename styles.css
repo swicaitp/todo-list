@@ -50,6 +50,8 @@ flex-shrink: 0;
 align-items: center;
 justify-content: space-between;
 font-family: 'foxlite_scriptregular', normal;
+transition-property: background-color;
+transition-duration: 0.4s;
 }
 #headerbar #ghost{
   color: white;
@@ -112,12 +114,16 @@ position: relative;
   padding: 0px;
   color: var(--themeColor);
   font-family: 'Permanent Marker', cursive;
+  transition-property: color;
+  transition-duration: 0.4s;
 }
 #footer{
   text-align: center;
   padding: 20px;
   background-color: var(--themeColor);
   color: white;
+  transition-property: background-color;
+  transition-duration: 0.4s;
   margin: 0;
 
 }
@@ -239,8 +245,8 @@ input:hover{
 }*/
 #title{
   visibility: hidden;
-  transition-property: visibility;
-  transition-duration: 1s;
+  transition-property: visibility, background-color;
+  transition-duration: 0.4s;
   font-family: 'Permanent Marker', cursive;
   color: var(--themeColor);
   text-align: center;
@@ -257,6 +263,8 @@ padding-right: 10px;
   text-align: center;
   width: 100%;
   background-color: var(--themeColor);
+  transition-property: background-color;
+  transition-duration: 0.4s;
 }
 #progressBarFill{
   width: 0%;
