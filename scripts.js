@@ -15,11 +15,10 @@ var titleStyle = document.getElementById("title").style;
 
 var progress = 0;
 //START TIME-OUT CORNER//
-  var headerColor = window.getComputedStyle(headerbarElement);
-  var headerColorValue = headerColor.getPropertyValue("--bannerColor");
-  console.log(headerColorValue);
+  var headerColor = window.getComputedStyle(document.documentElement);
+  var headerColorValue = headerColor.getPropertyValue("--themeColor");
   //var footerColor = window.getComputedStyle(footerElement);
-  //var footerColorValue = footerColor.getPropertyValue("--bannerColor");
+  //var footerColorValue = footerColor.getPropertyValue("--themeColor");
   //var listLength = item.length;
 //END TIME-OUT CORNER//
 
@@ -39,36 +38,16 @@ function colorPicker(){
   var optionGreen = document.getElementById("green");
   switch(colorPickerValue.value){
     case optionBlue.value:
-    headerbarStyle.backgroundColor = "#0092e7";
-    headerbarStyle.borderColor = "#0092e7";
-    footerStyle.backgroundColor = "#0092e7";
-    progressBar.style.backgroundColor = "#0092e7";
-    titleStyle.color = "#0092e7";
-    titleStyle.borderBottomColor = "#0092e7";
+    document.documentElement.style.setProperty("--themeColor", "#0092e7")
     break;
     case optionRed.value:
-    headerbarStyle.backgroundColor = "#c00000";
-    headerbarStyle.borderColor = "#c00000";
-    footerStyle.backgroundColor = "#c00000";
-    progressBar.style.backgroundColor = "#c00000";
-    titleStyle.color = "#c00000";
-    titleStyle.borderBottomColor = "#c00000";
+    document.documentElement.style.setProperty("--themeColor", "#c00000");
     break;
     case optionGreen.value:
-    headerbarStyle.backgroundColor = "#00c62e";
-    headerbarStyle.borderColor = "#00c62e";
-    footerStyle.backgroundColor = "#00c62e";
-    progressBar.style.backgroundColor = "#00c62e";
-    titleStyle.color = "#00c62e";
-    titleStyle.borderBottomColor = "#00c62e";
+    document.documentElement.style.setProperty("--themeColor", "#00c62e");
     break;
     case defaultOption.value:
-    headerbarStyle.backgroundColor = headerColorValue;
-    headerbarStyle.borderColor = "#333E48";
-    footerStyle.backgroundColor = "#333E48";
-    progressBar.style.backgroundColor = "#333E48";
-    titleStyle.color = "#333E48";
-    titleStyle.borderBottomColor = "#333E48";
+    document.documentElement.style.setProperty("--themeColor", "#333E48")
     break;
     default:
     alert("That's not gonna fly, bucko");
@@ -178,7 +157,7 @@ function createListElement(){
   displayProgress();
   }
 //End Ass Class Delete
-const newItem = `<li> ${taskInput.value}<button class="deleteButton"> <i class="fas fa-times"></i></button><span class="time">@ ${timeInput.value} ${dateInput.value}</span></li>`;
+const newItem = `<li> ${taskInput.value}<button class="deleteButton"> <i class="fas fa-times"></i></button><span class="time">${dateInput.value} @ ${timeInput.value}</span></li>`;
   ul.insertAdjacentHTML('beforeend', newItem);//adds li to the ul
   //taskInput.value=""; //resets the text field
   //timeInput.value="";
