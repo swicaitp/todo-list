@@ -15,7 +15,6 @@ var headerColor = window.getComputedStyle(document.documentElement);
 var headerColorValue = headerColor.getPropertyValue("--themeColor");
 var progress = 0;
 //START TIME-OUT CORNER//
-
   //var footerColor = window.getComputedStyle(footerElement);
   //var footerColorValue = footerColor.getPropertyValue("--themeColor");
   //var listLength = item.length;
@@ -29,7 +28,7 @@ function inputLength(){
 function listLength(){
   return item.length;
 }
-
+//Start ColorPicker//
 function colorPicker(){
   var colorPickerValue = document.getElementById("colorPickerSelect");
   var defaultOption = document.getElementById("defaultColor");
@@ -69,9 +68,11 @@ function colorPicker(){
 
   console.log("I am being run");
 }
+//End ColorPicker//
 function updateProgress(){
   //Insert code that increments var progress every time function 'crossOut' toggles True//
 }
+//Start Input Pop-in//
 function showInput(){
   if(taskInput.style.display === "none" && timeInput.style.display === "none" && enterButton.style.display === "none"){
       taskInput.style.display = "inline";
@@ -97,6 +98,7 @@ function showInput(){
     enterButton.style.visibility = "hidden";
   }
 }
+//End Input Pop-in//
 
 function createListElement(){
   /*var span = document.createElement("span");
