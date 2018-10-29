@@ -169,13 +169,18 @@ li > button {
   background-color: var(--themeColor);
   border-radius: 4px;
 	border: none;
-	float: right;
 	color: white;
   font-weight: 800;
   transition-property: all;
   transition-duration: 0.4s;
+
+}
+.deleteButton{
   position: absolute;
   right: 5px;
+}
+.editButton{
+  float: right;
 }
 .done > button:hover{
   background-color: var(--darkestBlueColor);

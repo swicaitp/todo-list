@@ -143,20 +143,39 @@ function createListElement(){
       }
   }
 
-  //Start Strikethrough
+  //Start Strikethrough//
   function crossOut(){
   this.classList.toggle("done");
     displayProgress();
 
   }
-  //End Strikethrough
+  //End Strikethrough//
+
   //Add Class Delete (display:none)
   function deleteListItem(){
   thisLi.remove();
   displayProgress();
   }
-//End Ass Class Delete
-const newItem = `<li> ${taskInput.value}<button class="deleteButton"> <i class="fas fa-times"></i></button><span class="time">${dateInput.value} @ ${timeInput.value}</span></li>`;
+  //End Ass Class Delete//
+
+  //Start Append Edit Task Input Element//
+  function editTaskInput(){
+    var editInput = document.createElement('input');
+    var timeData = thisLi.querySelectorAll('span');
+    thisLi.removeChild(timeData);
+    thisLi.appendChild(editInput);
+    editButton.addEventListener('click', editTask);
+  }
+  //End Append Edit Task Input Element//
+
+  //Start Edit Task via Input Element//
+  function editTask(){
+    var newInput = editInput.value;
+    thisLi.appendChild(newInput);
+  }
+  //End Edit Task via Input Element//
+
+const newItem = `<li> ${taskInput.value}<button class="deleteButton"> <i class="fas fa-times"></i></button> <button class="editButton"><i class="far fa-edit"></i></button><span class="time">${dateInput.value} @ ${timeInput.value}</span></li>`;
   ul.insertAdjacentHTML('beforeend', newItem);//adds li to the ul
   //taskInput.value=""; //resets the text field
   //timeInput.value="";
@@ -164,11 +183,14 @@ const newItem = `<li> ${taskInput.value}<button class="deleteButton"> <i class="
   //Add Event Listeners
 const lastLi = document.querySelectorAll('li');
 const thisLi = lastLi[lastLi.length - 1];
-const lastBtn = document.querySelectorAll('li > button');
-const thisBtn = lastBtn[lastBtn.length - 1];
+const deleteBtn = document.querySelectorAll('.deleteButton');
+const thisDeleteBtn = deleteBtn[deleteBtn.length - 1];
+const editButton = document.querySelectorAll('.editButton');
+const thisEditButton = editButton[editButton.length - 1];
 
 thisLi.addEventListener('click', crossOut);
-thisBtn.addEventListener('click', deleteListItem);
+thisDeleteBtn.addEventListener('click', deleteListItem);
+thisEditButton.addEventListener('click', editTaskInput);
 taskInput.value="";
 timeInput.value="";
 displayProgress();
