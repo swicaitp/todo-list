@@ -1,7 +1,7 @@
 var enterButton = document.getElementById("enter");
 var taskInput = document.getElementById("taskInput");
 var taskInputValue = document.getElementById('taskInputValue');
-var timeInputValue = document.getElementById('timeInputValue')
+var timeInputValue = document.getElementById('timeInputValue');
 var timeInput = document.getElementById("timeInput");
 var dateInput = document.getElementById("dateInput");
 var ul = document.querySelector("ul");
@@ -15,10 +15,11 @@ var titleElement = document.getElementById("title");
 var titleStyle = document.getElementById("title").style;
 var headerColor = window.getComputedStyle(document.documentElement);
 var headerColorValue = headerColor.getPropertyValue("--themeColor");
+var highLightColor = window.getComputedStyle(document.documentElement);
+var highLightColorValue = highLightColor.getPropertyValue("--highLightColor");
 var progress = 0;
 //START TIME-OUT CORNER//
-  //var footerColor = window.getComputedStyle(footerElement);
-  //var footerColorValue = footerColor.getPropertyValue("--themeColor");
+
   //var listLength = item.length;
 //END TIME-OUT CORNER//
 
@@ -39,16 +40,18 @@ function colorPicker(){
   var optionGreen = document.getElementById("green");
   switch(colorPickerValue.value){
     case optionBlue.value:
-    document.documentElement.style.setProperty("--themeColor", "#0092e7")
+    document.documentElement.style.setProperty("--themeColor", "#0092e7");
     break;
     case optionRed.value:
-    document.documentElement.style.setProperty("--themeColor", "#c00000");
+    document.documentElement.style.setProperty("--themeColor", "#8c0000");
+    document.documentElement.style.setProperty("--highLightColor", "#8c0000");
     break;
     case optionGreen.value:
-    document.documentElement.style.setProperty("--themeColor", "#00c62e");
+    document.documentElement.style.setProperty("--themeColor", "#00ba60");
+    document.documentElement.style.setProperty("--highLightColor", "#00c62e");
     break;
     case defaultOption.value:
-    document.documentElement.style.setProperty("--themeColor", "#333E48")
+    document.documentElement.style.setProperty("--themeColor", "#333E48");
     break;
     default:
     alert("That's not gonna fly, bucko");

@@ -14,7 +14,7 @@
   --darkerBlueHighlightColor: #237FCA;
   --darkestBlueColor: #1063a7;
   --darkerBlueBorderColor: #0787d1;
-  --lighterBlueHighLightColor: #0092e7;
+  --highLightColor: #0092e7;
   --goldenHighlightColor: #ffbb00;
 }
 @font-face {
@@ -71,7 +71,7 @@ color: var(--bodyColor);
   background-color: var(--darkRed);
 }
 .lightBlue{
-  background-color: var(--lighterBlueHighLightColor);
+  background-color: var(--highLightColor);
 }
 .green{
   background-color: var(--green);
@@ -167,7 +167,7 @@ float: left;
 input {
 	border-radius: 5px;
 	padding: 10px;
-  border: 1px solid var(--lighterBlueHighLightColor);
+  border: 1px solid var(--highLightColor);
   transition: all;
   transition-duration: 0.4s;
   visibility: hidden;
@@ -178,7 +178,7 @@ input {
   border-radius: 5px;
   margin-top: 5px;
 	padding: 8px;
-  border: 1px solid var(--lighterBlueHighLightColor);
+  border: 1px solid var(--highLightColor);
   transition: all;
   transition-duration: 0.4s;
   visibility: hidden;
@@ -201,12 +201,12 @@ input:hover{
 }
 #enter:hover{
   color: var(--goldenHighlightColor) !important;
-  background-color: var(--lighterBlueHighLightColor) !important;
-  border-color: var(--lighterBlueHighLightColor);
+  background-color: var(--highLightColor) !important;
+  border-color: var(--highLightColor);
 }
 .done{
   border-bottom-color: var(--goldenHighlightColor) !important;
-  background-color: var(--lighterBlueHighLightColor) !important;
+  background-color: var(--highLightColor) !important;
 }
 .done button{
   background-color: var(--darkerBlueHighlightColor);
