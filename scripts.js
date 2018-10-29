@@ -5,18 +5,17 @@ var dateInput = document.getElementById("dateInput");
 var ul = document.querySelector("ul");
 var item = document.getElementsByTagName("li");
 var title = document.getElementById("title");
-var colorPickerValue = document.getElementById("colorPickerSelect");
 var headerbarElement = document.getElementById("headerbar");
 var headerbarStyle = document.getElementById("headerbar").style;
 var footerElement = document.getElementById("footer");
 var footerStyle = document.getElementById("footer").style;
 var titleElement = document.getElementById("title");
 var titleStyle = document.getElementById("title").style;
-
+var headerColor = window.getComputedStyle(document.documentElement);
+var headerColorValue = headerColor.getPropertyValue("--themeColor");
 var progress = 0;
 //START TIME-OUT CORNER//
-  var headerColor = window.getComputedStyle(document.documentElement);
-  var headerColorValue = headerColor.getPropertyValue("--themeColor");
+
   //var footerColor = window.getComputedStyle(footerElement);
   //var footerColorValue = footerColor.getPropertyValue("--themeColor");
   //var listLength = item.length;
@@ -32,6 +31,7 @@ function listLength(){
 }
 
 function colorPicker(){
+  var colorPickerValue = document.getElementById("colorPickerSelect");
   var defaultOption = document.getElementById("defaultColor");
   var optionBlue = document.getElementById("lightBlue");
   var optionRed = document.getElementById("darkRed");
