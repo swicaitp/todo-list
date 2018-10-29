@@ -40,7 +40,8 @@ function colorPicker(){
   var optionGreen = document.getElementById("green");
   switch(colorPickerValue.value){
     case optionBlue.value:
-    document.documentElement.style.setProperty("--themeColor", "#0092e7");
+    document.documentElement.style.setProperty("--themeColor", "#94C3CD");
+    document.documentElement.style.setProperty("--highLightColor", "#94B9CD")
     break;
     case optionRed.value:
     document.documentElement.style.setProperty("--themeColor", "#8c0000");

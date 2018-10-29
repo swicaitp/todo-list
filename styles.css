@@ -16,6 +16,7 @@
   --darkerBlueBorderColor: #0787d1;
   --highLightColor: #0092e7;
   --goldenHighlightColor: #ffbb00;
+  --bodyBackgroundImg:
 }
 @font-face {
   font-family: 'foxlite_scriptregular';
@@ -33,6 +34,8 @@ body{
   margin: 0;
   padding: 0;
   text-align: center;
+  background-image:url("Phases\ of\ the\ Moon.jpg");
+  background-size: 1270px 720px;
 }
 .password {
   color: rgb(192, 0, 0);
