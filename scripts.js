@@ -162,11 +162,17 @@ function createListElement(){
 
   //Start Append Edit Task Input Element//
   function editTaskInput(){
-    var editInput = document.createElement('input');
+    var editInputTask = document.createElement('input');
+    const editInputTime = document.createElement('input');
     var timeData = thisLi.querySelectorAll('span');
-    thisLi.removeChild(timeData);
-    thisLi.appendChild(editInput);
-    editButton.addEventListener('click', editTask);
+    var dateTime = timeData[timeData.length - 1];
+    thisLi.removeChild(dateTime);
+    thisLi.appendChild(editInputTask);
+    thisLi.appendChild(editInputTime);
+    editInputTask.classList.add(".editInputTask");
+    editInputTime.classList.add('.editInputTask');
+    thisEditButton.addEventListener('click', editTask);
+    console.log("I am running.");
   }
   //End Append Edit Task Input Element//
 
@@ -174,6 +180,7 @@ function createListElement(){
   function editTask(){
     var newInput = editInput.value;
     thisLi.appendChild(newInput);
+
   }
   //End Edit Task via Input Element//
 

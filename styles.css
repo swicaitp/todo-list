@@ -93,6 +93,9 @@ ul{
   list-style-type: none;
 }
 .column .taskList li{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 background-color: var(--taskListColor);
 font-size: 1.5em;
 color: var(--bodyColor);
@@ -186,7 +189,7 @@ li > button {
   right: 5px;
 }
 .editButton{
-  float: right;
+  align-self: flex-start;
   padding: 0 2px 2px 5px;
 }
 .done > button:hover{
@@ -238,6 +241,11 @@ input:hover{
 }
 .done button{
   background-color: var(--darkerBlueHighlightColor);
+}
+.editInputTask{
+
+}
+.editInputTime{
 
 }
 /*.delete{
