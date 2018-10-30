@@ -3,7 +3,7 @@
 :root {
   --green: #00c62e;
   --darkRed: #8c0000;
-  --darkestBlack: #111;
+  --borderColor: #111;
   --themeColor: #333E48;
   --liButtonColor: #333E48;
   --progressBarColor: #333E48;
@@ -84,7 +84,7 @@ color: var(--bodyColor);
 #colorPickerSelect{
   padding: 5px;
   border-radius: 3px;
-  border: 1px solid var(--darkestBlack);
+  border: 1px solid var(--borderColor);
   background-color: var(--themeColor);
 }
 ul{
@@ -106,7 +106,7 @@ font-size: 1.5em;
 color: var(--bodyColor);
 font-family: 'Permanent Marker', cursive;
 padding: 5px 45px 5px 0px;
-border-bottom: 2px solid #111;
+border-bottom: 2px solid var(--borderColor);
 border-radius: 10px;
 border-bottom-right-radius: 5px;
 text-indent: 10px;

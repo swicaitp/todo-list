@@ -16,6 +16,7 @@ var titleStyle = document.getElementById("title").style;
 var rootCustomProperties = window.getComputedStyle(document.documentElement);
 var headerColorValue = rootCustomProperties.getPropertyValue("--themeColor");
 var highLightColorValue = rootCustomProperties.getPropertyValue("--highLightColor");
+var borderColorValue = rootCustomProperties.getPropertyValue("--borderColor");
 var progress = 0;
 //START TIME-OUT CORNER//
 
@@ -41,19 +42,26 @@ function colorPicker(){
     case optionBlue.value:
     document.documentElement.style.setProperty("--themeColor", "#94C3CD");
     document.documentElement.style.setProperty("--highLightColor", "#94B9CD")
+    document.documentElement.style.setProperty("--borderColor", "#EAEFF1");
+    document.body.style.backgroundImage = "url('Minimalist Waves.png')";
     break;
     case optionRed.value:
     document.documentElement.style.setProperty("--themeColor", "#8c0000");
     document.documentElement.style.setProperty("--highLightColor", "#5b0000");
+    document.documentElement.style.setProperty("--borderColor", "#111");
     document.body.style.backgroundImage = "url('New Face Bulb.png')";
     break;
     case optionGreen.value:
-    document.documentElement.style.setProperty("--themeColor", "#00ba60");
+    document.documentElement.style.setProperty("--themeColor", "#72e592");
     document.documentElement.style.setProperty("--highLightColor", "#00c62e");
+    document.documentElement.style.setProperty("--borderColor", "#EAEFF1");
+    document.body.style.backgroundImage = "url('Disk Storage Evolution Flat Minimalist Desktop Wallpaper.jpg')";
     break;
     case defaultOption.value:
     document.documentElement.style.setProperty("--themeColor", "#333E48");
     document.documentElement.style.setProperty("--highLightColor", "#586877");
+    document.documentElement.style.setProperty("--borderColor", "#EAEFF1");
+    document.body.style.backgroundImage = "url('Phases of the Moon.jpg')";
     break;
     default:
     alert("That's not gonna fly, bucko");
