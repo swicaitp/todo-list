@@ -16,7 +16,7 @@
   --darkerBlueBorderColor: #0787d1;
   --highLightColor: #586877;          /*#0092e7*/
   --goldenHighlightColor: #ffbb00;
-  --bodyBackgroundImg: url("Phases\ of\ the\ Moon.jpg");
+  --bodyBackgroundImg: url("Assets/Phases\ of\ the\ Moon.jpg");
 }
 @font-face {
   font-family: 'foxlite_scriptregular';
@@ -319,7 +319,6 @@ padding-right: 10px;
 @media screen and (max-width: 600px){
   body{
     background-size: cover;
-    background-repeat: repeat-y;
   }
   .column{
     margin: 0;
