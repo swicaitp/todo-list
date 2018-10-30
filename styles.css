@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
 :root {
   --green: #00c62e;
-  --darkRed: #c00000;
+  --darkRed: #8c0000;
   --darkestBlack: #111;
   --themeColor: #333E48;
   --liButtonColor: #333E48;
@@ -14,9 +14,9 @@
   --darkerBlueHighlightColor: #237FCA;
   --darkestBlueColor: #1063a7;
   --darkerBlueBorderColor: #0787d1;
-  --highLightColor: #0092e7;
+  --highLightColor: #586877;          /*#0092e7*/
   --goldenHighlightColor: #ffbb00;
-  --bodyBackgroundImg: url("Minimalist\ Planets.jpg");
+  --bodyBackgroundImg: url("Phases\ of\ the\ Moon.jpg");
 }
 @font-face {
   font-family: 'foxlite_scriptregular';
@@ -36,6 +36,8 @@ body{
   text-align: center;
   background-image: var(--bodyBackgroundImg);
   background-size: cover;
+  transition-property: background-image;
+  transition-duration: 0.4s;
 }
 .password {
   color: rgb(192, 0, 0);
@@ -99,7 +101,7 @@ ul{
   /*display: flex;
   flex-direction: row;
   justify-content: space-between;*/
-background-color: var(--taskListColor);
+background-color: var(--themeColor);
 font-size: 1.5em;
 color: var(--bodyColor);
 font-family: 'Permanent Marker', cursive;
@@ -224,14 +226,11 @@ input:hover{
   transition-property: visibility, background-color;
   transition-duration: 0.4s;
   font-family: 'Permanent Marker', cursive;
-  /*color: var(--themeColor);*/
+  color: var(--themeColor);
   text-align: center;
   font-size: 3em;
   border-bottom: 3px solid var(--themeColor);
   display: inline;
-  background-image: url(Space_Purple.png);
-  -webkit-background-clip: text;
-  color: transparent;
 }
 .timeInputValue{
 float: right;

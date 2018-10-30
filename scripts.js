@@ -13,10 +13,9 @@ var footerElement = document.getElementById("footer");
 var footerStyle = document.getElementById("footer").style;
 var titleElement = document.getElementById("title");
 var titleStyle = document.getElementById("title").style;
-var headerColor = window.getComputedStyle(document.documentElement);
-var headerColorValue = headerColor.getPropertyValue("--themeColor");
-var highLightColor = window.getComputedStyle(document.documentElement);
-var highLightColorValue = highLightColor.getPropertyValue("--highLightColor");
+var rootCustomProperties = window.getComputedStyle(document.documentElement);
+var headerColorValue = rootCustomProperties.getPropertyValue("--themeColor");
+var highLightColorValue = rootCustomProperties.getPropertyValue("--highLightColor");
 var progress = 0;
 //START TIME-OUT CORNER//
 
@@ -45,7 +44,8 @@ function colorPicker(){
     break;
     case optionRed.value:
     document.documentElement.style.setProperty("--themeColor", "#8c0000");
-    document.documentElement.style.setProperty("--highLightColor", "#8c0000");
+    document.documentElement.style.setProperty("--highLightColor", "#5b0000");
+    document.body.style.backgroundImage = "url('New Face Bulb.png')";
     break;
     case optionGreen.value:
     document.documentElement.style.setProperty("--themeColor", "#00ba60");
@@ -53,6 +53,7 @@ function colorPicker(){
     break;
     case defaultOption.value:
     document.documentElement.style.setProperty("--themeColor", "#333E48");
+    document.documentElement.style.setProperty("--highLightColor", "#586877");
     break;
     default:
     alert("That's not gonna fly, bucko");
