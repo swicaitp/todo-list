@@ -17,6 +17,7 @@
   --highLightColor: #586877;          /*#0092e7*/
   --goldenHighlightColor: #ffbb00;
   --bodyBackgroundImg: url("Assets/Phases\ of\ the\ Moon.jpg");
+  --mobileBodyBackgroundImg: url('Assets/Minimalist Planets Phone.jpg');
 }
 @font-face {
   font-family: 'foxlite_scriptregular';
@@ -318,7 +319,7 @@ padding-right: 10px;
 }
 @media screen and (max-width: 600px){
   body{
-    background-size: cover;
+    background-image: var(--mobileBodyBackgroundImg);
   }
   .column{
     margin: 0;

@@ -44,6 +44,11 @@ function colorPicker(){
     document.documentElement.style.setProperty("--highLightColor", "#94B9CD")
     document.documentElement.style.setProperty("--borderColor", "#EAEFF1");
     document.body.style.backgroundImage = "url('Assets/Minimalist Waves.png')";
+    if(window.outerWidth <= '600px'){
+      document.body.style.backgroundImage = "url('Assets/Minimalist Waves Phone.jpg')";
+      console.log('I am running');
+    }
+
     break;
     case optionRed.value:
     document.documentElement.style.setProperty("--themeColor", "#8c0000");
