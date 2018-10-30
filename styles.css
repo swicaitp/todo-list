@@ -318,7 +318,8 @@ padding-right: 10px;
 }
 @media screen and (max-width: 600px){
   body{
-    background-size:
+    background-size: cover;
+    background-repeat: repeat-y;
   }
   .column{
     margin: 0;
