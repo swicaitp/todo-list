@@ -16,7 +16,7 @@
   --darkerBlueBorderColor: #0787d1;
   --highLightColor: #0092e7;
   --goldenHighlightColor: #ffbb00;
-  --bodyBackgroundImg:
+  --bodyBackgroundImg: url("Minimalist\ Planets.jpg");
 }
 @font-face {
   font-family: 'foxlite_scriptregular';
@@ -34,8 +34,8 @@ body{
   margin: 0;
   padding: 0;
   text-align: center;
-  background-image:url("Phases\ of\ the\ Moon.jpg");
-  background-size: 1270px 720px;
+  background-image: var(--bodyBackgroundImg);
+  background-size: cover;
 }
 .password {
   color: rgb(192, 0, 0);
@@ -224,11 +224,14 @@ input:hover{
   transition-property: visibility, background-color;
   transition-duration: 0.4s;
   font-family: 'Permanent Marker', cursive;
-  color: var(--themeColor);
+  /*color: var(--themeColor);*/
   text-align: center;
   font-size: 3em;
   border-bottom: 3px solid var(--themeColor);
   display: inline;
+  background-image: url(Space_Purple.png);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 .timeInputValue{
 float: right;
@@ -315,6 +318,9 @@ padding-right: 10px;
   display: block;
 }
 @media screen and (max-width: 600px){
+  body{
+    background-size:
+  }
   .column{
     margin: 0;
     padding: 0;
