@@ -17,6 +17,7 @@ var rootCustomProperties = window.getComputedStyle(document.documentElement);
 var headerColorValue = rootCustomProperties.getPropertyValue("--themeColor");
 var highLightColorValue = rootCustomProperties.getPropertyValue("--highLightColor");
 var borderColorValue = rootCustomProperties.getPropertyValue("--borderColor");
+var screenSize = window.matchMedia('(max-width <= 600px)');
 var progress = 0;
 //START TIME-OUT CORNER//
 
@@ -31,6 +32,15 @@ function inputLength(){
 function listLength(){
   return item.length;
 }
+//Start BackgroundChange//
+function BackgroundChange(screenSize){
+if(screenSize.matches){
+      document.body.style.backgroundImage = "url('Assets/Minimalist Waves Phone.jpg')";
+      console.log('I am running');
+}
+}
+BackgroundChange(screenSize);
+//End BackgroundChange//
 //Start ColorPicker//
 function colorPicker(){
   var colorPickerValue = document.getElementById("colorPickerSelect");
@@ -44,10 +54,6 @@ function colorPicker(){
     document.documentElement.style.setProperty("--highLightColor", "#94B9CD")
     document.documentElement.style.setProperty("--borderColor", "#EAEFF1");
     document.body.style.backgroundImage = "url('Assets/Minimalist Waves.png')";
-    if(window.outerWidth <= '600px'){
-      document.body.style.backgroundImage = "url('Assets/Minimalist Waves Phone.jpg')";
-      console.log('I am running');
-    }
 
     break;
     case optionRed.value:
@@ -250,5 +256,5 @@ if(inputLength() > 0 && event.which === 13){
 enterButton.addEventListener("click", addListAfterClick);
 taskInput.addEventListener("keypress", addListAfterEvent);
 timeInput.addEventListener("keypress", addListAfterEvent);
-
+screenSize.addListener(BackgroundChange);
 
