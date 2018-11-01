@@ -19,15 +19,9 @@ var highLightColorValue = rootCustomProperties.getPropertyValue("--highLightColo
 var borderColorValue = rootCustomProperties.getPropertyValue("--borderColor");
 var screenSize = window.matchMedia('(max-width <= 600px)');
 var progress = 0;
-var db;
 //START TIME-OUT CORNER//
   //var listLength = item.length;
 //END TIME-OUT CORNER//
-
-window.load = function(){
-window.indexedDB = window.indexedDB;
-
-}
 
 function inputLength(){
   return taskInput.value.length;
