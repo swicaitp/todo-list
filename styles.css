@@ -52,7 +52,7 @@ Position: sticky;
 text-align: center;
 background-color: var(--themeColor);
 top: 0;
-height: 90px;
+height: 12vh;
 border: 1px solid var(--themeColor);
 display: flex;
 flex-shrink: 0;
@@ -324,6 +324,9 @@ padding-right: 10px;
 @media screen and (max-width: 600px){
   body{
     background-image: var(--mobileBodyBackgroundImg);
+  }
+  .headerbar{
+    font-size: 5vw;
   }
   .column{
     margin: 0;
