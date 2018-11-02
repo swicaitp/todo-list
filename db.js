@@ -1,3 +1,4 @@
+var note = document.getElementById('notifications');
 var db;
 var newItem = [
   { taskTitle: "", hours: 0, minutes: 0, day: 0, month: "", year: 0, notified: "no" }
@@ -18,14 +19,15 @@ var submit = document.getElementById('submit');
 //End Global Variables//
 
 window.load = function(){
+  note.innerHTML += '<li>App initialised.</li>';
   window.indexedDB = window.indexedDB;
   var DBOpenRequest = window.indexedDB.open("todo-list", 4);
 
 DBOpenRequest.onerror = function(event){
-  alert('Error loading Database');
+  note.innerHTML += '<li>Error loading database.</li>';
 }
 DBOpenRequest.onsuccess = function(event){
-  console.log('Successfully loaded Database');
+  note.innerHTML += '<li>Database initialised.</li>';
 
   db = DBOpenRequest.result;
 
@@ -36,11 +38,11 @@ DBOpenRequest.onupgradeneeded = function(event){
 var db = event.target.result;
 
 db.onerror = function(event){
-alert("Error upgrading Database");
+  note.innerHTML += '<li>Error loading database.</li>';
 }
 
 
-var objectStore = db.createObjectStore("todo-list", {keypath: taskTitle});
+var objectStore = db.createObjectStore("todo-list", {keyPath: taskTitle});
 
 objectStore.createIndex("hours", "hours", {unique: false});
 objectStore.createIndex("minutes", "minutes", {unique: false});
@@ -50,11 +52,10 @@ objectStore.createIndex("year", "year", {unique: false});
 
 objectStore.createIndex("notified", "notified", {unique: false});
 
-console.log("objectStore Successfully created");
+note.innerHTML += '<li>Object store created.</li>';
 }
 
 function displayData(){
-  taskList.innerHTML = '';
   var objectStore = db.transaction('todo-list').objectStore('todo-list');
   objectStore.openCursor().onsuccess = function(event){
     var cursor = event.target.result;
@@ -84,7 +85,7 @@ function displayData(){
         }
         cursor.continue();
       } else {
-        console.log('Entries all displayed');
+        note.innerHTML += '<li>Entries all displayed.</li>';
       }
   }
 }
@@ -92,18 +93,18 @@ taskForm.addEventListener('submit', addData, false);
 function addData(e){
 e.preventDefault();
   if(title.value == ''|| hours.value == null || minutes.value == null || month.value == '' || day.value == '' || year.value == null){
-    alert('Task not submitted, task form incomplete');
+    note.innerHTML += '<li>Data not submitted — form incomplete.</li>';
   } else{
     var newItem = [
       {taskTitle: title.value, hours: hours.value, minutes: minutes.value, day: day.value, month: month.value, year: year.value, notified:'no'}
     ];
     var transaction = db.transaction('todo-list', 'readwrite');
     transaction.onsuccess = function(){
-      console.log('Database Transaction Success: Database Modified');
+      note.innerHTML += '<li>Transaction completed: database modification finished.</li>';
       displayData();
     }
     transaction.onerror = function(){
-      console.log("Transactions not opened, error due to:" + transaction.console.error);
+      note.innerHTML += '<li>Transaction not opened due to error: ' + transaction.error + '</li>';
     }
     var objectStore = transaction.objectStore("todo-list");
     console.log(objectStore.indexNames);
@@ -114,7 +115,7 @@ e.preventDefault();
 
     var objectStoreRequest =objectStore.add(newItem[0]);
     objectStoreRequest.onsuccess = function(event){
-    console.log('Request Successful');
+      note.innerHTML += '<li>Request successful.</li>';
       title.value = '';
       hours.value = null;
       minutes.value = null;
@@ -130,7 +131,7 @@ function deleteItem(){
   var request = transaction.objectStore('todo-list').delete(dateTask);
   transaction.onsuccess = function(){
     event.target.parentNode.parentNode.removeChild(event.target.parentNode);
-    console.log('Task ' +dataTask+ ' deleted');
+    note.innerHTML += '<li>Task \"' + dataTask + '\" deleted.</li>';
   }
 }
 function checkDeadlines(){
