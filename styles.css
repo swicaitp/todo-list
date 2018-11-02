@@ -174,15 +174,57 @@ flex-direction: row;
 float: left;
 }
 
-input {
+.form-box{
+  color: var(--borderColor);
+  font-family: 'Permanent Marker', cursive;
+  display: flex;
+  justify-content: center;
+}
+form .half-width {
+  display: inline-block;
+}
+
+form .third-width {
+  display: inline-block;
+}
+.full-width{
+  display: inline-block;
+}
+form div label {
+  float: left;
+  text-align: center;
+  font-size: 20px;
+  padding: 0 5px 0 5px;
+}
+.form-box select{
+  border-radius: 5px;
+	padding: 10px 0 10px 0;
+  border: 1px solid var(--highLightColor);
+  transition: all;
+  transition-duration: 0.4s;
+  /*visibility: hidden;
+  display: none;*/
+  max-width: 1.5in;
+}
+.full-width input, #submit {
 	border-radius: 5px;
 	padding: 10px;
   border: 1px solid var(--highLightColor);
   transition: all;
   transition-duration: 0.4s;
-  visibility: hidden;
-  display: none;
+  /*visibility: hidden;
+  display: none;*/
   max-width: 1.5in;
+}
+.half-width input{
+  border-radius: 5px;
+	padding: 10px;
+  border: 1px solid var(--highLightColor);
+  transition: all;
+  transition-duration: 0.4s;
+  /*visibility: hidden;
+  display: none;*/
+  max-width: 0.3in;
 }
 #dateInput{
   border-radius: 5px;
@@ -226,7 +268,7 @@ input:hover{
 }
 
 
-#title{
+#topTitle{
   visibility: hidden;
   transition-property: visibility, background-color;
   transition-duration: 0.4s;
