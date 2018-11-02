@@ -92,8 +92,9 @@ color: var(--bodyColor);
   border: 1px solid var(--borderColor);
   background-color: var(--themeColor);
 }
-.task-list{
+#task-list{
   padding-inline-start: 0;
+  list-style-type: none;
 }
 .column{
   padding: 20px;
@@ -102,7 +103,7 @@ color: var(--bodyColor);
   border-radius: 10px;
   list-style-type: none;
 }
-.task-list li{
+#task-list li{
   /*display: flex;
   flex-direction: row;
   justify-content: space-between;*/
@@ -137,7 +138,7 @@ position: relative;
   margin: 0;
 }
 
-li > .taskContainer > button {
+li > button {
   font-size: 1em;
 	font-weight: normal;
   background-color: var(--themeColor);
@@ -197,7 +198,7 @@ form div label {
 }
 .form-box select{
   border-radius: 5px;
-	padding: 10px 0 10px 0;
+	padding: 5px 0 5px 0;
   border: 1px solid var(--highLightColor);
   transition: all;
   transition-duration: 0.4s;
@@ -207,7 +208,7 @@ form div label {
 }
 .full-width input, #submit {
 	border-radius: 5px;
-	padding: 10px;
+	padding: 5px;
   border: 1px solid var(--highLightColor);
   transition: all;
   transition-duration: 0.4s;
@@ -217,7 +218,7 @@ form div label {
 }
 .half-width input{
   border-radius: 5px;
-	padding: 10px;
+	padding: 5px;
   border: 1px solid var(--highLightColor);
   transition: all;
   transition-duration: 0.4s;
@@ -227,8 +228,7 @@ form div label {
 }
 #dateInput{
   border-radius: 5px;
-  margin-top: 5px;
-	padding: 8px;
+	padding: 4px;
   border: 1px solid var(--highLightColor);
   transition: all;
   transition-duration: 0.4s;
