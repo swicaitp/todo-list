@@ -138,7 +138,7 @@ function createListElement(){
 
   //displayProgress();
   //Display Progress
-  function displayProgress(){
+  /*function displayProgress(){
     var liLength = document.querySelectorAll("li").length;
     var tasksDone = document.querySelectorAll(".done").length;
     var progressReport = document.getElementById("progress");
@@ -167,7 +167,7 @@ function createListElement(){
           progressBarFill.style.width = ((tasksDone/liLength)*100) +"%";
         }
       }
-  }
+  }*/
 
   //Start Strikethrough//
   function crossOut(){

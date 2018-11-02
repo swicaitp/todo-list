@@ -54,6 +54,7 @@ console.log("objectStore Successfully created");
 }
 
 function displayData(){
+  taskList.innerHTML = '';
   var objectStore = db.transaction('todo-list').objectStore('todo-list');
   objectStore.openCursor().onsuccess = function(event){
     var cursor = event.target.result;

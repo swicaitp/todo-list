@@ -92,7 +92,7 @@ color: var(--bodyColor);
   border: 1px solid var(--borderColor);
   background-color: var(--themeColor);
 }
-ul{
+.task-list{
   padding-inline-start: 0;
 }
 .column{
@@ -102,7 +102,7 @@ ul{
   border-radius: 10px;
   list-style-type: none;
 }
-.taskList li{
+.task-list li{
   /*display: flex;
   flex-direction: row;
   justify-content: space-between;*/
@@ -147,7 +147,6 @@ li > .taskContainer > button {
   font-weight: 800;
   transition-property: all;
   transition-duration: 0.4s;
-
 }
 .deleteButton{
   position: absolute;
