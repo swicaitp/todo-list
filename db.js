@@ -124,7 +124,7 @@ window.onload = function() {
           // function when clicked
           var deleteButton = document.createElement('button');
           listItem.appendChild(deleteButton);
-          deleteButton.innerHTML = '<i class="fas fa-eraser"></i>';
+          deleteButton.innerHTML = 'X';
           // here we are setting a data attribute on our delete button to say what task we want deleted if it is clicked!
           deleteButton.setAttribute('data-task', cursor.value.taskTitle);
           deleteButton.onclick = function(event) {
