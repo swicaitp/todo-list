@@ -142,7 +142,48 @@ function checkDeadlines(){
 
   var objectStore = bd.transaction(['todo-list'], "readwrite").objectStore('todo-list');
   objectStore.openCursor().onsuccess = function(event){
-var cursor = event.target.result;
+  var cursor = event.target.result;
+    if(cursor){
+      switch(cursor.value.month){
+        case "January":
+        var monthNumber = 0;
+        break;
+        case "February":
+        var monthNumber = 1;
+        break;
+        case "March":
+        var monthNumber = 2;
+        case "April":
+        var monthNumber = 3;
+        break;
+        case "May":
+        var monthNumber = 4;
+        break;
+        case "June":
+        var monthNumber = 5;
+        break;
+        case "July":
+        var monthNumber = 6;
+        break;
+        case "August":
+        var monthNumber = 7;
+        break;
+        case "September":
+        var monthNumber = 8;
+        break;
+        case "October":
+        var monthNumber = 9;
+        break;
+        case "November":
+        var monthNumber = 10;
+        break;
+        case "December":
+        var monthNumber = 11;
+        break;
+        default:
+        alert('Incorrect month enter in database.');
+      }
+    }
   }
 }
 }
