@@ -58,7 +58,7 @@ function displayData(){
   objectStore.openCursor().onsuccess = function(event){
     var cursor = event.target.result;
       if(cursor){
-        var ul = document.querySelector("ul");
+
         var listItem = document.createElement('li');
         if(cursor.value.day == 1 || cursor.value.day == 21 || cursor.value.day == 31){
           daySuffix = 'st';
@@ -73,7 +73,7 @@ function displayData(){
         if (cursor.notified == "yes"){
           crossOut();
         }
-        ul.appendChild(listItem);
+        taskList.appendChild(listItem);
         var deleteButton = document.createElement('button');
         listItem.appendChild(deleteButton);
         deleteButton.appendChild('<i class="fas fa-times"></i>');
@@ -134,7 +134,7 @@ function deleteItem(){
 }
 function checkDeadlines(){
   var now = new Date();
-  var checkMinutes = now.getMinutes();
+  var minuteCheck = now.getMinutes();
   var hourCheck = now.getHours();
   var dayCheck = now.getDay();
   var monthCheck = now.getMonth();
@@ -183,7 +183,45 @@ function checkDeadlines(){
         default:
         alert('Incorrect month enter in database.');
       }
+      if(+(cursor.value.hours) == hourCheck && +(cursor.value.minutes) == minuteCheck && +(cursor.value.day) == dayCheck && monthNumber == monthCheck && cursor.value.year== yearCheck && cursor.value.notified =="no"){
+        createNotification(cursor.value.taskTitle);
+      }
+      cursor.continue();
     }
   }
 }
+
+function createNotification(title){
+  if(!"Notification" in window){
+    console.log('This browser does not support notifications.');
+  } else if (Notification.permission==="granted"){
+    var img = '/Assets/sample_image.jpg';
+    var text = "HEY! You've missed your deadline!";
+    var notification = new Notification('To do list',{ body: text, icon: img});
+
+    window.navigator.vibrate(500);
+  } else if (Notification.permission !== 'denied'){
+    Notification.requestPermission(function(permission){
+      if(!('permission' in Notification)){
+        Notification.permission = permission;
+      }
+      if(permission === "granted"){
+        var img = '/Assets/sample_image.jpg';
+        var text = "HEY! You've missed your deadline!";
+        var notification = new Notification('To do list',{ body: text, icon: img});
+      }
+    });
+  }
+  var objectStore = db.transaction(['todo-list'], "readwrite").objectStore('todo-list');
+  var objectStoreTitleRequest = objectStore.get(title);
+  objectStoreTitleRequest.onsuccess = function(){
+    var data = objectStoreTitleRequest.result;
+    data.notified = "yes";
+    var updateTitleRequest = objectStore.put(data);
+    updateTitleRequest.onsuccess = function(){
+      displayData();
+    }
+  }
+}
+setInterval(checkDeadlines, 1000);
 }
