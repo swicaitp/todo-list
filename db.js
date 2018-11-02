@@ -316,10 +316,10 @@ window.onload = function() {
     else if (Notification.permission === "granted") {
       // If it's okay let's create a notification
 
-      var img = '/to-do-notifications/img/icon-128.png';
+      var img = '/Assets/notification-icon.png';
       var text = 'HEY! Your task "' + title + '" is now overdue.';
       var notification = new Notification('To do list', { body: text, icon: img });
-
+      console.log('I am running');
       window.navigator.vibrate(500);
     }
 
@@ -336,7 +336,7 @@ window.onload = function() {
 
         // If the user is okay, let's create a notification
         if (permission === "granted") {
-          var img = '/to-do-notifications/img/icon-128.png';
+          var img = '/Assets/notification-icon.png';
           var text = 'HEY! Your task "' + title + '" is now overdue.';
           var notification = new Notification('To do list', { body: text, icon: img });
 
