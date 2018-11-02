@@ -98,28 +98,17 @@ function updateProgress(){
 }
 //Start Input Pop-in//
 function showInput(){
-  if(taskInput.style.display === "none" && timeInput.style.display === "none" && enterButton.style.display === "none"){
-      taskInput.style.display = "inline";
-      timeInput.style.display = "inline";
-      dateInput.style.display = "inline";
-      enterButton.style.display = "inline";
+  const formBox = document.querySelector('.form-box');
+  const topTitle = document.getElementById('topTitle');
+  if(formBox.style.display === "none"){
+      formBox.style.display = 'flex';
   } else {
-    taskInput.style.display = "none";
-    timeInput.style.display = "none";
-    dateInput.style.display = "none";
-    enterButton.style.display = "none";
+    formBox.style.display = "none";
   }
-  if(taskInput.style.visibility === "hidden" && timeInput.style.visibility === "hidden" && enterButton.style.visibility === "hidden"){
-    taskInput.style.visibility = "visible";
-    timeInput.style.visibility = "visible";
-    dateInput.style.visibility = "visible";
-    enterButton.style.visibility = "visible";
-    title.style.visibility = "visible";
+  if(formBox.style.visibility === "hidden"){
+    formBox.style.visibility = "visible";
   } else {
-    taskInput.style.visibility = "hidden";
-    timeInput.style.visibility = "hidden";
-    dateInput.style.visibility = "hidden";
-    enterButton.style.visibility = "hidden";
+    formBox.style.visibility = "hidden";
   }
 }
 //End Input Pop-in//

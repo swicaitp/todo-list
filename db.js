@@ -113,8 +113,8 @@ window.onload = function() {
           listItem.innerHTML = cursor.value.taskTitle + ' — ' + cursor.value.hours + ':' + cursor.value.minutes + ', ' + cursor.value.month + ' ' + cursor.value.day + daySuffix + ' ' + cursor.value.year + '.';
 
           if(cursor.value.notified == "yes") {
-            listItem.style.textDecoration = "line-through";
-            listItem.style.color = "rgba(255,0,0,0.5)";
+            listItem.style.backgroundColor = highLightColorValue;
+            listItem.style.color = '#ffbb00';
           }
 
           // put the item item inside the task list
