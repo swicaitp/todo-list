@@ -12,7 +12,7 @@ var headerbarStyle = document.getElementById("headerbar").style;
 var footerElement = document.getElementById("footer");
 var footerStyle = document.getElementById("footer").style;
 var titleElement = document.getElementById("title");
-var titleStyle = document.getElementById("title").style;
+var titleStyle = document.getElementById("title");
 var rootCustomProperties = window.getComputedStyle(document.documentElement);
 var headerColorValue = rootCustomProperties.getPropertyValue("--themeColor");
 var highLightColorValue = rootCustomProperties.getPropertyValue("--highLightColor");
@@ -98,17 +98,18 @@ function updateProgress(){
 }
 //Start Input Pop-in//
 function showInput(){
-  const formBox = document.querySelector('.form-box');
+  const inputContainer = document.querySelector('.inputContainer');
+  const enterButton = document.querySelector('#enter');
   const topTitle = document.getElementById('topTitle');
-  if(formBox.style.display === "none"){
-      formBox.style.display = 'flex';
+  if(inputContainer.style.display === "none"){
+      inputContainer.style.display = 'flex';
   } else {
-    formBox.style.display = "none";
+    inputContainer.style.display = "none";
   }
-  if(formBox.style.visibility === "hidden"){
-    formBox.style.visibility = "visible";
+  if(inputContainer.style.visibility === "hidden"){
+    inputContainer.style.visibility = "visible";
   } else {
-    formBox.style.visibility = "hidden";
+    inputContainer.style.visibility = "hidden";
   }
 }
 //End Input Pop-in//
@@ -121,13 +122,12 @@ function createListElement(){
   span.insertAdjacentHTML('beforeend', timeItem);
 
   li.appendChild(document.createTextNode(taskInput.value));
-  */
 
-  //ul.appendChild(li);
+  ul.appendChild(li);*/
 
-  //displayProgress();
+  displayProgress();
   //Display Progress
-  /*function displayProgress(){
+  function displayProgress(){
     var liLength = document.querySelectorAll("li").length;
     var tasksDone = document.querySelectorAll(".done").length;
     var progressReport = document.getElementById("progress");
@@ -156,7 +156,7 @@ function createListElement(){
           progressBarFill.style.width = ((tasksDone/liLength)*100) +"%";
         }
       }
-  }*/
+  }
 
   //Start Strikethrough//
   function crossOut(){
@@ -243,5 +243,5 @@ if(inputLength() > 0 && event.which === 13){
 enterButton.addEventListener("click", addListAfterClick);
 taskInput.addEventListener("keypress", addListAfterEvent);
 timeInput.addEventListener("keypress", addListAfterEvent);
-screenSize.addListener(BackgroundChange);
+screenSize.addListener(BackgroundChange());
 
