@@ -76,6 +76,7 @@ color: var(--bodyColor);
 #headerbar #plus{
   color: var(--bodyColor);
   padding-right: 10px;
+  animation: shadow 0.5s ease 1;
 }
 .darkRed{
   background-color: var(--darkRed);
@@ -222,6 +223,7 @@ input:hover{
   border-bottom: 3px solid;
   border-bottom-color: var(--themeColor);
   display: inline-block;
+  animation: shadow 0.5s ease-in-out infinite;
 }
 .timeInputValue{
 float: right;
@@ -353,6 +355,20 @@ padding-right: 10px;
     bottom: 20%;
     max-width: 40%;
     visibility: hidden;
+  }
+  @keyframes shadow{
+    from
+    {
+      text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #c2c2c2, 0 0 40px #c2c2c2, 0 0 #c2c2c2, 0 0 50px #c2c2c2, 0 0 60px #c2c2c2;
+    }
+    to
+    {
+      text-shadow: 0 0 10px transparent, 0 0 20px transparent, 0 0 30px transparent, 0 0 40px #c2c2c2, 0 0 #c2c2c2, 0 0 50px #c2c2c2, 0 0 60px #c2c2c2;
+    }
+    to
+    {
+      text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #c2c2c2, 0 0 40px transparent, 0 0 transparent, 0 0 50px transparent, 0 0 60px transparent;
+    }
   }
   @keyframes fanfareLeft{
     0% {visibility: visible; width: 0%;}
