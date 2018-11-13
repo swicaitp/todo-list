@@ -327,10 +327,10 @@ function clock(){
   }
   setInterval(drawClock, 1000);
 }
-window.addEventListener("load", clock);
+
 
 enterButton.addEventListener("click", addListAfterClick);
 taskInput.addEventListener("keypress", addListAfterEvent);
 timeInput.addEventListener("keypress", addListAfterEvent);
 screenSize.addListener(BackgroundChange());
-
+window.addEventListener("load", clock);
