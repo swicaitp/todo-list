@@ -312,8 +312,6 @@ padding-right: 10px;
 }
 
 .inputContainer{
-  display: none;
-  visibility: hidden;
   justify-content: center;
 }
 @keyframes shadow{

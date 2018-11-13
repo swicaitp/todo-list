@@ -99,18 +99,18 @@ function updateProgress(){
 //Start Input Pop-in//
 function showInput(){
   const inputContainer = document.querySelector('.inputContainer');
-  const enterButton = document.querySelector('#enter');
-  const topTitle = document.getElementById('topTitle');
-  if(inputContainer.style.display === "none"){
+  const plus = document.getElementById("plus");
+  if(inputContainer.style.display == "none"){
       inputContainer.style.display = 'flex';
   } else {
     inputContainer.style.display = "none";
   }
-  if(inputContainer.style.visibility === "hidden"){
+  if(inputContainer.style.visibility == "hidden"){
     inputContainer.style.visibility = "visible";
   } else {
     inputContainer.style.visibility = "hidden";
   }
+  plus.anima
 }
 //End Input Pop-in//
 
