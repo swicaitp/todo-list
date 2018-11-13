@@ -132,7 +132,7 @@ position: relative;
 }
 #footer{
   text-align: center;
-  padding: 20px;
+  padding: 10px 0 20px 0;
   background-color: var(--themeColor);
   color: white;
   transition-property: background-color;
