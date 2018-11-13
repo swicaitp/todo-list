@@ -250,6 +250,26 @@ padding-right: 10px;
   transition-duration: 0.5s;
   transition-timing-function: ease-in-out;
 }
+#welcome-message{
+  font-size: 3rem;
+  text-align: center;
+  color: var(--fontColor);
+  display: inline;
+}
+#blinking-cursor{
+  font-weight: 100;
+  font-size: 3rem;
+  color: var(--fontColor);
+  animation: 1s blink step-end infinite;
+}
+@keyframes blink{
+  from, to{
+    color: transparent;
+  }
+  50%{
+    color: var(--fontColor);
+  }
+}
 .trumpets{
   padding: 0;
   margin: 0;

@@ -328,9 +328,23 @@ function clock(){
   setInterval(drawClock, 1000);
 }
 
+function typeWriting(){
+  var i = 0;
+  var text = "Hello, and Welcome.";
+  var speed = 150;
+  function typeWriter(){
+    if(i < text.length){
+      document.getElementById("welcome-message").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+
+  typeWriter();
+}
 
 enterButton.addEventListener("click", addListAfterClick);
 taskInput.addEventListener("keypress", addListAfterEvent);
 timeInput.addEventListener("keypress", addListAfterEvent);
-
+window.addEventListener("load", typeWriting);
 window.addEventListener("load", clock);
