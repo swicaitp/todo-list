@@ -343,7 +343,10 @@ function typeWriting(){
     {id: 4, text: "I'll help you out since you're so inept.", executed: false},
     {id: 5, text: "See that big plus sign in the top right corner?", executed: false},
     {id: 6, text: "Click that with your big sausage fingers.", executed: false},
-    {id: 7, text: "Next, I'll explain this as slowly as possible for a meat-popsicle such as yourself.", executed: false}
+    {id: 7, text: "Next, I'll explain this as slowly as possible for a meat-popsicle such as yourself.", executed: false},
+    {id: 8, text: "The left most box that appears is the name you'll be assigning to your meaningless task.", executed: false},
+    {id: 9, text: "The box to the right of that is the time you wish to set for doing that task.", executed: false},
+    {id: 10, text: "Once you're down drooling all over the place, smash your grubby mitts into the keyboard until you're satisfied with your entries, then hit the submit button to the right of the time assignment box."}
   ];
   console.log(text[1["executed"]]);
   var now = new Date();
@@ -376,6 +379,9 @@ function typeWriting(){
     var j = 0;
     var k = 0;
     var l = 0;
+    var m = 0;
+    var n = 0;
+    var o = 0;
     function helloAndWelcome(){
       let obj = text.find(obj => obj.id == 1);
       if(i < obj.text.length){
@@ -410,6 +416,22 @@ function typeWriting(){
         setTimeout(illHelp, speed);
       }
     }
+    function seeThat(){
+      let obj = text.find(obj => obj.id === 5);
+      if(m < obj.text.length){
+        terminal.innerHTML += obj.text.charAt(m);
+        m++;
+        setTimeout(seeThat, speed);
+      }
+    }
+    function clickThat(){
+      let obj = text.find(obj => obj.id == 6);
+      if(n < obj.text.length){
+        terminal.innerHTML += obj.text.charAt(n);
+        n++;
+        setTimeout(clickThat, speed);
+      }
+    }
     if(currentTime === 1){
       let obj = text.find(obj => obj.id == 1);
       if(obj.executed == false){
@@ -442,16 +464,25 @@ function typeWriting(){
         setClearCreate(3950);
       }
     }
+    if(currentTime == 14){
+      let obj = text.find(obj => obj.id == 5);
+      if(obj.executed == false){
+        seeThat();
+        obj.executed = true;
+        setClearCreate(4950);
+      }
+    }
+    if(currentTime == 19){
+      let obj = text.find(obj => obj.id == 6);
+      if(obj.executed == false){
+        clickThat();
+        obj.executed = true;
+        setClearCreate(3950);
+      }
+    }
   }
   //Check if statements of typeWriter every half second
   setInterval(typeWriter, 500);
-
-
-  //Call baffled Message
-
-  //Reset Text
-
-
 }
 
 enterButton.addEventListener("click", addListAfterClick);
