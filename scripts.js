@@ -331,12 +331,24 @@ function clock(){
 function typeWriting(){
   var i = 0;
   var j = 0;
+  var k = 0;
   var text = ["Hello.",
-  "It seems you are in need of my assistance, meat-bag.","How funny.",
+  "It seems you are in need of my assistance, meat-bag.",
+  "How funny.",
   "I'll help you out since you're so inept."];
   console.log(text);
   var terminal = document.getElementById("welcome-message");
+  var currentText;
+  var currentTime = 0;
   var speed = 50;
+  function incrementCurrentTime(){
+    currentTime += 1;
+  }
+  //To find out currentTime count
+  function getCurrentTime(){
+    console.log(currentTime);
+  }
+    window.setInterval(incrementCurrentTime, 1000);
   function clearText(){
     while(terminal.firstChild){
       terminal.removeChild(terminal.firstChild);
@@ -347,30 +359,42 @@ function typeWriting(){
     terminal.appendChild(newText);
   }
   function helloAndWelcome(){
-    if(i < text[0].length){
-      terminal.innerHTML += text[0].charAt(i);
+    var currentText = text[0];
+    if(i < currentText.length){
+      terminal.innerHTML += currentText.charAt(i);
       i++;
       setTimeout(helloAndWelcome, speed);
     }
   }
-  window.setTimeout(clearText, 1000);
-  window.setTimeout(createText, 1000);
-  console.log(terminal.innerHTML.length);
+  function setClearCreate(milliseconds){
+    window.setTimeout(clearText, milliseconds);
+    window.setTimeout(createText, milliseconds);
+  }
+  setClearCreate(1000);
   //Call Welcome Message
   helloAndWelcome();
   //Reset Text
 
   //Next Function to be Called
   function itSeems(){
-    var currentText = text[1];
+    currentText = text[1];
     if(j < currentText.length){
       terminal.innerHTML += currentText.charAt(j);
       j++;
       setTimeout(itSeems, speed);
     }
   }
+  setClearCreate(3000);
   setTimeout(itSeems, 1000);
-  // text = "How funny.";
+  function howFunny(){
+    currentText = index[2];
+    if(k < currentText.length){
+      terminal.innerHTML += currentText.charAt(k);
+      k++
+      setTimeout(howFunny, speed);
+    }
+  }
+  setClearCreate(4000);
 }
 
 enterButton.addEventListener("click", addListAfterClick);
