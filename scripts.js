@@ -329,14 +329,22 @@ function clock(){
 }
 
 function typeWriting(){
-  var i = 0;
-  var j = 0;
-  var k = 0;
+  var lineOne = {text: "Hello.", executed: false};
+  var lineTwo = {text: "It seems you are in need of my assistance, meat-bag.", executed: false};
+  var lineThree = {text: "How funny.", executed: false};
+  var lineFour = {text: "I'll help you out since you're so inept.", executed: false};
+  var lineFive = {text: "See that big plus sign in the top right corner?", executed: false};
+  var lineSix = {text: "Click that with your big sausage fingers.", executed: false};
+  var lineSeven = {text: "Next, I'll explain this as slowly as possible for a meat-popsicle such as yourself.", executed: false};
   var text = ["Hello.",
-  "It seems you are in need of my assistance, meat-bag.",
-  "How funny.",
-  "I'll help you out since you're so inept."];
+    "It seems you are in need of my assistance, meat-bag.",
+    "How funny.",
+    "I'll help you out since you're so inept.",
+    "See that big plus sign in the top right corner?",
+    "Click that with your big sausage fingers.",
+    "Next, I'll explain this as slowly as possible for a meat-popsicle such as yourself."];
   console.log(text);
+
   var terminal = document.getElementById("welcome-message");
   var currentText;
   var currentTime = 0;
@@ -358,43 +366,69 @@ function typeWriting(){
     var newText = document.createTextNode("");
     terminal.appendChild(newText);
   }
-  function helloAndWelcome(){
-    var currentText = text[0];
-    if(i < currentText.length){
-      terminal.innerHTML += currentText.charAt(i);
-      i++;
-      setTimeout(helloAndWelcome, speed);
-    }
-  }
   function setClearCreate(milliseconds){
     window.setTimeout(clearText, milliseconds);
     window.setTimeout(createText, milliseconds);
   }
-  setClearCreate(1000);
+  function typeWriter(){
+    var i = 0;
+    var executed = Boolean(false);
+    function helloAndWelcome(){
+      var currentText = text[0];
+      if(i < currentText.length){
+        terminal.innerHTML += currentText.charAt(i);
+        i++;
+        setTimeout(helloAndWelcome, speed);
+      }
+    }
+    if(currentTime === 1 && !executed){
+      helloAndWelcome();
+      executed = true;
+    }
+  }
   //Call Welcome Message
-  helloAndWelcome();
+  setInterval(typeWriter, 500);
   //Reset Text
-
+  setClearCreate(2000);
   //Next Function to be Called
   function itSeems(){
-    currentText = text[1];
+    var currentText = text[1];
     if(j < currentText.length){
       terminal.innerHTML += currentText.charAt(j);
       j++;
       setTimeout(itSeems, speed);
     }
   }
-  setClearCreate(3000);
-  setTimeout(itSeems, 1000);
+  //Call Insult Message
+  setTimeout(itSeems, 2000);
+  //Reset Text
+  setClearCreate(5500);
+
   function howFunny(){
-    currentText = index[2];
+    var currentText = text[2];
     if(k < currentText.length){
       terminal.innerHTML += currentText.charAt(k);
-      k++
+      k++;
       setTimeout(howFunny, speed);
     }
   }
-  setClearCreate(4000);
+  //Call baffled Message
+  setTimeout(howFunny, 5500);
+  //Reset Text
+  setClearCreate(7000);
+  function illHelp(){
+    var currentText = text[3];
+    if(l < currentText.length)
+    {
+      terminal.innerHTML += currentText.charAt(l);
+      l++;
+      setTimeout(illHelp, speed);
+    }
+  }
+  setTimeout(illHelp, 7000);
+  setClearCreate(11000);
+
+
 }
 
 enterButton.addEventListener("click", addListAfterClick);
