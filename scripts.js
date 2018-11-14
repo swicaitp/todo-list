@@ -337,13 +337,13 @@ function typeWriting(){
   // var lineSix = {text: "Click that with your big sausage fingers.", executed: false};
   // var lineSeven = {text: "Next, I'll explain this as slowly as possible for a meat-popsicle such as yourself.", executed: false};
   var text = [
-    {text: "Hello.", executed: false},
-    {text: "It seems you are in need of my assistance, meat-bag.", executed: false},
-    {text: "How funny.", executed: false},
-    {text: "I'll help you out since you're so inept.", executed: false},
-    {text: "See that big plus sign in the top right corner?", executed: false},
-    {text: "Click that with your big sausage fingers.", executed: false},
-    {text: "Next, I'll explain this as slowly as possible for a meat-popsicle such as yourself.", executed: false}
+    {id: 1, text: "Hello.", executed: false},
+    {id: 2, text: "It seems you are in need of my assistance, meat-bag.", executed: false},
+    {id: 3, text: "How funny.", executed: false},
+    {id: 4, text: "I'll help you out since you're so inept.", executed: false},
+    {id: 5, text: "See that big plus sign in the top right corner?", executed: false},
+    {id: 6, text: "Click that with your big sausage fingers.", executed: false},
+    {id: 7, text: "Next, I'll explain this as slowly as possible for a meat-popsicle such as yourself.", executed: false}
   ];
   console.log(text[1["executed"]]);
   var now = new Date();
@@ -375,17 +375,21 @@ function typeWriting(){
   function typeWriter(){
     var i = 0;
     function helloAndWelcome(){
-      var currentText = text[0["text"]];
-      if(i < currentText.length){
-        terminal.innerHTML += currentText.charAt(i);
+      let obj = text.find(obj => obj.id == 1);
+      if(i < obj.text.length){
+        terminal.innerHTML += obj.text.charAt(i);
         i++;
         setTimeout(helloAndWelcome, speed);
         console.log("I am running");
       }
     }
-    if(currentTime === 1 && text[0["executed"]]){
-      helloAndWelcome();
-      currentText[0[executed]] = true;
+
+    if(currentTime === 1){
+      let obj = text.find(obj => obj.id == 1);
+      if(obj.executed == false){
+        helloAndWelcome();
+        obj.executed = true;
+      }
     }
   }
   //Call Welcome Message
