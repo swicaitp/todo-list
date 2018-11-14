@@ -330,17 +330,47 @@ function clock(){
 
 function typeWriting(){
   var i = 0;
-  var text = "Hello, and Welcome.";
-  var speed = 150;
-  function typeWriter(){
-    if(i < text.length){
-      document.getElementById("welcome-message").innerHTML += text.charAt(i);
-      i++;
-      setTimeout(typeWriter, speed);
+  var j = 0;
+  var text = ["Hello.",
+  "It seems you are in need of my assistance, meat-bag.","How funny.",
+  "I'll help you out since you're so inept."];
+  console.log(text);
+  var terminal = document.getElementById("welcome-message");
+  var speed = 50;
+  function clearText(){
+    while(terminal.firstChild){
+      terminal.removeChild(terminal.firstChild);
     }
   }
+  function createText(){
+    var newText = document.createTextNode("");
+    terminal.appendChild(newText);
+  }
+  function helloAndWelcome(){
+    if(i < text[0].length){
+      terminal.innerHTML += text[0].charAt(i);
+      i++;
+      setTimeout(helloAndWelcome, speed);
+    }
+  }
+  window.setTimeout(clearText, 1000);
+  window.setTimeout(createText, 1000);
+  console.log(terminal.innerHTML.length);
+  //Call Welcome Message
+  helloAndWelcome();
+  //Reset Text
 
-  typeWriter();
+  //Next Function to be Called
+  function itSeems(){
+    var currentText = text[1];
+    if(j < currentText.length){
+      terminal.innerHTML += currentText.charAt(j);
+      j++;
+      setTimeout(itSeems, speed);
+    }
+  }
+  setTimeout(itSeems, 1000);
+  // text = "How funny.";
 }
 
 enterButton.addEventListener("click", addListAfterClick);
