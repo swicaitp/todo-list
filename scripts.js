@@ -329,22 +329,24 @@ function clock(){
 }
 
 function typeWriting(){
-  var lineOne = {text: "Hello.", executed: false};
-  var lineTwo = {text: "It seems you are in need of my assistance, meat-bag.", executed: false};
-  var lineThree = {text: "How funny.", executed: false};
-  var lineFour = {text: "I'll help you out since you're so inept.", executed: false};
-  var lineFive = {text: "See that big plus sign in the top right corner?", executed: false};
-  var lineSix = {text: "Click that with your big sausage fingers.", executed: false};
-  var lineSeven = {text: "Next, I'll explain this as slowly as possible for a meat-popsicle such as yourself.", executed: false};
-  var text = ["Hello.",
-    "It seems you are in need of my assistance, meat-bag.",
-    "How funny.",
-    "I'll help you out since you're so inept.",
-    "See that big plus sign in the top right corner?",
-    "Click that with your big sausage fingers.",
-    "Next, I'll explain this as slowly as possible for a meat-popsicle such as yourself."];
-  console.log(text);
-
+  // var lineOne = {text: "Hello.", executed: false};
+  // var lineTwo = {text: "It seems you are in need of my assistance, meat-bag.", executed: false};
+  // var lineThree = {text: "How funny.", executed: false};
+  // var lineFour = {text: "I'll help you out since you're so inept.", executed: false};
+  // var lineFive = {text: "See that big plus sign in the top right corner?", executed: false};
+  // var lineSix = {text: "Click that with your big sausage fingers.", executed: false};
+  // var lineSeven = {text: "Next, I'll explain this as slowly as possible for a meat-popsicle such as yourself.", executed: false};
+  var text = [
+    {text: "Hello.", executed: false},
+    {text: "It seems you are in need of my assistance, meat-bag.", executed: false},
+    {text: "How funny.", executed: false},
+    {text: "I'll help you out since you're so inept.", executed: false},
+    {text: "See that big plus sign in the top right corner?", executed: false},
+    {text: "Click that with your big sausage fingers.", executed: false},
+    {text: "Next, I'll explain this as slowly as possible for a meat-popsicle such as yourself.", executed: false}
+  ];
+  console.log(text[1["executed"]]);
+  var now = new Date();
   var terminal = document.getElementById("welcome-message");
   var currentText;
   var currentTime = 0;
@@ -372,18 +374,18 @@ function typeWriting(){
   }
   function typeWriter(){
     var i = 0;
-    var executed = Boolean(false);
     function helloAndWelcome(){
-      var currentText = text[0];
+      var currentText = text[0["text"]];
       if(i < currentText.length){
         terminal.innerHTML += currentText.charAt(i);
         i++;
         setTimeout(helloAndWelcome, speed);
+        console.log("I am running");
       }
     }
-    if(currentTime === 1 && !executed){
+    if(currentTime === 1 && text[0["executed"]]){
       helloAndWelcome();
-      executed = true;
+      currentText[0[executed]] = true;
     }
   }
   //Call Welcome Message
@@ -392,7 +394,7 @@ function typeWriting(){
   setClearCreate(2000);
   //Next Function to be Called
   function itSeems(){
-    var currentText = text[1];
+    var currentText = text[1[text]];
     if(j < currentText.length){
       terminal.innerHTML += currentText.charAt(j);
       j++;
@@ -405,7 +407,7 @@ function typeWriting(){
   setClearCreate(5500);
 
   function howFunny(){
-    var currentText = text[2];
+    var currentText = text[2[text]];
     if(k < currentText.length){
       terminal.innerHTML += currentText.charAt(k);
       k++;
@@ -417,7 +419,7 @@ function typeWriting(){
   //Reset Text
   setClearCreate(7000);
   function illHelp(){
-    var currentText = text[3];
+    var currentText = text[3[text]];
     if(l < currentText.length)
     {
       terminal.innerHTML += currentText.charAt(l);
