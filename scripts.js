@@ -327,23 +327,24 @@ function clock(){
   }
   setInterval(drawClock, 1000);
 }
-
+//Get Helper-Button
+const helperButton = document.getElementById("helper-button");
 function typeWriting(){
   var text = [
+    {id: 0, text: "Initializing...", executed: false},
     {id: 1, text: "Hello.", executed: false},
     {id: 2, text: "It seems you are in need of my assistance, meat-bag.", executed: false},
     {id: 3, text: "How funny.", executed: false},
     {id: 4, text: "I'll help you out since you're so inept.", executed: false},
     {id: 5, text: "See that big plus sign in the top right corner?", executed: false},
     {id: 6, text: "Click that with your big sausage fingers.", executed: false},
-    {id: 7, text: "Next, I'll explain this as slowly as possible for a meat-popsicle such as yourself.", executed: false},
+    {id: 7, text: "Now, I'll explain this as slowly as possible for a meat-popsicle such as yourself.", executed: false},
     {id: 8, text: "The left most box that appears is the name you'll be assigning to your meaningless task.", executed: false},
     {id: 9, text: "The box to the right of that is the time you wish to set for doing that task.", executed: false},
-    {id: 10, text: "Once you're down drooling all over the place, smash your grubby mitts into the keyboard until you're satisfied with your entries, then hit the submit button to the right of the time assignment box.", executed: false},
-    {id: 11, text: "All done! Goodbye! Leave me alone! It's time for me to dream of electric sheep.", executed: false}
+    {id: 10, text: "Once you're done drooling all over the place, smash your grubby mitts into the keyboard until you're satisfied with your entries, then hit the submit button to the right of the time assignment box.", executed: false},
+    {id: 11, text: "All done! Goodbye! Leave me alone! It's time for me to dream of electric sheep.", executed: false},
+    {id: 12, text: "Exiting...", executed: false}
   ];
-  console.log(text[1["executed"]]);
-  var now = new Date();
   var terminal = document.getElementById("welcome-message");
   var currentTime = 0;
   var speed = 50;
@@ -369,6 +370,7 @@ function typeWriting(){
     window.setTimeout(createText, milliseconds);
   }
   function typeWriter(){
+    var h = 0;
     var i = 0;
     var j = 0;
     var k = 0;
@@ -380,6 +382,15 @@ function typeWriting(){
     var q = 0;
     var r = 0;
     var s = 0;
+    var t = 0;
+    function initializing(){
+      let obj = text.find(obj => obj.id == 0);
+      if(h < obj.text.length){
+        terminal.innerHTML += obj.text.charAt(h);
+        h++;
+        setTimeout(initializing, speed);
+      }
+    }
     function helloAndWelcome(){
       let obj = text.find(obj => obj.id == 1);
       if(i < obj.text.length){
@@ -470,7 +481,23 @@ function typeWriting(){
         setTimeout(electricSheep, speed);
       }
     }
-    if(currentTime === 1){
+    function exiting(){
+      let obj = text.find(obj => obj.id == 12);
+      if(t < obj.text.length){
+        terminal.innerHTML += obj.text.charAt(t);
+        t++;
+        setTimeout(exiting, speed);
+      }
+    }
+    if(currentTime == 0.5){
+      let obj = text.find(obj => obj.id == 0);
+      if(obj.executed == false){
+        initializing();
+        obj.executed = true;
+        setClearCreate(2450);
+      }
+    }
+    if(currentTime === 3){
       let obj = text.find(obj => obj.id == 1);
       if(obj.executed == false){
         helloAndWelcome();
@@ -478,7 +505,7 @@ function typeWriting(){
         setClearCreate(1950);
       }
     }
-    if(currentTime === 3){
+    if(currentTime === 5){
       let obj = text.find(obj => obj.id == 2);
       if(obj.executed == false){
         itSeems();
@@ -486,7 +513,7 @@ function typeWriting(){
         setClearCreate(4950);
       }
     }
-    if(currentTime === 8){
+    if(currentTime === 10){
       let obj = text.find(obj => obj.id == 3);
       if(obj.executed == false){
         howFunny();
@@ -494,7 +521,7 @@ function typeWriting(){
         setClearCreate(1950);
       }
     }
-    if(currentTime === 10){
+    if(currentTime === 12){
       let obj = text.find(obj => obj.id == 4);
       if(obj.executed == false){
         illHelp();
@@ -502,7 +529,7 @@ function typeWriting(){
         setClearCreate(4950);
       }
     }
-    if(currentTime == 15){
+    if(currentTime == 17){
       let obj = text.find(obj => obj.id == 5);
       if(obj.executed == false){
         seeThat();
@@ -510,7 +537,7 @@ function typeWriting(){
         setClearCreate(5950);
       }
     }
-    if(currentTime == 21){
+    if(currentTime == 23){
       let obj = text.find(obj => obj.id == 6);
       if(obj.executed == false){
         clickThat();
@@ -518,7 +545,7 @@ function typeWriting(){
         setClearCreate(4950);
       }
     }
-    if(currentTime == 26){
+    if(currentTime == 28){
       let obj = text.find(obj => obj.id == 7);
       if(obj.executed == false){
         nextIll();
@@ -526,7 +553,7 @@ function typeWriting(){
         setClearCreate(6950);
       }
     }
-    if(currentTime == 33){
+    if(currentTime == 35){
       let obj = text.find(obj => obj.id == 8);
       if(obj.executed == false){
         leftMost();
@@ -534,7 +561,7 @@ function typeWriting(){
         setClearCreate(6950);
       }
     }
-    if(currentTime == 40){
+    if(currentTime == 42){
       let obj = text.find(obj => obj.id == 9);
       if(obj.executed == false){
         rightMost();
@@ -542,7 +569,7 @@ function typeWriting(){
         setClearCreate(5950);
       }
     }
-    if(currentTime == 46){
+    if(currentTime == 48){
       let obj = text.find(obj => obj.id == 10);
       if(obj.executed == false){
         drooling();
@@ -550,12 +577,20 @@ function typeWriting(){
         setClearCreate(13950);
       }
     }
-    if(currentTime == 60){
+    if(currentTime == 62){
       let obj = text.find(obj => obj.id == 11);
       if(obj.executed == false){
         electricSheep();
         obj.executed = true;
         setClearCreate(5950);
+      }
+    }
+    if(currentTime == 68){
+      let obj = text.find(obj => obj.id == 12);
+      if(obj.executed == false){
+        exiting();
+        obj.executed = true;
+        setClearCreate(2950);
       }
     }
   }
@@ -566,5 +601,5 @@ function typeWriting(){
 enterButton.addEventListener("click", addListAfterClick);
 taskInput.addEventListener("keypress", addListAfterEvent);
 timeInput.addEventListener("keypress", addListAfterEvent);
-window.addEventListener("load", typeWriting);
+helperButton.addEventListener("click", typeWriting);
 window.addEventListener("load", clock);
