@@ -348,17 +348,16 @@ function typeWriting(){
   console.log(text[1["executed"]]);
   var now = new Date();
   var terminal = document.getElementById("welcome-message");
-  var currentText;
   var currentTime = 0;
   var speed = 50;
   function incrementCurrentTime(){
-    currentTime += 1;
+    currentTime += 0.5;
   }
   //To find out currentTime count
   function getCurrentTime(){
     console.log(currentTime);
   }
-    window.setInterval(incrementCurrentTime, 1000);
+    window.setInterval(incrementCurrentTime, 500);
   function clearText(){
     while(terminal.firstChild){
       terminal.removeChild(terminal.firstChild);
@@ -374,6 +373,9 @@ function typeWriting(){
   }
   function typeWriter(){
     var i = 0;
+    var j = 0;
+    var k = 0;
+    var l = 0;
     function helloAndWelcome(){
       let obj = text.find(obj => obj.id == 1);
       if(i < obj.text.length){
@@ -383,56 +385,71 @@ function typeWriting(){
         console.log("I am running");
       }
     }
-
+    function itSeems(){
+      let obj = text.find(obj => obj.id == 2);
+      if(j < obj.text.length){
+        terminal.innerHTML += obj.text.charAt(j);
+        j++;
+        setTimeout(itSeems, speed);
+      }
+    }
+    function howFunny(){
+      let obj = text.find(obj => obj.id == 3);
+      if(k < obj.text.length){
+        terminal.innerHTML += obj.text.charAt(k);
+        k++;
+        setTimeout(howFunny, speed);
+      }
+    }
+    function illHelp(){
+      let obj = text.find(obj => obj.id == 4);
+      if(l < obj.text.length)
+      {
+        terminal.innerHTML += obj.text.charAt(l);
+        l++;
+        setTimeout(illHelp, speed);
+      }
+    }
     if(currentTime === 1){
       let obj = text.find(obj => obj.id == 1);
       if(obj.executed == false){
         helloAndWelcome();
         obj.executed = true;
+        setClearCreate(1950);
+      }
+    }
+    if(currentTime === 3){
+      let obj = text.find(obj => obj.id == 2);
+      if(obj.executed == false){
+        itSeems();
+        obj.executed = true;
+        setClearCreate(4950);
+      }
+    }
+    if(currentTime === 8){
+      let obj = text.find(obj => obj.id == 3);
+      if(obj.executed == false){
+        howFunny();
+        obj.executed = true;
+        setClearCreate(1950);
+      }
+    }
+    if(currentTime === 10){
+      let obj = text.find(obj => obj.id == 4);
+      if(obj.executed == false){
+        illHelp();
+        obj.executed = true;
+        setClearCreate(3950);
       }
     }
   }
-  //Call Welcome Message
+  //Check if statements of typeWriter every half second
   setInterval(typeWriter, 500);
-  //Reset Text
-  setClearCreate(2000);
-  //Next Function to be Called
-  function itSeems(){
-    var currentText = text[1[text]];
-    if(j < currentText.length){
-      terminal.innerHTML += currentText.charAt(j);
-      j++;
-      setTimeout(itSeems, speed);
-    }
-  }
-  //Call Insult Message
-  setTimeout(itSeems, 2000);
-  //Reset Text
-  setClearCreate(5500);
 
-  function howFunny(){
-    var currentText = text[2[text]];
-    if(k < currentText.length){
-      terminal.innerHTML += currentText.charAt(k);
-      k++;
-      setTimeout(howFunny, speed);
-    }
-  }
+
   //Call baffled Message
-  setTimeout(howFunny, 5500);
+
   //Reset Text
-  setClearCreate(7000);
-  function illHelp(){
-    var currentText = text[3[text]];
-    if(l < currentText.length)
-    {
-      terminal.innerHTML += currentText.charAt(l);
-      l++;
-      setTimeout(illHelp, speed);
-    }
-  }
-  setTimeout(illHelp, 7000);
-  setClearCreate(11000);
 
 
 }
