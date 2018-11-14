@@ -547,15 +547,15 @@ function typeWriting(){
       if(obj.executed == false){
         drooling();
         obj.executed = true;
-        setClearCreate(11950);
+        setClearCreate(13950);
       }
     }
-    if(currentTime == 58){
+    if(currentTime == 60){
       let obj = text.find(obj => obj.id == 11);
       if(obj.executed == false){
         electricSheep();
         obj.executed = true;
-        setClearCreate(4950);
+        setClearCreate(5950);
       }
     }
   }
