@@ -329,13 +329,6 @@ function clock(){
 }
 
 function typeWriting(){
-  // var lineOne = {text: "Hello.", executed: false};
-  // var lineTwo = {text: "It seems you are in need of my assistance, meat-bag.", executed: false};
-  // var lineThree = {text: "How funny.", executed: false};
-  // var lineFour = {text: "I'll help you out since you're so inept.", executed: false};
-  // var lineFive = {text: "See that big plus sign in the top right corner?", executed: false};
-  // var lineSix = {text: "Click that with your big sausage fingers.", executed: false};
-  // var lineSeven = {text: "Next, I'll explain this as slowly as possible for a meat-popsicle such as yourself.", executed: false};
   var text = [
     {id: 1, text: "Hello.", executed: false},
     {id: 2, text: "It seems you are in need of my assistance, meat-bag.", executed: false},
@@ -346,7 +339,8 @@ function typeWriting(){
     {id: 7, text: "Next, I'll explain this as slowly as possible for a meat-popsicle such as yourself.", executed: false},
     {id: 8, text: "The left most box that appears is the name you'll be assigning to your meaningless task.", executed: false},
     {id: 9, text: "The box to the right of that is the time you wish to set for doing that task.", executed: false},
-    {id: 10, text: "Once you're down drooling all over the place, smash your grubby mitts into the keyboard until you're satisfied with your entries, then hit the submit button to the right of the time assignment box."}
+    {id: 10, text: "Once you're down drooling all over the place, smash your grubby mitts into the keyboard until you're satisfied with your entries, then hit the submit button to the right of the time assignment box."},
+    {id: 11, text: "All done! Goodbye! Leave me alone! It's time for me to dream of electric sheep."}
   ];
   console.log(text[1["executed"]]);
   var now = new Date();
@@ -382,6 +376,10 @@ function typeWriting(){
     var m = 0;
     var n = 0;
     var o = 0;
+    var p = 0;
+    var q = 0;
+    var r = 0;
+    var s = 0;
     function helloAndWelcome(){
       let obj = text.find(obj => obj.id == 1);
       if(i < obj.text.length){
@@ -432,6 +430,46 @@ function typeWriting(){
         setTimeout(clickThat, speed);
       }
     }
+    function nextIll(){
+      let obj = text.find(obj => obj.id == 7);
+      if(o < obj.text.length){
+        terminal.innerHTML += obj.text.charAt(o);
+        o++;
+        setTimeout(nextIll, speed);
+      }
+    }
+    function leftMost(){
+      let obj = text.find(obj => obj.id == 8);
+      if(p < obj.text.length){
+        terminal.innerHTML += obj.text.charAt(p);
+        p++;
+        setTimeout(leftMost, speed);
+      }
+    }
+    function rightMost(){
+      let obj = text.find(obj => obj.id == 9);
+      if(q < obj.text.length){
+        terminal.innerHTML += obj.text.charAt(q);
+        q++;
+        setTimeout(rightMost, speed);
+      }
+    }
+    function drooling(){
+      let obj = text.find(obj => obj.id == 10);
+      if(r < obj.text.length){
+        terminal.innerHTML += obj.text.charAt(r);
+        r++;
+        setTimeout(drooling, speed);
+      }
+    }
+    function electricSheep(){
+      let obj = text.find(obj => obj.id == 11);
+      if(s < obj.text.length){
+        terminal.innerHTML += obj.text.charAt(s);
+        s++;
+        setTimeout(electricSheep, speed);
+      }
+    }
     if(currentTime === 1){
       let obj = text.find(obj => obj.id == 1);
       if(obj.executed == false){
@@ -476,6 +514,46 @@ function typeWriting(){
       let obj = text.find(obj => obj.id == 6);
       if(obj.executed == false){
         clickThat();
+        obj.executed = true;
+        setClearCreate(3950);
+      }
+    }
+    if(currentTime == 23){
+      let obj = text.find(obj => obj.id == 7);
+      if(obj.executed == false){
+        nextIll();
+        obj.executed = true;
+        setClearCreate(5950);
+      }
+    }
+    if(currentTime == 29){
+      let obj = text.find(obj => obj.id == 8);
+      if(obj.executed == false){
+        leftMost();
+        obj.executed = true;
+        setClearCreate(5950);
+      }
+    }
+    if(currentTime == 35){
+      let obj = text.find(obj => obj.id == 9);
+      if(obj.executed == false){
+        rightMost();
+        obj.executed = true;
+        setClearCreate(4950);
+      }
+    }
+    if(currentTime == 40){
+      let obj = text.find(obj => obj.id == 10);
+      if(obj.executed == false){
+        drooling();
+        obj.executed = true;
+        setClearCreate(6950);
+      }
+    }
+    if(currentTime == 47){
+      let obj = text.find(obj => obj.id == 11);
+      if(obj.executed == false){
+        electricSheep();
         obj.executed = true;
         setClearCreate(3950);
       }

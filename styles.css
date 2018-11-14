@@ -32,6 +32,12 @@
   font-family: handWritten;
   src: url('Handletterink.otf');
 }
+@font-face{
+  font-family: px-vga;
+  src: url("fonts/PxPlus_VGA_SquarePx.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
 body{
   background-color: var(--bodyColor);
   margin: 0;
@@ -255,6 +261,7 @@ padding-right: 10px;
   text-align: center;
   color: var(--fontColor);
   display: inline;
+  font-family: "px-vga", cursive;
 }
 #blinking-cursor{
   font-weight: 100;
