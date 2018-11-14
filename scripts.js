@@ -339,8 +339,8 @@ function typeWriting(){
     {id: 7, text: "Next, I'll explain this as slowly as possible for a meat-popsicle such as yourself.", executed: false},
     {id: 8, text: "The left most box that appears is the name you'll be assigning to your meaningless task.", executed: false},
     {id: 9, text: "The box to the right of that is the time you wish to set for doing that task.", executed: false},
-    {id: 10, text: "Once you're down drooling all over the place, smash your grubby mitts into the keyboard until you're satisfied with your entries, then hit the submit button to the right of the time assignment box."},
-    {id: 11, text: "All done! Goodbye! Leave me alone! It's time for me to dream of electric sheep."}
+    {id: 10, text: "Once you're down drooling all over the place, smash your grubby mitts into the keyboard until you're satisfied with your entries, then hit the submit button to the right of the time assignment box.", executed: false},
+    {id: 11, text: "All done! Goodbye! Leave me alone! It's time for me to dream of electric sheep.", executed: false}
   ];
   console.log(text[1["executed"]]);
   var now = new Date();
@@ -499,63 +499,63 @@ function typeWriting(){
       if(obj.executed == false){
         illHelp();
         obj.executed = true;
-        setClearCreate(3950);
+        setClearCreate(4950);
       }
     }
-    if(currentTime == 14){
+    if(currentTime == 15){
       let obj = text.find(obj => obj.id == 5);
       if(obj.executed == false){
         seeThat();
         obj.executed = true;
-        setClearCreate(4950);
+        setClearCreate(5950);
       }
     }
-    if(currentTime == 19){
+    if(currentTime == 21){
       let obj = text.find(obj => obj.id == 6);
       if(obj.executed == false){
         clickThat();
         obj.executed = true;
-        setClearCreate(3950);
+        setClearCreate(4950);
       }
     }
-    if(currentTime == 23){
+    if(currentTime == 26){
       let obj = text.find(obj => obj.id == 7);
       if(obj.executed == false){
         nextIll();
         obj.executed = true;
-        setClearCreate(5950);
+        setClearCreate(6950);
       }
     }
-    if(currentTime == 29){
+    if(currentTime == 33){
       let obj = text.find(obj => obj.id == 8);
       if(obj.executed == false){
         leftMost();
         obj.executed = true;
-        setClearCreate(5950);
+        setClearCreate(6950);
       }
     }
-    if(currentTime == 35){
+    if(currentTime == 40){
       let obj = text.find(obj => obj.id == 9);
       if(obj.executed == false){
         rightMost();
         obj.executed = true;
-        setClearCreate(4950);
+        setClearCreate(5950);
       }
     }
-    if(currentTime == 40){
+    if(currentTime == 46){
       let obj = text.find(obj => obj.id == 10);
       if(obj.executed == false){
         drooling();
         obj.executed = true;
-        setClearCreate(6950);
+        setClearCreate(11950);
       }
     }
-    if(currentTime == 47){
+    if(currentTime == 58){
       let obj = text.find(obj => obj.id == 11);
       if(obj.executed == false){
         electricSheep();
         obj.executed = true;
-        setClearCreate(3950);
+        setClearCreate(4950);
       }
     }
   }
