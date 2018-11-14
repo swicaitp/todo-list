@@ -256,6 +256,13 @@ padding-right: 10px;
   transition-duration: 0.5s;
   transition-timing-function: ease-in-out;
 }
+#helper-button{
+position: absolute;
+left: 0;
+font-size: 5.2rem;
+margin-left: 15px;
+color: var(--fontColor);
+}
 #welcome-message{
   font-size: 3rem;
   text-align: center;
