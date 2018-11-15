@@ -300,6 +300,9 @@ color: var(--fontColor);
     color: var(--terminalColor);
   }
 }
+.property-stamp{
+font-family: "Open Sans", sans-serif;
+}
 .trumpets{
   padding: 0;
   margin: 0;
