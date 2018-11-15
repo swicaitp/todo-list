@@ -10,7 +10,7 @@
   --progressBarColor: #333E48;
   --enterButtonColor: #333E48;
   --titleColor: #333E48;
-  --terminalColor: #5B79FF;
+  --terminalColor: #32CD32;
   --bodyColor: #EAEFF1;
   --taskListColor: #8d8d8d;
   --darkerBlueHighlightColor: #237FCA;
@@ -291,7 +291,6 @@ color: var(--fontColor);
 #blinking-cursor{
   font-weight: 100;
   font-size: 3rem;
-  color: var(--terminalColor);
   animation: 1s blink step-end infinite;
   visibility: hidden;
 }
