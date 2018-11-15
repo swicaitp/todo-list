@@ -329,7 +329,8 @@ function clock(){
 }
 //Get Helper-Button
 const helperButton = document.getElementById("helper-button");
-const blinkingCursor = document.getElementById("blinking-cursor");
+//Counter for times asked for assistance
+var timesHelper = 0;
 function typeWriting(){
   var text = [
     {id: 0, text: "Initializing...", executed: false},
@@ -346,6 +347,7 @@ function typeWriting(){
     {id: 11, text: "All done! Goodbye! Leave me alone! It's time for me to dream of electric sheep.", executed: false},
     {id: 12, text: "Exiting...", executed: false}
   ];
+  const blinkingCursor = document.getElementById("blinking-cursor");
   var terminal = document.getElementById("welcome-message");
   var currentTime = 0;
   var speed = 50;
@@ -593,15 +595,16 @@ function typeWriting(){
       if(obj.executed == false){
         exiting();
         obj.executed = true;
-        setClearCreate(2950);
+        setClearCreate(3000);
       }
     }
-    if(currentTime == 70.5){
+    if(currentTime == 71){
       blinkingCursor.style.visibility = "hidden";
     }
   }
   //Check if statements of typeWriter every half second
   setInterval(typeWriter, 500);
+  timesHelper++;
 }
 
 enterButton.addEventListener("click", addListAfterClick);
