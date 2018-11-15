@@ -343,12 +343,18 @@ function typeWriting(){
     {id: 7, text: "Now, I'll explain this as slowly as possible for a meat-popsicle such as yourself.", executed: false},
     {id: 8, text: "The left most box that appears is the name you'll be assigning to your meaningless task.", executed: false},
     {id: 9, text: "The box to the right of that is the time you wish to set for doing that task.", executed: false},
-    {id: 10, text: "Once you're done drooling all over the place, smash your grubby mitts into the keyboard until you're satisfied with your entries, then hit the submit button to the right of the time assignment box.", executed: false},
-    {id: 11, text: "All done! Goodbye! Leave me alone! It's time for me to dream of electric sheep.", executed: false},
-    {id: 12, text: "Exiting...", executed: false}
+    {id: 10, text: "The right most box is the date box, where you select whether the task will be for today, or at a later date.", executed: false},
+    {id: 11, text: "Once you're done drooling all over the place, smash your grubby mitts into the keyboard until you're satisfied with your entries, then hit the submit button to the right of the time assignment box.", executed: false},
+    {id: 12, text: "All done! Goodbye! Leave me alone! It's time for me to dream of electric sheep.", executed: false},
+    {id: 13, text: "Exiting...", executed: false}
   ];
   const blinkingCursor = document.getElementById("blinking-cursor");
   const toDoHelper = document.getElementById("to-do-helper");
+  const taskInputField = document.getElementById("taskInput");
+  const timeInputField = document.getElementById("timeInput");
+  const dateInputField = document.getElementById("dateInput");
+  const enterButton = document.getElementById("enter");
+  const plusButton = document.getElementById("plus");
   var terminal = document.getElementById("welcome-message");
   var currentTime = 0;
   var speed = 50;
@@ -389,6 +395,7 @@ function typeWriting(){
     var r = 0;
     var s = 0;
     var t = 0;
+    var u = 0;
     function initializing(){
       let obj = text.find(obj => obj.id == 0);
       if(h < obj.text.length){
@@ -471,8 +478,16 @@ function typeWriting(){
         setTimeout(rightMost, speed);
       }
     }
-    function drooling(){
+    function dateInputExplain(){
       let obj = text.find(obj => obj.id == 10);
+      if(u < obj.text.length){
+        terminal.innerHTML += obj.text.charAt(u);
+        u++;
+        setTimeout(dateInputExplain, speed);
+      }
+    }
+    function drooling(){
+      let obj = text.find(obj => obj.id == 11);
       if(r < obj.text.length){
         terminal.innerHTML += obj.text.charAt(r);
         r++;
@@ -480,7 +495,7 @@ function typeWriting(){
       }
     }
     function electricSheep(){
-      let obj = text.find(obj => obj.id == 11);
+      let obj = text.find(obj => obj.id == 12);
       if(s < obj.text.length){
         terminal.innerHTML += obj.text.charAt(s);
         s++;
@@ -488,12 +503,27 @@ function typeWriting(){
       }
     }
     function exiting(){
-      let obj = text.find(obj => obj.id == 12);
+      let obj = text.find(obj => obj.id == 13);
       if(t < obj.text.length){
         terminal.innerHTML += obj.text.charAt(t);
         t++;
         setTimeout(exiting, speed);
       }
+    }
+    function taskFocus(){
+      taskInputField.focus();
+    }
+    function timeFocus(){
+      timeInputField.focus();
+    }
+    function dateFocus(){
+      dateInputField.click();
+    }
+    function enterFocus(){
+      enterButton.click();
+    }
+    function plusFocus(){
+      plusButton.click();
     }
     if(currentTime == 0.5){
       let obj = text.find(obj => obj.id == 0);
@@ -553,6 +583,9 @@ function typeWriting(){
         setClearCreate(4950);
       }
     }
+    if(currentTime == 27){
+      plusFocus();
+    }
     if(currentTime == 28){
       let obj = text.find(obj => obj.id == 7);
       if(obj.executed == false){
@@ -562,6 +595,7 @@ function typeWriting(){
       }
     }
     if(currentTime == 35){
+      taskFocus();
       let obj = text.find(obj => obj.id == 8);
       if(obj.executed == false){
         leftMost();
@@ -570,6 +604,7 @@ function typeWriting(){
       }
     }
     if(currentTime == 42){
+      timeFocus();
       let obj = text.find(obj => obj.id == 9);
       if(obj.executed == false){
         rightMost();
@@ -578,32 +613,50 @@ function typeWriting(){
       }
     }
     if(currentTime == 48){
+      dateFocus();
       let obj = text.find(obj => obj.id == 10);
+      if(obj.executed == false){
+        dateInputExplain();
+        obj.executed = true;
+        setClearCreate(7950);
+      }
+    }
+    if(currentTime == 56){
+      enterFocus();
+      let obj = text.find(obj => obj.id == 11);
       if(obj.executed == false){
         drooling();
         obj.executed = true;
         setClearCreate(13950);
       }
     }
-    if(currentTime == 62){
-      let obj = text.find(obj => obj.id == 11);
+    if(currentTime == 68){
+      let i = 0;
+      while(i < 3){
+        setTimeout(enterFocus(), 500);
+        i++;
+      }
+    }
+
+    if(currentTime == 70){
+      let obj = text.find(obj => obj.id == 12);
       if(obj.executed == false){
         electricSheep();
         obj.executed = true;
         setClearCreate(5950);
       }
     }
-    if(currentTime == 68){
+    if(currentTime == 76){
       //Hide Helper
       toDoHelper.style.visibility = "hidden";
-      let obj = text.find(obj => obj.id == 12);
+      let obj = text.find(obj => obj.id == 13);
       if(obj.executed == false){
         exiting();
         obj.executed = true;
         setClearCreate(3000);
       }
     }
-    if(currentTime == 71){
+    if(currentTime == 79){
       //Hide Cursor
       blinkingCursor.style.visibility = "hidden";
     }
