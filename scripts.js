@@ -348,6 +348,7 @@ function typeWriting(){
     {id: 12, text: "Exiting...", executed: false}
   ];
   const blinkingCursor = document.getElementById("blinking-cursor");
+  const toDoHelper = document.getElementById("to-do-helper");
   var terminal = document.getElementById("welcome-message");
   var currentTime = 0;
   var speed = 50;
@@ -503,6 +504,8 @@ function typeWriting(){
       }
     }
     if(currentTime === 3){
+      //Display Helper
+      toDoHelper.style.visibility = "visible";
       let obj = text.find(obj => obj.id == 1);
       if(obj.executed == false){
         helloAndWelcome();
@@ -591,6 +594,8 @@ function typeWriting(){
       }
     }
     if(currentTime == 68){
+      //Hide Helper
+      toDoHelper.style.visibility = "hidden";
       let obj = text.find(obj => obj.id == 12);
       if(obj.executed == false){
         exiting();
@@ -599,6 +604,7 @@ function typeWriting(){
       }
     }
     if(currentTime == 71){
+      //Hide Cursor
       blinkingCursor.style.visibility = "hidden";
     }
   }
