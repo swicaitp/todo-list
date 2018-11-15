@@ -280,6 +280,12 @@ padding-right: 10px;
   /* position: absolute;
   bottom: 20vh; */
 }
+#terminal-button{
+position: absolute;
+right: 1px;
+bottom: 1px;
+color: var(--fontColor);
+}
 #helper-button{
 position: absolute;
 left: 0;

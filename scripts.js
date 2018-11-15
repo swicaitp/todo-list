@@ -13,11 +13,13 @@ var footerElement = document.getElementById("footer");
 var footerStyle = document.getElementById("footer").style;
 var titleElement = document.getElementById("title");
 var titleStyle = document.getElementById("title");
+const goTerminal = document.getElementById("terminalDimension");
 var rootCustomProperties = window.getComputedStyle(document.documentElement);
 var headerColorValue = rootCustomProperties.getPropertyValue("--themeColor");
 var highLightColorValue = rootCustomProperties.getPropertyValue("--highLightColor");
 var borderColorValue = rootCustomProperties.getPropertyValue("--borderColor");
 var terminalColor = rootCustomProperties.getPropertyValue("--terminalColor");
+var fontColor = rootCustomProperties.getPropertyValue("--fontColor");
 var screenSize = window.matchMedia('(max-width <= 600px)');
 var progress = 0;
 //START TIME-OUT CORNER//
@@ -47,6 +49,7 @@ function colorPicker(){
   var optionBlue = document.getElementById("lightBlue");
   var optionRed = document.getElementById("darkRed");
   var optionGreen = document.getElementById("green");
+  var terminalOption = document.getElementById("terminalDimension");
   switch(colorPickerValue.value){
     case optionBlue.value:
     document.documentElement.style.setProperty("--themeColor", "#94C3CD");
@@ -111,7 +114,6 @@ function showInput(){
   } else {
     inputContainer.style.visibility = "hidden";
   }
-  plus.anima
 }
 //End Input Pop-in//
 
