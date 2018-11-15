@@ -21,20 +21,37 @@ html{
 body{
   box-sizing: border-box;
   margin: 0;
+  height: 100%;
   font-size: 16px;
   background-color: var(--terminalColor);
   color: var(--terminalFontColor);
 }
+.terminal-container{
+  box-sizing: border-box;
+  height: 100%;
+  display: grid;
+  grid-template:
+    "helper helper helper" auto
+    "helper helper helper" auto
+    "terminal terminal terminal" 10%
+    / 33.3% 33.3% 33.3%;
+}
+.helper-container{
+  grid-area: helper;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
 #helper{
-  display: inline;
+  display: block;
 }
 .terminal{
   box-sizing: border-box;
   height: 100%;
   width: 100%;
-  display: inline-block;
-  position: fixed;
-  bottom: 0;
+  display: block;
+  grid-area: terminal;
 }
 #terminal-start{
   float: left;
@@ -46,13 +63,13 @@ body{
   background-color: transparent;
   border: none;
   width: 100%;
-  height: 100%;
+  height: 100%;;
   caret-color: var(--terminalFontColor);
   color: var(--terminalFontColor);
   font-size: 2rem;
   font-family: "px-vga", Arial, Helvetica, sans-serif;
   display: block;
-  overflow: hidden;
+  overflow-wrap: break-word;
 }
 #terminal-input:focus{
   outline: none;
