@@ -275,6 +275,7 @@ color: var(--fontColor);
   font-size: 3rem;
   color: var(--fontColor);
   animation: 1s blink step-end infinite;
+  visibility: hidden;
 }
 @keyframes blink{
   from, to{

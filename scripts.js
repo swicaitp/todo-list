@@ -329,6 +329,7 @@ function clock(){
 }
 //Get Helper-Button
 const helperButton = document.getElementById("helper-button");
+const blinkingCursor = document.getElementById("blinking-cursor");
 function typeWriting(){
   var text = [
     {id: 0, text: "Initializing...", executed: false},
@@ -348,6 +349,8 @@ function typeWriting(){
   var terminal = document.getElementById("welcome-message");
   var currentTime = 0;
   var speed = 50;
+  //Display Terminal Text Cursor
+  blinkingCursor.style.visibility = "visible";
   function incrementCurrentTime(){
     currentTime += 0.5;
   }
@@ -592,6 +595,9 @@ function typeWriting(){
         obj.executed = true;
         setClearCreate(2950);
       }
+    }
+    if(currentTime == 70.5){
+      blinkingCursor.style.visibility = "hidden";
     }
   }
   //Check if statements of typeWriter every half second
