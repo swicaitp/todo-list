@@ -511,12 +511,17 @@ function typeWriting(){
       }
     }
     function taskFocus(){
+      taskInputField.classList.add("helperInput");
       taskInputField.focus();
     }
     function timeFocus(){
+      taskInputField.classList.remove("helperInput");
+      timeInputField.classList.add("helperInput");
       timeInputField.focus();
     }
     function dateFocus(){
+      timeInputField.classList.remove("helperInput");
+      dateInputField.classList.add("helperInput");
       dateInputField.click();
     }
     function enterFocus(){
