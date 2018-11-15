@@ -54,9 +54,6 @@ body{
   transition-property: background-image;
   transition-duration: 0.4s;
 }
-.parallaxBackground{
-
-}
 .password {
   color: rgb(192, 0, 0);
 }
