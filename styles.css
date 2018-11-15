@@ -177,7 +177,12 @@ li > .taskContainer > button {
 display: block;
 justify-content: center;
 flex-direction: row;
-
+}
+#taskInput, #timeInput{
+  border-radius: 5px;
+}
+#taskInput, #timeInput, #dateInput{
+  margin-right: 10px;
 }
 .taskInputValue{
 float: left;
@@ -194,8 +199,6 @@ float: left;
   border: 1px solid var(--highLightColor);
   transition: all;
   transition-duration: 0.4s;
-  visibility: hidden;
-  display: none;
   max-width: 1.5in;
 }
 input:hover{
