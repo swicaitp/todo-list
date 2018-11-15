@@ -17,6 +17,7 @@ var rootCustomProperties = window.getComputedStyle(document.documentElement);
 var headerColorValue = rootCustomProperties.getPropertyValue("--themeColor");
 var highLightColorValue = rootCustomProperties.getPropertyValue("--highLightColor");
 var borderColorValue = rootCustomProperties.getPropertyValue("--borderColor");
+var terminalColor = rootCustomProperties.getPropertyValue("--terminalColor");
 var screenSize = window.matchMedia('(max-width <= 600px)');
 var progress = 0;
 //START TIME-OUT CORNER//
@@ -522,13 +523,18 @@ function typeWriting(){
     function dateFocus(){
       timeInputField.classList.remove("helperInput");
       dateInputField.classList.add("helperInput");
-      dateInputField.click();
+      dateInputField.focus();
     }
     function enterFocus(){
+
       enterButton.click();
     }
     function plusFocus(){
       plusButton.click();
+    }
+    function enterFocusStyle(){
+      enterButton.style.backgroundColor = "black";
+      enterButton.style.color = terminalColor;
     }
     if(currentTime == 0.5){
       let obj = text.find(obj => obj.id == 0);
