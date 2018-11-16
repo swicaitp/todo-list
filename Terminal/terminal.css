@@ -35,25 +35,31 @@ body{
   grid-template:
     "helper helper helper" auto
     "helper helper helper" auto
-    "helper-terminal helper-terminal helper-terminal" 15%
+    "helper-terminal helper-terminal helper-terminal" 25%
     /* "output output output" 20% */
     /* "terminal-header terminal-header terminal-header" 3.5% */
-    "terminal terminal terminal" 20%
+    "terminal terminal terminal" 25%
     / auto auto;
 }
 .helper-container{
   grid-area: helper;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   width: 100%;
 }
 #helper{
   display: block;
-  height: 65%;
+  height: 90%;
 }
 .helper-terminal{
   grid-area: helper-terminal;
+  text-align: center;
+}
+.helper-message{
+  text-align: center;
+  height: 100%;
+  width: 100%;
 }
 #console-helper{
   height: 20px;
@@ -71,6 +77,12 @@ body{
   font-size: 2rem;
   display: block;
   grid-area: terminal;
+}
+.terminal-message{
+  text-align: center;
+  font-size: 2rem;
+  width: 100%;
+  height: 100%;
 }
 .terminal-input-form{
 height: 100%;
