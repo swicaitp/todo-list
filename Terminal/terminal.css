@@ -36,20 +36,21 @@ body{
     "helper helper helper" auto
     "helper helper helper" auto
     "helper-terminal helper-terminal helper-terminal" 15%
-    "output output output" 20%
-    "terminal-header terminal-header terminal-header" 3.5%
-    "terminal terminal terminal" 10%
+    /* "output output output" 20% */
+    /* "terminal-header terminal-header terminal-header" 3.5% */
+    "terminal terminal terminal" 20%
     / auto auto;
 }
 .helper-container{
   grid-area: helper;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   width: 100%;
 }
 #helper{
   display: block;
+  height: 65%;
 }
 .helper-terminal{
   grid-area: helper-terminal;
