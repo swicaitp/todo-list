@@ -35,10 +35,10 @@ body{
   grid-template:
     "helper helper helper" auto
     "helper helper helper" auto
-    "helper-terminal helper-terminal helper-terminal" 25%
+    "helper-terminal helper-terminal helper-terminal" 20%
     /* "output output output" 20% */
     /* "terminal-header terminal-header terminal-header" 3.5% */
-    "terminal terminal terminal" 25%
+    "terminal terminal terminal" 30%
     / auto auto;
 }
 .helper-container{
@@ -55,11 +55,13 @@ body{
 .helper-terminal{
   grid-area: helper-terminal;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .helper-message{
   text-align: center;
-  height: 100%;
-  width: 100%;
+  font-size: 2rem;
 }
 #console-helper{
   height: 20px;
