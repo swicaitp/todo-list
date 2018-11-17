@@ -11,7 +11,7 @@ const Typer = {
   add: async (str) => {const chars = str.split("")//Creates string type array
   for(c in chars){ //Iterates through that newly create string array "srt"
     await Typer.pause(); // Waits to finish each loop until the Typer.pause setTimeout has passed, in this case, 100 milliseconds
-    Typer.INNER.innerHTML += chars[c]; //Added each character to the inner.html of helper-message div
+    Typer.INNER.innerHTML += chars[c]; //Adds each character to the inner.html of helper-message div
   }
 },
 
@@ -36,7 +36,7 @@ const Typer = {
 }
 
 const helperMessages = [{text: "OH."}, {text: "You're here..."}, {text: "Well this is awkward"}];
-// Typer.cycleText(helperMessages);
+Typer.cycleText(helperMessages);
 // function welcomeMessage(){
 //   return new Promise(resolve => { setTimeout(() => { resolve(helperMessages.text);}, 2000);});
 // }
