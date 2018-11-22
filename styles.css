@@ -209,6 +209,7 @@ input:hover{
 .helperInput:focus{
 border-color: var(--terminalColor);
 font-family: "px-vga", sans-serif;
+font-size: 1.5rem;
 background-color: black;
 color: var(--terminalColor);
 border: 1px solid var(--terminalColor);
