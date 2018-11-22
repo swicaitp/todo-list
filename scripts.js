@@ -743,3 +743,5 @@ taskInput.addEventListener("keypress", addListAfterEvent);
 timeInput.addEventListener("keypress", addListAfterEvent);
 helperButton.addEventListener("click", typeWriting);
 window.addEventListener("load", clock);
+window.addEventListener("load" ,() => {document.getElementById("colorPickerSelect").value = document.getElementById("defaultColor").value});
+window.addEventListener("load", colorPicker);
