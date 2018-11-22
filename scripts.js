@@ -51,6 +51,8 @@ function colorPicker(){
   var plus = document.getElementById("plus");
   var ghost = document.getElementById("ghost");
   var progress = document.getElementById("progress");
+  var progressBar = document.getElementById("progressBar")
+  var progressBarFill = document.getElementById("progressBarFill");
   var propertyStamp = document.getElementsByClassName("property-stamp")[0];
   var taskInputField = document.getElementById("taskInput");
   var timeInputField = document.getElementById("timeInput");
@@ -69,14 +71,15 @@ function colorPicker(){
     banner.style.fontFamily = bannerfont;
     progress.style.fontFamily = progressfont;
     propertyStamp.style.fontFamily = propertystampfont;
-    backfaceColor = rootCustomProperties.getPropertyValue("--themeColor");;
-    document.body.style.backgroundImage = "url(" + backgroundimage + ")";
+    backfaceColor = rootCustomProperties.getPropertyValue("--themeColor");
+    document.body.style.backgroundImage = "url('" + backgroundimage + "')";
+    progressBar.style.backgroundColor = rootCustomProperties.getPropertyValue("--themeColor");
+    progressBarFill.style.backgroundColor = rootCustomProperties.getPropertyValue("--goldenHighlightColor");
   }
   switch(colorPickerValue.value){
 
     case optionBlue.value:
-
-    themeChange("#94C3CD", "#94B9CD", "#EAEFF1", "#EAEFF1", "Permanent Marker", "foxlite_scriptregular", "Permanent Marker", "Open Sans", "Assets/Minimalist Waves.png");
+    themeChange("#94C3CD", "#94B9CD", "#EAEFF1", "#EAEFF1", "Permanent Marker", "foxlite_scriptregular", "Permanent Marker", "Open Sans", "Assets/Minimalist Waves.png", );
     if(taskInputField.classList.contains("terminal-input")){
       taskInputField.classList.remove("terminal-input");
       timeInputField.classList.remove("terminal-input");
@@ -85,57 +88,30 @@ function colorPicker(){
     break;
 
     case optionRed.value:
-    document.documentElement.style.setProperty("--themeColor", "#8c0000");
-    document.documentElement.style.setProperty("--highLightColor", "#5b0000");
-    document.documentElement.style.setProperty("--borderColor", "#111");
-    document.documentElement.style.setProperty("--fontColor", "#EAEFF1");
-    topTitle.style.fontFamily = "Permanent Marker";
-    banner.style.fontFamily = "foxlite_scriptregular";
-    progress.style.fontFamily = "Permanent Marker";
-    propertyStamp.style.fontFamily = "Open Sans";
-    backfaceColor = headerColorValue;
+    themeChange("#8c0000", "#5b0000", "#111", " #EAEFF1", "Permanent Marker", " foxlite_scriptregular", "Permanent Marker", "Open Sans", "Assets/New Face Bulb.png");
     if(taskInputField.classList.contains("terminal-input")){
       taskInputField.classList.remove("terminal-input");
       timeInputField.classList.remove("terminal-input");
       dateInputField.classList.remove("terminal-input");
     }
-    document.body.style.backgroundImage = "url('Assets/New Face Bulb.png')";
     break;
 
     case optionGreen.value:
-    document.documentElement.style.setProperty("--themeColor", "#72e592");
-    document.documentElement.style.setProperty("--highLightColor", "#00c62e");
-    document.documentElement.style.setProperty("--borderColor", "#EAEFF1");
-    document.documentElement.style.setProperty("--fontColor", "#EAEFF1");
-    topTitle.style.fontFamily = "Permanent Marker";
-    banner.style.fontFamily = "foxlite_scriptregular";
-    progress.style.fontFamily = "Permanent Marker";
-    propertyStamp.style.fontFamily = "Open Sans";
-    backfaceColor = headerColorValue;
+    themeChange("#72e592", "#00c62e", "#EAEFF1", "#EAEFF1", "Permanent Marker", "foxlite_scriptregular", "Permanent Marker", "Open Sans", "Assets/Disk Storage Evolution Flat Minimalist Desktop Wallpaper.jpg");
     if(taskInputField.classList.contains("terminal-input")){
       taskInputField.classList.remove("terminal-input");
       timeInputField.classList.remove("terminal-input");
       dateInputField.classList.remove("terminal-input");
     }
-    document.body.style.backgroundImage = "url('Assets/Disk Storage Evolution Flat Minimalist Desktop Wallpaper.jpg')";
     break;
 
     case defaultOption.value:
-    document.documentElement.style.setProperty("--themeColor", "#333E48");
-    document.documentElement.style.setProperty("--highLightColor", "#586877");
-    document.documentElement.style.setProperty("--borderColor", "#EAEFF1");
-    document.documentElement.style.setProperty("--fontColor", "#EAEFF1");
-    topTitle.style.fontFamily = "Permanent Marker";
-    banner.style.fontFamily = "foxlite_scriptregular";
-    progress.style.fontFamily = "Permanent Marker";
-    propertyStamp.style.fontFamily = "Open Sans";
-    backfaceColor = headerColorValue;
+    themeChange("#333E48", "#586877", "#EAEFF1", "#EAEFF1", "Permanent Marker", "foxlite_scriptregular", "Permanent Marker", "Open Sans", "Assets/Phases of the Moon.jpg");
     if(taskInputField.classList.contains("terminal-input")){
       taskInputField.classList.remove("terminal-input");
       timeInputField.classList.remove("terminal-input");
       dateInputField.classList.remove("terminal-input");
     }
-    document.body.style.backgroundImage = "url('Assets/Phases of the Moon.jpg')";
     break;
 
     case terminalOption.value:
@@ -153,6 +129,8 @@ function colorPicker(){
     progress.style.fontFamily = "px-vga";
     propertyStamp.style.fontFamily = "px-vga";
     backfaceColor = "black";
+    progressBar.style.backgroundColor = "#32CD32"
+    progressBarFill.style.backgroundColor = "#FFB000";
     break;
 
     default:
