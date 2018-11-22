@@ -212,6 +212,12 @@ background-color: black;
 color: var(--terminalColor);
 border: 1px solid var(--terminalColor);
 }
+.terminal-input{
+  border-color: var(--terminalColor);
+  background-color: black;
+  color: var(--terminalColor);
+  border: 1px solid var(--terminalColor);
+}
 .enterButtonHelperFocus{
   border-color: var(--terminalColor);
   background-color: black;
