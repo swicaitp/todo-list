@@ -20,6 +20,7 @@ var highLightColorValue = rootCustomProperties.getPropertyValue("--highLightColo
 var borderColorValue = rootCustomProperties.getPropertyValue("--borderColor");
 var terminalColor = rootCustomProperties.getPropertyValue("--terminalColor");
 var fontColor = rootCustomProperties.getPropertyValue("--fontColor");
+var backfaceColor = headerColorValue;
 var screenSize = window.matchMedia('(max-width <= 600px)');
 var progress = 0;
 //START TIME-OUT CORNER//
@@ -49,33 +50,48 @@ function colorPicker(){
   var optionBlue = document.getElementById("lightBlue");
   var optionRed = document.getElementById("darkRed");
   var optionGreen = document.getElementById("green");
-  var terminalOption = document.getElementById("terminalDimension");
+  var terminalOption = document.getElementById("terminal-theme");
   switch(colorPickerValue.value){
     case optionBlue.value:
     document.documentElement.style.setProperty("--themeColor", "#94C3CD");
     document.documentElement.style.setProperty("--highLightColor", "#94B9CD")
     document.documentElement.style.setProperty("--borderColor", "#EAEFF1");
+    document.documentElement.style.setProperty("--fontColor", "#EAEFF1");
+    backfaceColor = headerColorValue;
     document.body.style.backgroundImage = "url('Assets/Minimalist Waves.png')";
-
     break;
     case optionRed.value:
     document.documentElement.style.setProperty("--themeColor", "#8c0000");
     document.documentElement.style.setProperty("--highLightColor", "#5b0000");
     document.documentElement.style.setProperty("--borderColor", "#111");
+    document.documentElement.style.setProperty("--fontColor", "#EAEFF1");
+    backfaceColor = headerColorValue;
     document.body.style.backgroundImage = "url('Assets/New Face Bulb.png')";
     break;
     case optionGreen.value:
     document.documentElement.style.setProperty("--themeColor", "#72e592");
     document.documentElement.style.setProperty("--highLightColor", "#00c62e");
     document.documentElement.style.setProperty("--borderColor", "#EAEFF1");
+    document.documentElement.style.setProperty("--fontColor", "#EAEFF1");
+    backfaceColor = headerColorValue;
     document.body.style.backgroundImage = "url('Assets/Disk Storage Evolution Flat Minimalist Desktop Wallpaper.jpg')";
     break;
     case defaultOption.value:
     document.documentElement.style.setProperty("--themeColor", "#333E48");
     document.documentElement.style.setProperty("--highLightColor", "#586877");
     document.documentElement.style.setProperty("--borderColor", "#EAEFF1");
+    document.documentElement.style.setProperty("--fontColor", "#EAEFF1");
+    backfaceColor = headerColorValue;
     document.body.style.backgroundImage = "url('Assets/Phases of the Moon.jpg')";
     break;
+    case terminalOption.value:
+    document.documentElement.style.setProperty("--themeColor", "#000000");
+    document.documentElement.style.setProperty("--highLightColor", "#32CD32");
+    document.documentElement.style.setProperty("--borderColor", "#32CD32");
+    document.body.style.backgroundImage = "none";
+    document.body.style.backgroundColor = "black";
+    document.documentElement.style.setProperty("--fontColor" , "#32CD32");
+    backfaceColor = "black";
     default:
     alert("That's not gonna fly, bucko");
   }
@@ -262,15 +278,15 @@ function clock(){
       //Start Backface
       ctx.beginPath();
       ctx.arc(0, 0, radius, 0, 2*Math.PI);
-      ctx.fillStyle = headerColorValue;
+      ctx.fillStyle = backfaceColor;
       ctx.fill();
       //End Backface
       //Start Frontface
       //Start Outer Rim
       grad = ctx.createRadialGradient(0, 0, radius * 0.95, 0, 0, radius * 1.05);
-      grad.addColorStop(0, highLightColorValue);
-      grad.addColorStop(0.5, borderColorValue);
-      grad.addColorStop(1.0, highLightColorValue);
+      grad.addColorStop(0, window.getComputedStyle(document.documentElement).getPropertyValue("--fontColor"));
+      grad.addColorStop(0.5, window.getComputedStyle(document.documentElement).getPropertyValue("--fontColor"));
+      grad.addColorStop(1.0, window.getComputedStyle(document.documentElement).getPropertyValue("--fontColor"));
       ctx.strokeStyle = grad;
       ctx.lineWidth = radius * 0.1;
       ctx.stroke();
@@ -278,7 +294,7 @@ function clock(){
       //Start Hand Base
       ctx.beginPath();
       ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
-      ctx.fillStyle = borderColorValue;
+      ctx.fillStyle = window.getComputedStyle(document.documentElement).getPropertyValue("--fontColor");
       ctx.fill();
       //End Hand Base
       //End Frontface
