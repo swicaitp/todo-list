@@ -73,17 +73,17 @@ font-family: 'foxlite_scriptregular', normal;
 transition-property: background-color;
 transition-duration: 0.4s;
 }
-#headerbar #ghost{
+#ghost{
   color: var(--fontColor);
   padding: 10px 0 0 0;
 }
-#headerbar #banner{
+#banner{
 font-size: 1.20em;
 height: 82px;
 align-self: flex-end;
 color: var(--fontColor);
 }
-#headerbar #plus{
+#plus{
   color: var(--fontColor);
   padding-right: 10px;
   animation: pressed 0.25s 2 alternate;
