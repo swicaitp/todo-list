@@ -48,8 +48,6 @@ function colorPicker(){
   var colorPickerValue = document.getElementById("colorPickerSelect");
   var topTitle = document.getElementById("topTitle");
   var banner = document.getElementById("banner");
-  var bannerComputedStyle = window.getComputedStyle(document.getElementById("banner"));
-  var bannerAlignmentGetValue = bannerComputedStyle.getPropertyValue("align-self");
   var plus = document.getElementById("plus");
   var ghost = document.getElementById("ghost");
   var progress = document.getElementById("progress");
@@ -128,7 +126,7 @@ function colorPicker(){
     dateInputField.classList.add("terminal-input");
     topTitle.style.fontFamily = "px-vga";
     banner.style.fontFamily = "px-vga";
-    bannerComputedStyle.setProperty("align-self", "flex-start");
+    banner.style.alignSelf = "baseline";
     progress.style.fontFamily = "px-vga";
     propertyStamp.style.fontFamily = "px-vga";
     backfaceColor = "black";
