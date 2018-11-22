@@ -184,6 +184,8 @@ flex-direction: row;
 #taskInput, #timeInput, #dateInput{
   margin-right: 10px;
   border-style: solid;
+  transition: all;
+  transition-duration: 0.4s;
 }
 
 .taskInputValue{
@@ -199,8 +201,6 @@ float: left;
   border-radius: 5px;
 	padding: 4px;
   border: 1px solid var(--highLightColor);
-  transition: all;
-  transition-duration: 0.4s;
   max-width: 1.5in;
 }
 input:hover{
@@ -208,17 +208,20 @@ input:hover{
 }
 .helperInput:focus{
 border-color: var(--terminalColor);
+font-family: "px-vga", sans-serif;
 background-color: black;
 color: var(--terminalColor);
 border: 1px solid var(--terminalColor);
 }
 .terminal-input{
   border-color: var(--terminalColor);
+  font-family: "px-vga", sans-serif;
+  font-size: 1.5rem;
   background-color: black;
   color: var(--terminalColor);
   border: 1px solid var(--terminalColor);
 }
-.enterButtonHelperFocus{
+.enterButtonHelperFocus:focus{
   border-color: var(--terminalColor);
   background-color: black;
   color: var(--terminalColor);
