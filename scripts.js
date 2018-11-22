@@ -46,44 +46,98 @@ BackgroundChange(screenSize);
 //Start ColorPicker//
 function colorPicker(){
   var colorPickerValue = document.getElementById("colorPickerSelect");
+  var topTitle = document.getElementById("topTitle");
+  var banner = document.getElementById("banner");
+  var plus = document.getElementById("plus");
+  var ghost = document.getElementById("ghost");
+  var progress = document.getElementById("progress");
+  var propertyStamp = document.getElementsByClassName("property-stamp")[0];
+  var taskInputField = document.getElementById("taskInput");
+  var timeInputField = document.getElementById("timeInput");
+  var dateInputField = document.getElementById("dateInput");
   var defaultOption = document.getElementById("defaultColor");
   var optionBlue = document.getElementById("lightBlue");
   var optionRed = document.getElementById("darkRed");
   var optionGreen = document.getElementById("green");
   var terminalOption = document.getElementById("terminal-theme");
+  function themeChange(themecolor, highlightcolor, bordercolor, fontcolor, toptitlefont, bannerfont, progressfont, propertystampfont, backgroundimage){
+    document.documentElement.style.setProperty("--themeColor", themecolor);
+    document.documentElement.style.setProperty("--highLightColor", highlightcolor);
+    document.documentElement.style.setProperty("--borderColor", bordercolor);
+    document.documentElement.style.setProperty("--fontColor", fontcolor);
+    topTitle.style.fontFamily = toptitlefont;
+    banner.style.fontFamily = bannerfont;
+    progress.style.fontFamily = progressfont;
+    propertyStamp.style.fontFamily = propertystampfont;
+    backfaceColor = rootCustomProperties.getPropertyValue("--themeColor");;
+    document.body.style.backgroundImage = "url(" + backgroundimage + ")";
+  }
   switch(colorPickerValue.value){
+
     case optionBlue.value:
-    document.documentElement.style.setProperty("--themeColor", "#94C3CD");
-    document.documentElement.style.setProperty("--highLightColor", "#94B9CD")
-    document.documentElement.style.setProperty("--borderColor", "#EAEFF1");
-    document.documentElement.style.setProperty("--fontColor", "#EAEFF1");
-    backfaceColor = headerColorValue;
-    document.body.style.backgroundImage = "url('Assets/Minimalist Waves.png')";
+
+    themeChange("#94C3CD", "#94B9CD", "#EAEFF1", "#EAEFF1", "Permanent Marker", "foxlite_scriptregular", "Permanent Marker", "Open Sans", "Assets/Minimalist Waves.png");
+    if(taskInputField.classList.contains("terminal-input")){
+      taskInputField.classList.remove("terminal-input");
+      timeInputField.classList.remove("terminal-input");
+      dateInputField.classList.remove("terminal-input");
+    }
     break;
+
     case optionRed.value:
     document.documentElement.style.setProperty("--themeColor", "#8c0000");
     document.documentElement.style.setProperty("--highLightColor", "#5b0000");
     document.documentElement.style.setProperty("--borderColor", "#111");
     document.documentElement.style.setProperty("--fontColor", "#EAEFF1");
+    topTitle.style.fontFamily = "Permanent Marker";
+    banner.style.fontFamily = "foxlite_scriptregular";
+    progress.style.fontFamily = "Permanent Marker";
+    propertyStamp.style.fontFamily = "Open Sans";
     backfaceColor = headerColorValue;
+    if(taskInputField.classList.contains("terminal-input")){
+      taskInputField.classList.remove("terminal-input");
+      timeInputField.classList.remove("terminal-input");
+      dateInputField.classList.remove("terminal-input");
+    }
     document.body.style.backgroundImage = "url('Assets/New Face Bulb.png')";
     break;
+
     case optionGreen.value:
     document.documentElement.style.setProperty("--themeColor", "#72e592");
     document.documentElement.style.setProperty("--highLightColor", "#00c62e");
     document.documentElement.style.setProperty("--borderColor", "#EAEFF1");
     document.documentElement.style.setProperty("--fontColor", "#EAEFF1");
+    topTitle.style.fontFamily = "Permanent Marker";
+    banner.style.fontFamily = "foxlite_scriptregular";
+    progress.style.fontFamily = "Permanent Marker";
+    propertyStamp.style.fontFamily = "Open Sans";
     backfaceColor = headerColorValue;
+    if(taskInputField.classList.contains("terminal-input")){
+      taskInputField.classList.remove("terminal-input");
+      timeInputField.classList.remove("terminal-input");
+      dateInputField.classList.remove("terminal-input");
+    }
     document.body.style.backgroundImage = "url('Assets/Disk Storage Evolution Flat Minimalist Desktop Wallpaper.jpg')";
     break;
+
     case defaultOption.value:
     document.documentElement.style.setProperty("--themeColor", "#333E48");
     document.documentElement.style.setProperty("--highLightColor", "#586877");
     document.documentElement.style.setProperty("--borderColor", "#EAEFF1");
     document.documentElement.style.setProperty("--fontColor", "#EAEFF1");
+    topTitle.style.fontFamily = "Permanent Marker";
+    banner.style.fontFamily = "foxlite_scriptregular";
+    progress.style.fontFamily = "Permanent Marker";
+    propertyStamp.style.fontFamily = "Open Sans";
     backfaceColor = headerColorValue;
+    if(taskInputField.classList.contains("terminal-input")){
+      taskInputField.classList.remove("terminal-input");
+      timeInputField.classList.remove("terminal-input");
+      dateInputField.classList.remove("terminal-input");
+    }
     document.body.style.backgroundImage = "url('Assets/Phases of the Moon.jpg')";
     break;
+
     case terminalOption.value:
     document.documentElement.style.setProperty("--themeColor", "#000000");
     document.documentElement.style.setProperty("--highLightColor", "#32CD32");
@@ -91,7 +145,16 @@ function colorPicker(){
     document.body.style.backgroundImage = "none";
     document.body.style.backgroundColor = "black";
     document.documentElement.style.setProperty("--fontColor" , "#32CD32");
+    taskInputField.classList.add("terminal-input");
+    timeInputField.classList.add("terminal-input");
+    dateInputField.classList.add("terminal-input");
+    topTitle.style.fontFamily = "px-vga";
+    banner.style.fontFamily = "px-vga";
+    progress.style.fontFamily = "px-vga";
+    propertyStamp.style.fontFamily = "px-vga";
     backfaceColor = "black";
+    break;
+
     default:
     alert("That's not gonna fly, bucko");
   }
@@ -277,18 +340,20 @@ function clock(){
       var grad;
       //Start Backface
       ctx.beginPath();
-      ctx.arc(0, 0, radius, 0, 2*Math.PI);
-      ctx.fillStyle = backfaceColor;
+      ctx.arc(0, 0, (radius * 1.05), 0, 2*Math.PI);
+      ctx.fillStyle = rootCustomProperties.getPropertyValue("--themeColor");;
       ctx.fill();
       //End Backface
       //Start Frontface
       //Start Outer Rim
-      grad = ctx.createRadialGradient(0, 0, radius * 0.95, 0, 0, radius * 1.05);
-      grad.addColorStop(0, window.getComputedStyle(document.documentElement).getPropertyValue("--fontColor"));
-      grad.addColorStop(0.5, window.getComputedStyle(document.documentElement).getPropertyValue("--fontColor"));
-      grad.addColorStop(1.0, window.getComputedStyle(document.documentElement).getPropertyValue("--fontColor"));
-      ctx.strokeStyle = grad;
-      ctx.lineWidth = radius * 0.1;
+      //Gradient Start
+      // grad = ctx.createRadialGradient(0, 0, radius * 0.95, 0, 0, radius * 1.05);
+      // grad.addColorStop(0, window.getComputedStyle(document.documentElement).getPropertyValue("--fontColor"));
+      // grad.addColorStop(0.5, window.getComputedStyle(document.documentElement).getPropertyValue("--themeColor"));
+      // grad.addColorStop(1.0, window.getComputedStyle(document.documentElement).getPropertyValue("--fontColor"));
+      ctx.strokeStyle = window.getComputedStyle(document.documentElement).getPropertyValue("--fontColor");
+      //Gradient End
+      ctx.lineWidth = radius * 0.05;
       ctx.stroke();
       //End Outer Rim
       //Start Hand Base
@@ -302,7 +367,7 @@ function clock(){
   function drawNumbers(ctx, radius){
       var ang;
       var num;
-      ctx.font = radius*0.15 + "px arial";
+      ctx.font = radius*0.30 + "px px-vga";
       ctx.textBaseline = "middle";
       ctx.textAlign = "center";
       for(num = 1; num < 13; num++){
@@ -323,7 +388,7 @@ function clock(){
       var second = now.getSeconds();
       //Hour Start
       hour = hour % 12;
-      hour = (hour * Math.PI / 6) + (minute * Math.PI / (6 * 60)) + (second * Math.PI / (6 * 360));
+      hour = (hour * Math.PI / 6) + (minute * Math.PI / (6 * 60)) + (second * Math.PI / (360* 60));
       drawHand(ctx, hour, radius * 0.5, radius * 0.07);
       //Hour End
       //Minute Start
