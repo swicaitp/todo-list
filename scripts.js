@@ -134,7 +134,7 @@ function colorPicker(){
     break;
 
     default:
-    alert("That's not gonna fly, bucko");
+    console.log("That's not gonna fly, bucko");
   }
   /*if(colorPickerValue == optionBlue){
     headerbarStyle.backgroundColor = "#0092e7";
