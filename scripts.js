@@ -48,8 +48,6 @@ function colorPicker(){
   var colorPickerValue = document.getElementById("colorPickerSelect");
   var topTitle = document.getElementById("topTitle");
   var banner = document.getElementById("banner");
-  var plus = document.getElementById("plus");
-  var ghost = document.getElementById("ghost");
   var progress = document.getElementById("progress");
   var progressBar = document.getElementById("progressBar")
   var progressBarFill = document.getElementById("progressBarFill");
