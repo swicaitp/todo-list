@@ -62,24 +62,25 @@ function colorPicker(){
   var optionRed = document.getElementById("darkRed");
   var optionGreen = document.getElementById("green");
   var terminalOption = document.getElementById("terminal-theme");
-  function themeChange(themecolor, highlightcolor, bordercolor, fontcolor, toptitlefont, bannerfont, progressfont, propertystampfont, backgroundimage){
-    document.documentElement.style.setProperty("--themeColor", themecolor);
-    document.documentElement.style.setProperty("--highLightColor", highlightcolor);
-    document.documentElement.style.setProperty("--borderColor", bordercolor);
+  function themeChange(themeColor, highlightColor, borderColor, fontcolor, topTitleFont, bannerFont, bannerAlignSelf, progressFont, propertyStampFont, backgroundImagePath){
+    document.documentElement.style.setProperty("--themeColor", themeColor);
+    document.documentElement.style.setProperty("--highLightColor", highlightColor);
+    document.documentElement.style.setProperty("--borderColor", borderColor);
     document.documentElement.style.setProperty("--fontColor", fontcolor);
-    topTitle.style.fontFamily = toptitlefont;
-    banner.style.fontFamily = bannerfont;
-    progress.style.fontFamily = progressfont;
-    propertyStamp.style.fontFamily = propertystampfont;
+    topTitle.style.fontFamily = topTitleFont;
+    banner.style.fontFamily = bannerFont;
+    banner.style.alignSelf = bannerAlignSelf;
+    progress.style.fontFamily = progressFont;
+    propertyStamp.style.fontFamily = propertyStampFont;
     backfaceColor = rootCustomProperties.getPropertyValue("--themeColor");
-    document.body.style.backgroundImage = "url('" + backgroundimage + "')";
+    document.body.style.backgroundImage = "url('" + backgroundImagePath + "')";
     progressBar.style.backgroundColor = rootCustomProperties.getPropertyValue("--themeColor");
     progressBarFill.style.backgroundColor = rootCustomProperties.getPropertyValue("--goldenHighlightColor");
   }
   switch(colorPickerValue.value){
 
     case optionBlue.value:
-    themeChange("#94C3CD", "#94B9CD", "#EAEFF1", "#EAEFF1", "Permanent Marker", "foxlite_scriptregular", "Permanent Marker", "Open Sans", "Assets/Minimalist Waves.png", );
+    themeChange("#94C3CD", "#94B9CD", "#EAEFF1", "#EAEFF1", "Permanent Marker", "foxlite_scriptregular", "flex-end", "Permanent Marker", "Open Sans", "Assets/Minimalist Waves.png", );
     if(taskInputField.classList.contains("terminal-input")){
       taskInputField.classList.remove("terminal-input");
       timeInputField.classList.remove("terminal-input");
@@ -88,7 +89,7 @@ function colorPicker(){
     break;
 
     case optionRed.value:
-    themeChange("#8c0000", "#5b0000", "#111", " #EAEFF1", "Permanent Marker", " foxlite_scriptregular", "Permanent Marker", "Open Sans", "Assets/New Face Bulb.png");
+    themeChange("#8c0000", "#5b0000", "#111", " #EAEFF1", "Permanent Marker", " foxlite_scriptregular", "flex-end", "Permanent Marker", "Open Sans", "Assets/New Face Bulb.png");
     if(taskInputField.classList.contains("terminal-input")){
       taskInputField.classList.remove("terminal-input");
       timeInputField.classList.remove("terminal-input");
@@ -97,7 +98,7 @@ function colorPicker(){
     break;
 
     case optionGreen.value:
-    themeChange("#72e592", "#00c62e", "#EAEFF1", "#EAEFF1", "Permanent Marker", "foxlite_scriptregular", "Permanent Marker", "Open Sans", "Assets/Disk Storage Evolution Flat Minimalist Desktop Wallpaper.jpg");
+    themeChange("#72e592", "#00c62e", "#EAEFF1", "#EAEFF1", "Permanent Marker", "foxlite_scriptregular", "flex-end", "Permanent Marker", "Open Sans", "Assets/Disk Storage Evolution Flat Minimalist Desktop Wallpaper.jpg");
     if(taskInputField.classList.contains("terminal-input")){
       taskInputField.classList.remove("terminal-input");
       timeInputField.classList.remove("terminal-input");
@@ -106,7 +107,7 @@ function colorPicker(){
     break;
 
     case defaultOption.value:
-    themeChange("#333E48", "#586877", "#EAEFF1", "#EAEFF1", "Permanent Marker", "foxlite_scriptregular", "Permanent Marker", "Open Sans", "Assets/Phases of the Moon.jpg");
+    themeChange("#333E48", "#586877", "#EAEFF1", "#EAEFF1", "Permanent Marker", "foxlite_scriptregular", "flex-end", "Permanent Marker", "Open Sans", "Assets/Phases of the Moon.jpg");
     if(taskInputField.classList.contains("terminal-input")){
       taskInputField.classList.remove("terminal-input");
       timeInputField.classList.remove("terminal-input");
@@ -121,9 +122,11 @@ function colorPicker(){
     document.body.style.backgroundImage = "none";
     document.body.style.backgroundColor = "black";
     document.documentElement.style.setProperty("--fontColor" , "#32CD32");
-    taskInputField.classList.add("terminal-input");
-    timeInputField.classList.add("terminal-input");
-    dateInputField.classList.add("terminal-input");
+    if(!taskInputField.classList.contains("terminal-input")){
+      taskInputField.classList.add("terminal-input");
+      timeInputField.classList.add("terminal-input");
+      dateInputField.classList.add("terminal-input");
+    }
     topTitle.style.fontFamily = "px-vga";
     banner.style.fontFamily = "px-vga";
     banner.style.alignSelf = "baseline";
