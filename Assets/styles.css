@@ -1,0 +1,73 @@
+@font-face{
+    font-family: px-vga;
+    src: url("Fonts/PxPlus_VGA_SquarePx.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+html{
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+    background-color: black;
+    color: #32CD32;
+    font-family: "px-vga";
+}
+a{
+    text-decoration: none;
+    color: #FFB000;
+}
+h1{
+    font-weight: normal;
+    font-size: 3rem;
+}
+header{
+    border-bottom: 1px solid #32CD32;
+}
+.main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.main-container a:hover{
+    text-decoration: underline;
+}
+.main-container p{
+    font-size: 3rem;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+}
+.main-container span{
+    display: inline;
+    font-size: 1.5rem;
+}
+.main-container input{
+    font-size: 3rem;
+}
+.main-container input[type="submit"]:hover{
+    border-color: #FFB000;
+    color: #FFB000;
+    cursor: pointer;
+}
+.main-container ul{
+    list-style-type: square;
+    padding-inline-start: 0;
+}
+.main-container ul a{
+    color: #32CD32;
+}
+.main-container li{
+    font-size: 2em;
+    padding: 10px;
+    border: 1px solid #32CD32;
+    display: inline;
+}
+table, tbody{
+    border-color: #32CD32;
+}
+th{
+    font-size: 2rem;
+    font-weight: normal;
+}
+td{
+    font-size: 1.5rem;
+}
