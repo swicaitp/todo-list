@@ -433,7 +433,7 @@ font-family: "Open Sans", sans-serif;
     margin: 0;
     padding: 0;
   }
-  input{
+  .taskContainer input{
     max-width: 1in;
     margin: 5px 0 0 0;
   }
