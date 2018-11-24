@@ -40,8 +40,18 @@ header{
     display: inline;
     font-size: 1.5rem;
 }
+.main-container form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .main-container input{
     font-size: 3rem;
+    font-family: "px-vga", Arial, Helvetica, sans-serif;
+    border: 1px solid #32CD32;
+    color: #32CD32;
+    caret-color: #32CD32;
+    background-color: black;
 }
 .main-container input[type="submit"]:hover{
     border-color: #FFB000;
