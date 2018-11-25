@@ -6,7 +6,9 @@
 }
 html{
     box-sizing: border-box;
+    position: relative;
     width: 100%;
+    height: 100%;
     text-align: center;
     background-color: black;
     color: #32CD32;
@@ -20,13 +22,36 @@ h1{
     font-weight: normal;
     font-size: 3rem;
 }
+h2{
+    font-weight: normal;
+    font-size: 3.5rem;
+    margin: 0;
+}
 header{
+    grid-area: header;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     border-bottom: 1px solid #32CD32;
+}
+header h1{
+    margin: 0;
+}
+.grid{
+    margin: 0;
+    height: 100%;
+    display: grid;
+    grid-template:
+    "header header header" 10%
+    "main main main" 80%
+    "footer footer footer" 10%
+    / 10% 80% 10%;
 }
 .main-container{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    height: 100%;
 }
 .main-container a:hover{
     text-decoration: underline;
@@ -43,7 +68,19 @@ header{
 .main-container form{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
+}
+.main-container form a {
+    font-size: 3rem;
+    border: 1px solid #32CD32;
+    color: #32CD32;
+    padding: 1px 6px;
+}
+.main-container form a:hover{
+    border-color: #FFB000;
+    color: #FFB000;
+    cursor: pointer;
+    text-decoration: none;
 }
 .main-container input{
     font-size: 3rem;
@@ -51,7 +88,10 @@ header{
     border: 1px solid #32CD32;
     color: #32CD32;
     caret-color: #32CD32;
+    display: inline;
     background-color: black;
+    max-width: 80vw;
+    margin: 5px;
 }
 .main-container input[type="submit"]:hover{
     border-color: #FFB000;
@@ -67,9 +107,29 @@ header{
 }
 .main-container li{
     font-size: 2em;
-    padding: 10px;
+    padding: 8px;
     border: 1px solid #32CD32;
     display: inline;
+}
+.main-container li a:hover{
+    color: #FFB000;
+}
+.main-container button{
+    padding: 5px;
+    background-color: black;
+    border: 1px solid #32CD32;
+    color: #32CD32;
+}
+.main-container button:hover{
+    border-color: #FFB000;
+    color: #FFB000;
+    cursor: pointer;
+}
+.main-container i{
+    font-size: 1.5em;
+}
+.main-grid{
+    grid-area: main;
 }
 table, tbody{
     border-color: #32CD32;
@@ -80,4 +140,15 @@ th{
 }
 td{
     font-size: 1.5rem;
+}
+footer{
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 2.5rem;
+    border-top: 1px solid #32CD32;
+}
+footer a:hover{
+    text-decoration: underline;
 }

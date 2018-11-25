@@ -2,19 +2,23 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Create Todo PHP</title>
+  <title>Create Task</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="Assets/styles.css">
 </head>
-<body>
-<main class="main-container">
+<body class="grid">
+<header>
+  <h1>Create Task Form</h1>
+</header>
+<main class="main-container main-grid">
   <form method="post" action="create.php">
     <input type="text" name="todoTitle" id="todoTitle">
     <input type="text" name="todoDescription" id="todoDescription">
     <input type="submit" name="submit" id="submit" value="Submit">
+    <a href="index.php">Cancel</a>
   </form>
-</main>
 
+</main>
 </body>
 </html>
 <?php
