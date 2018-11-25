@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="Assets/styles.css">
 </head>
-<body>
-<main class="main-container">
+<body class="grid">
+<main class="main-container main-grid">
   <?php
   require_once("db_connect.php");
   if(isset($_GET["id"])){
