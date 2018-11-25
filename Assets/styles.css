@@ -61,7 +61,7 @@ header h1{
     grid-template:
     "header header header" 10%
     "response response response" 40%
-    "response response response" 40%
+    "return return return" 40%
     "footer footer footer" 10%
     / 10% 80% 10%;
 }
@@ -168,8 +168,17 @@ header h1{
 }
 .main-grid-response{
     grid-area: response;
-    height: 100%;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 3rem;
+}
+.main-grid-return{
+    grid-area: return;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 3rem;
 }
 table, tbody{
     border-color: #32CD32;
