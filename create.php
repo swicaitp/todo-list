@@ -29,7 +29,7 @@
 if(isset($_POST["submit"])){
   $title = $_POST["todoTitle"];
   $description = $_POST["todoDescription"];
-  $time = $_POST["todoTime"]
+  $time = $_POST["todoTime"];
   $date = $_POST["todoDate"];
   //Connect to Database
   db();
