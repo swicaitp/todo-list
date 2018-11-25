@@ -14,9 +14,16 @@ html{
     color: #32CD32;
     font-family: "px-vga";
 }
+.php-response{
+    font-size: 2rem;
+    grid-area: footer-child;
+}
 a{
     text-decoration: none;
     color: #FFB000;
+}
+p{
+    margin: 0;
 }
 h1{
     font-weight: normal;
@@ -108,8 +115,22 @@ header h1{
 .main-container li{
     box-sizing: border-box;
     font-size: 2em;
-    padding: 8px;
+    padding: 5px;
     border: 1px solid #32CD32;
+}
+.done{
+    color: #FFB000;
+    border-color: #FFB000;
+}
+.done > a{
+    color: #FFB000;
+}
+.done > button{
+    color: #FFB000;
+    border-color: #FFB000;
+}
+.done > button > i{
+    color: #FFB000;
 }
 .main-container li a:hover{
     color: #FFB000;
@@ -127,6 +148,9 @@ header h1{
 }
 .main-container i{
     font-size: 1.5em;
+}
+.main-form{
+    justify-content: center;
 }
 .main-grid{
     grid-area: main;
