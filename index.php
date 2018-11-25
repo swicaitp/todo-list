@@ -41,5 +41,6 @@ if(mysqli_num_rows($result) >= 1){
 ?>
 </main>
 </body>
+<script src="todo-script.js"></script>
 </html>
 

@@ -8,7 +8,11 @@
 </head>
 <body class="grid">
 <main class="main-container main-grid">
-  <?php
+
+</main>
+</body>
+</html>
+<?php
   require_once("db_connect.php");
   if(isset($_GET["id"])){
     $id = $_GET["id"];
@@ -17,13 +21,8 @@
     $query = "DELETE FROM todo WHERE id='$id'";
     $delete = mysqli_query($link, $query);
     if($delete){
-      echo "<h1>Task deleted Successfully</h1>";
+      print "<small>Task deleted Successfully</small>";
+      print "<a href='index.php'>Back to Task List</a>";
     }
   }
   ?>
-</main>
-<footer>
-  <a href="index.php">Back to Task List</a>
-</footer>
-</body>
-</html>

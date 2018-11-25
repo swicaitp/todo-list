@@ -6,6 +6,6 @@ function db(){
         return $link;
     }
     if(db()){
-        echo "<footer>Connection Successful</footer>";
+        print"<footer><p>Connection Successful</p></footer>";
     }
 ?>

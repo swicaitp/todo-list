@@ -1,3 +1,4 @@
+<?php require_once("db_connect.php"); ?>
 <html>
 <head>
   <meta charset="utf-8" />
@@ -10,19 +11,15 @@
 <header>
   <h1>Create Task Form</h1>
 </header>
-<main class="main-container main-grid">
+<main class="main-container main-form main-grid">
   <form method="post" action="create.php">
     <input type="text" name="todoTitle" id="todoTitle">
     <input type="text" name="todoDescription" id="todoDescription">
     <input type="submit" name="submit" id="submit" value="Submit">
-    <a href="index.php">Cancel</a>
+    <a href="index.php">Back</a>
   </form>
-
-</main>
-</body>
-</html>
 <?php
-require_once("db_connect.php");
+
 if(isset($_POST["submit"])){
   $title = $_POST["todoTitle"];
   $description = $_POST["todoDescription"];
@@ -34,9 +31,13 @@ if(isset($_POST["submit"])){
   VALUES('$title', '$description', now())";
   $todoInsert = mysqli_query($link, $query);
   if($todoInsert){
-    echo "Query Executed Successfully";
+    print "<p class='php-response'>Query Executed Successfully</p>";
   } else
   die("Unable to execute query: " . mysql_error());
   mysqli_close($link);
 }
 ?>
+</main>
+</body>
+</html>
+
