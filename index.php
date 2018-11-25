@@ -20,16 +20,19 @@
 db();
 //Assign returned connection variable to global variable instance
 global $link;
-$query = "SELECT id, todoTitle, todoDescription, date FROM todo";
+$query = "SELECT id, todoTitle, todoDescription, time, date FROM todo";
 $result = mysqli_query($link, $query);
 if(mysqli_num_rows($result) >= 1){
   while($row = mysqli_fetch_array($result)){
     $id =$row["id"];
     $title = $row["todoTitle"];
+    $time = $row["time"];
     $date = $row["date"];
     ?>
     <ul>
-      <li><a href="detail.php?id=<?php echo $id?>"><?php echo $title?></a>
+      <li>
+      <a href="detail.php?id=<?php echo $id?>"><?php echo $title?></a>
+      <?php echo $time ?>
       <?php echo "[[ $date ]]";?>
       <button type="button"><a href="update.php?id=<?php echo $id?>"><i class="fas fa-pen"></i></a></button>
       <button type="button"><a href="delete.php?id=<?php echo $id?>"><i class="fas fa-times"></i></a></button>
