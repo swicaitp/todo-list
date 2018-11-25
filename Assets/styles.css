@@ -115,7 +115,7 @@ header h1{
 .main-container li{
     box-sizing: border-box;
     font-size: 2em;
-    padding: 5px;
+    padding: 8px;
     border: 1px solid #32CD32;
 }
 .done{
