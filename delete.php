@@ -22,6 +22,8 @@
   }
   ?>
 </main>
-<a href="index.php">Back to Task List</a>
+<footer>
+  <a href="index.php">Back to Task List</a>
+</footer>
 </body>
 </html>
