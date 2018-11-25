@@ -10,9 +10,11 @@
   <link rel="stylesheet" type="text/css" media="screen" href="Assets/styles.css" />
 </head>
 <body class="grid">
+  <header>
+    <h1>My Tasks</h1>
+  </header>
 <main class="main-container main-grid">
-  <h1>My Tasks</h1>
-
+<p><a href="create.php" id="add-task-link">Add Task To To-Do List</a></p>
 <?php
 //Call for Database Connection
 db();
@@ -37,7 +39,6 @@ if(mysqli_num_rows($result) >= 1){
   }
 }
 ?>
-<p><a href="create.php">Add Task from To-Do Database</a></p>
 </main>
 </body>
 </html>

@@ -3,8 +3,11 @@
   <title>Task Details</title>
   <link rel="stylesheet" href="Assets/styles.css">
 </head>
-<body>
-<main class="main-container">
+<body class="grid">
+<header>
+  <h1>Detail View</h1>
+</header>
+<main class="main-container main-grid">
   <?php
     require_once("db_connect.php");
     if(isset($_GET["id"])){
@@ -31,5 +34,8 @@
   ?>
   <a href="index.php">Back to Task List</a>
 </main>
+<footer>
+
+</footer>
 </body>
 </html>

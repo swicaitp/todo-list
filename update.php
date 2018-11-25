@@ -2,13 +2,15 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Delete Task</title>
+  <title>Update Task</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="Assets/styles.css">
 </head>
-<body>
-<div class="grid">
-<main class="main-container grid-main">
+<body class="grid">
+<header>
+  <h1>Update Task Form</h1>
+</header>
+<main class="main-container main-grid">
   <?php
   require_once("db_connect.php");
   if(isset($_GET["id"])){
@@ -24,11 +26,10 @@
         $description = $row["todoDescription"];
 
         echo "
-        <h2>Edit Task</h2>
         <form method='post' action='update.php'>
-        <p>Title</p>
+        <p>Task Title:</p>
         <input type='text' name='title' value='$title'>
-        <p>Description</p>
+        <p>Task Description:</p>
         <input type='text' name='description' value='$description'>
         <br>
         <input type='submit' name='submit' value='Update Task Information'>
@@ -55,7 +56,6 @@
   }
 ?>
 </main>
-</div>
 <footer>
   <a href="index.php">Back to Task List</a>
 </footer>
