@@ -54,6 +54,17 @@ header h1{
     "footer footer footer" 10%
     / 10% 80% 10%;
 }
+.grid-response{
+    margin: 0;
+    height: 100%;
+    display: grid;
+    grid-template:
+    "header header header" 10%
+    "response response response" 40%
+    "response response response" 40%
+    "footer footer footer" 10%
+    / 10% 80% 10%;
+}
 .main-container{
     display: flex;
     flex-direction: column;
@@ -115,7 +126,7 @@ header h1{
 .main-container li{
     box-sizing: border-box;
     font-size: 2em;
-    padding: 8px;
+    padding: 5px;
     border: 1px solid #32CD32;
 }
 .done{
@@ -154,6 +165,11 @@ header h1{
 }
 .main-grid{
     grid-area: main;
+}
+.main-grid-response{
+    grid-area: response;
+    height: 100%;
+    width: 100%;
 }
 table, tbody{
     border-color: #32CD32;
