@@ -36,10 +36,9 @@
         </form>
         ";
       }
+    } else {
+      echo "No Task";
     }
-  } else {
-    echo "No Task";
-  }
 
   if(isset($_POST['submit'])){
     $title = $_POST["title"];
@@ -54,6 +53,7 @@
       echo mysql_error($link);
     }
   }
+}
 ?>
 </main>
 <footer>
