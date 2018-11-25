@@ -135,7 +135,7 @@ header h1{
     cursor: pointer;
 }
 .main-container ul{
-    list-style-type: square;
+    list-style-type: none;
     padding-inline-start: 0;
 }
 .task-list-li{
