@@ -9,7 +9,7 @@
       crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" media="screen" href="Assets/styles.css" />
 </head>
-<body class="grid">
+<body class="grid-index">
   <header>
     <h1>My Tasks</h1>
   </header>

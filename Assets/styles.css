@@ -65,6 +65,16 @@ header h1{
     "footer footer footer" 10%
     / 10% 80% 10%;
 }
+.grid-index{
+    margin: 0;
+    height: 100%;
+    display: grid;
+    grid-template:
+    "header header" 10%
+    "main main" 80%
+    "footer footer" 10%
+    / 50% 50%;
+}
 .main-container{
     display: flex;
     flex-direction: column;
@@ -120,17 +130,17 @@ header h1{
     list-style-type: square;
     padding-inline-start: 0;
 }
-.main-container li a{
-    color: #32CD32;
-}
-.main-container li a:hover{
-    text-decoration: underline;
-}
-.main-container li{
+.task-list-li{
     box-sizing: border-box;
     font-size: 2em;
     padding: 5px;
     border: 1px solid #32CD32;
+}
+.task-list-li a{
+    color: #32CD32;
+}
+.task-list-li a:hover{
+    text-decoration: underline;
 }
 .done{
     color: #FFB000;
