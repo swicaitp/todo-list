@@ -14,6 +14,9 @@ html{
     color: #32CD32;
     font-family: "px-vga";
 }
+body{
+    box-sizing: border-box;
+}
 .php-response{
     font-size: 2rem;
     grid-area: footer-child;
@@ -71,7 +74,7 @@ header h1{
     display: grid;
     grid-template:
     "header header" 10%
-    "main main" 80%
+    "main done" 80%
     "footer footer" 10%
     / 50% 50%;
 }
@@ -79,7 +82,9 @@ header h1{
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
+    margin: 5px;
+    border: 1px solid #32CD32;
+    overflow: auto;
 }
 .main-container a:hover{
     text-decoration: underline;
@@ -97,6 +102,9 @@ header h1{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.main-container form p{
+    margin: 0;
 }
 .main-container form a {
     font-size: 3rem;
