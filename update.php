@@ -26,7 +26,7 @@
         $description = $row["todoDescription"];
 
         echo "
-        <form method='post' action='update.php'>
+        <form method='post' action='update.php?id=$id'>
         <p>Task Title:</p>
         <input type='text' name='title' value='$title'>
         <p>Task Description:</p>
@@ -45,12 +45,12 @@
     $description = $_POST["description"];
     db();
     //Create Update SQL Query
-    $query = "UPDATE todo SET todoTitle = '$title', todoDescription = '$description', WHERE id = '$id'";
+    $query = "UPDATE todo SET todoTitle = '$title', todoDescription = '$description' WHERE id = '$id'";
     $updateTask = mysqli_query($link, $query);
     if($updateTask){
       echo "Task Successfully Updated";
     } else {
-      echo mysql_error($link);
+      echo mysqli_error($link);
     }
   }
 }
