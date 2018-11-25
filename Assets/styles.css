@@ -102,6 +102,7 @@ header h1{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0;
 }
 .main-container form p{
     margin: 0;
@@ -117,6 +118,10 @@ header h1{
     color: #FFB000;
     cursor: pointer;
     text-decoration: none;
+}
+.main-container form input[type="date"], .main-container form input[type="time"]{
+    font-size: 1.8rem;
+    padding-inline-start: 5px;
 }
 .main-container input{
     font-size: 3rem;
@@ -149,17 +154,29 @@ header h1{
 }
 .task-list-li{
     box-sizing: border-box;
-    font-size: 2em;
-    padding: 5px;
+    font-size: 2rem;
+    padding: 4px;
     border: 1px solid #32CD32;
     display: flex;
-    align-items: center;
+    align-items: stretch;
 }
 .task-list-li a{
     color: #32CD32;
 }
 .task-list-li a:hover{
     text-decoration: underline;
+}
+.task-list-li span{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 2rem;
+}
+.task-list-li .task-title{
+    margin-right: 5px;
+}
+.task-list-li .edit-button{
+    margin: 0 3px;
 }
 .done{
     color: #FFB000;
@@ -197,6 +214,9 @@ header h1{
     justify-content: center;
     font-size: 3rem;
 }
+.main-done{
+    grid-area: done;
+}
 table, tbody{
     border-color: #32CD32;
 }
@@ -229,4 +249,17 @@ footer a:hover{
     color: #FFB000;
     cursor: pointer;
     text-decoration: none;
+}
+.float-right{
+    float: right;
+}
+@media screen and (max-width: 500px){
+.grid-index{
+    grid-template:
+    "header" 10%
+    "main" auto
+    "done" auto
+    "footer" 10%
+    / 100%;
+}
 }

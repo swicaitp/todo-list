@@ -31,10 +31,10 @@ if(mysqli_num_rows($result) >= 1){
     ?>
     <ul>
       <li>
-      <a href="detail.php?id=<?php echo $id?>"><?php echo $title?></a>
-      <?php echo $time ?>
-      <?php echo "[[ $date ]]";?>
-      <button type="button"><a href="update.php?id=<?php echo $id?>"><i class="fas fa-pen"></i></a></button>
+      <a href="detail.php?id=<?php echo $id?>" class="task-title"><?php echo "$title "?></a>
+      <span><?php echo "[ $time ]" ?></span>
+      <span><?php echo "[[ $date ]]";?></span>
+      <button type="button" class="edit-button"><a href="update.php?id=<?php echo $id?>"><i class="fas fa-pen"></i></a></button>
       <button type="button"><a href="delete.php?id=<?php echo $id?>"><i class="fas fa-times"></i></a></button>
       </li>
     </ul>
@@ -42,6 +42,9 @@ if(mysqli_num_rows($result) >= 1){
   }
 }
 ?>
+</main>
+<main class="main-done">
+
 </main>
 </body>
 <script src="todo-script.js"></script>
