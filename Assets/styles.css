@@ -120,8 +120,11 @@ header h1{
     list-style-type: square;
     padding-inline-start: 0;
 }
-.main-container ul a{
+.main-container li a{
     color: #32CD32;
+}
+.main-container li a:hover{
+    text-decoration: underline;
 }
 .main-container li{
     box-sizing: border-box;
@@ -132,16 +135,6 @@ header h1{
 .done{
     color: #FFB000;
     border-color: #FFB000;
-}
-.done > a{
-    color: #FFB000;
-}
-.done > button{
-    color: #FFB000;
-    border-color: #FFB000;
-}
-.done > button > i{
-    color: #FFB000;
 }
 .main-container li a:hover{
     color: #FFB000;
