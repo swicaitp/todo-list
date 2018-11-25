@@ -13,8 +13,14 @@
 </header>
 <main class="main-container main-form main-grid">
   <form method="post" action="create.php">
+    <p>Task Title:</p>
     <input type="text" name="todoTitle" id="todoTitle">
+    <p>Task Description:</p>
     <input type="text" name="todoDescription" id="todoDescription">
+    <p>Task Time:</p>
+    <input type="time" name="todoTime" id="todoTime">
+    <p>Task Date:</p>
+    <input type="date" name="todoDate" id="todoDate">
     <input type="submit" name="submit" id="submit" value="Submit">
     <a href="index.php">Back</a>
   </form>
@@ -23,12 +29,14 @@
 if(isset($_POST["submit"])){
   $title = $_POST["todoTitle"];
   $description = $_POST["todoDescription"];
+  $time = $_POST["todoTime"]
+  $date = $_POST["todoDate"];
   //Connect to Database
   db();
   global $link;
   //Start Database Query
-  $query = "INSERT INTO todo (todoTitle, todoDescription, date)
-  VALUES('$title', '$description', now())";
+  $query = "INSERT INTO todo (todoTitle, todoDescription, time, date)
+  VALUES('$title', '$description', '$time', '$date')";
   $todoInsert = mysqli_query($link, $query);
   if($todoInsert){
     print "<p class='php-response'>Query Executed Successfully</p>";
