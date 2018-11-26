@@ -216,6 +216,8 @@ header h1{
 }
 .main-done{
     grid-area: done;
+    border: 1px solid #32CD32;
+    margin: 5px;
 }
 table, tbody{
     border-color: #32CD32;
