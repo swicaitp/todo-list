@@ -178,6 +178,9 @@ header h1{
 .task-list-li .edit-button{
     margin: 0 3px;
 }
+.task-list-li .cross-out-button{
+    margin-right: 5px;
+}
 .done{
     color: #FFB000;
     border-color: #FFB000;
