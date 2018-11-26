@@ -31,6 +31,7 @@ if(mysqli_num_rows($result) >= 1){
     ?>
     <ul>
       <li>
+      <button type="button" class="cross-out-button" name="cross-out-button"><i class="fas fa-check"></i></button>
       <a href="detail.php?id=<?php echo $id?>" class="task-title"><?php echo "$title "?></a>
       <span><?php echo "[ $time ]" ?></span>
       <span><?php echo "[[ $date ]]";?></span>
