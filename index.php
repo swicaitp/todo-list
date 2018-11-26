@@ -47,7 +47,7 @@ if(mysqli_num_rows($result) >= 1){
 ?>
 </main>
 <main class="main-done">
-<h1>Tasks Completed</h1>
+<p>Tasks Completed</p>
 <?php
   if(isset($_POST['cross-out-button'])){
     $query_complete_insert = "INSERT INTO complete (todoTitle, todoDescription, time, date) SELECT todoTitle, todoDescription, time, date FROM todo";

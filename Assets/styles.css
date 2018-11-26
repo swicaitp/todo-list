@@ -89,7 +89,7 @@ header h1{
 .main-container a:hover{
     text-decoration: underline;
 }
-.main-container p{
+.main-container p, .main-done p{
     font-size: 3rem;
     margin-block-start: 0.5em;
     margin-block-end: 0.5em;
@@ -148,17 +148,18 @@ header h1{
     color: #FFB000;
     cursor: pointer;
 }
-.main-container ul{
+.main-container ul, .main-done ul{
     list-style-type: none;
     padding-inline-start: 0;
 }
 .task-list-li{
     box-sizing: border-box;
-    font-size: 2rem;
+    font-size: 1.8rem;
     padding: 4px;
     border: 1px solid #32CD32;
     display: flex;
-    align-items: stretch;
+    align-items: center;
+    margin: 0 5px;
 }
 .task-list-li a{
     color: #32CD32;
@@ -169,8 +170,8 @@ header h1{
 .task-list-li span{
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    font-size: 2rem;
+    justify-content: center;
+    font-size: 1.8rem;
 }
 .task-list-li .task-title{
     margin-right: 5px;
@@ -179,13 +180,20 @@ header h1{
     margin: 0 3px;
 }
 .task-list-li .cross-out-button{
-    margin-right: 5px;
+    margin: 0;
+    padding: 0 5px;
+    font-size: 1rem;
+    width: 100%;
+}
+.task-list-li .cross-out-form{
+    display: inline;
+    margin: 0 3px;
 }
 .done{
     color: #FFB000;
     border-color: #FFB000;
 }
-.main-container li a:hover{
+.main-container li a:hover, .main-done li a:hover{
     color: #FFB000;
 }
 .main-container button{
@@ -221,6 +229,10 @@ header h1{
     grid-area: done;
     border: 1px solid #32CD32;
     margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
 }
 table, tbody{
     border-color: #32CD32;
