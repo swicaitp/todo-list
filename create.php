@@ -41,7 +41,7 @@ if(isset($_POST["submit"])){
   if($todoInsert){
     print "<p class='php-response'>Query Executed Successfully</p>";
   } else
-  die("Unable to execute query: " . mysql_error());
+  die("Unable to execute query: " . mysqli_error());
   mysqli_close($link);
 }
 ?>
