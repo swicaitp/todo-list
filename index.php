@@ -1,4 +1,4 @@
-<?php require_once("db_connect.php");?>
+<?php require("db_connect.php");?>
 <html>
 <head>
   <meta charset="utf-8" />
@@ -31,7 +31,9 @@ if(mysqli_num_rows($result) >= 1){
     ?>
     <ul>
       <li>
-      <button type="button" class="cross-out-button" name="cross-out-button"><i class="fas fa-check"></i></button>
+      <form action="" method="post" class="cross-out-form">
+        <input type="submit" class="cross-out-button" name="cross-out-button" value="&#x2714;">
+      </form>
       <a href="detail.php?id=<?php echo $id?>" class="task-title"><?php echo "$title "?></a>
       <span><?php echo "[ $time ]" ?></span>
       <span><?php echo "[[ $date ]]";?></span>
@@ -45,9 +47,43 @@ if(mysqli_num_rows($result) >= 1){
 ?>
 </main>
 <main class="main-done">
+<h1>Tasks Completed</h1>
+<?php
+  if(isset($_POST['cross-out-button'])){
+    $query_complete_insert = "INSERT INTO complete (todoTitle, todoDescription, time, date) SELECT todoTitle, todoDescription, time, date FROM todo";
+    $result_complete_insert = mysqli_query($link, $query_complete_insert);
+  }
+?>
 
+<?php
+  $query_complete_select = "SELECT id, todoTitle, todoDescription, time, date FROM complete";
+  $result_complete_select = mysqli_query($link, $query_complete_select);
+  if(mysqli_num_rows($result_complete_select) >= 1){
+    while($row = mysqli_fetch_array($result_complete_select)){
+      $id_complete =$row["id"];
+      $title_complete = $row["todoTitle"];
+      $time_complete = $row["time"];
+      $date_complete = $row["date"];
+      ?>
+      <ul>
+        <li>
+        <a href="detail.php?id=<?php echo $id_complete?>" class="task-title"><?php echo "$title_complete "?></a>
+        <span><?php echo "[ $time_complete ]" ?></span>
+        <span><?php echo "[[ $date_complete ]]";?></span>
+        </li>
+      </ul>
+    <?php
+  }
+}
+?>
 </main>
 </body>
 <script src="todo-script.js"></script>
+<script>
+if(window.history.replaceState){
+  window.history.replaceState(null, null, window.location.href);
+}
+</script>
 </html>
+
 
