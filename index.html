@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
       crossorigin="anonymous">
@@ -12,46 +13,67 @@
   </head>
 
   <body>
-    <header>
-      <span class="fas fa-ghost"></span>
-      <h1>Todo App</h1>
-      <span class="fas fa-plus"></span>
+    <header id="headerbar">
+      <a href="http://swicaitp.com"><span id="ghost" class="fas fa-crow"></span></a>
+        <span id="banner"> To Do </span>
+
+        <span id="plus" class="fas fa-plus" onclick="showInput()"></span>
     </header>
 
-    <main>
-      <ul>
-        <li>
-          Eat Pizza
-          <span>
-            11AM - 12PM
-          </span>
-        </li>
+    <main class="column">
+      <h2 id="topTitle">
+        Tasks
+      </h2>
+      <!--User Inputs New Task-->
+      <form class="inputContainer" style="display: none; visibility: hidden">
+        <input type="text" autocomplete="on" name="todoTitle" id="taskInput" placeholder="New task...">
+        <input type="text" autocomplete="on" name="time" id="timeInput" placeholder="Scheduled time...">
+        <input type="date" id="dateInput">
+        <button name="submit" id="enter"><i class="fas fa-pen"></i></button>
+      </form>
 
-        <li>
-          Play Fortnite
-        </li>
+        <ul >
 
-        <li>
-          Check FB
-        </li>
+        </ul>
+        <div id="progressBar">
+          <div id="progressBarFill">
 
-        <li>
-          Eat Taco Bell
-        </li>
+          </div>
+        </div>
 
-        <li>
-          zzzz
-        </li>
-      </ul>
-
-      <p>
-        2 / 5 Completed
-      </p>
+        <p id="progress">
+          <!--INSERT PROGRESS HERE-->
+        </p>
     </main>
+    <div class="helper-container">
+      <img id="to-do-helper" src="Assets/To-Do-Helper-Terminal-Green.svg" alt="To-do-helper" width="150px">
+    </div>
+    <div class="terminal">
+      <p id="welcome-message"></p><span id="blinking-cursor">|</span>
+    </div>
+<div class="container">
+    <footer id="footer">
+      <div class="trumpets">
+        <img src="Right_Facing_Trumpet.png" id="rightFacingTrumpet" alt="Right_Facing_Trumpet">
+        <img src="Left_Facing_Trumpet.png" id="leftFacingTrumpet" alt="Left_Facing_Trumpet">
+        <audio src="194624__harbour11__trumpet2.wav" id="funnyTrumpetSound"></audio>
+      </div>
+      <canvas id="canvas" width="105" height="105" style="background-color: transparent"></canvas>
+      <span id="helper-button"><i class="fas fa-question"></i></span>
+      <p class="property-stamp">Created by SWIC AITP</p>
 
-    <footer>
-      <p>Created by SWIC AITP</p>
+      <form>
+        <select id="colorPickerSelect" onchange="colorPicker()">
+          <option id="defaultColor" value="#333E48">Default Color</option>
+          <option id="lightBlue" value="#0092e7">Light Blue</option>
+          <option id="darkRed" value="#8c0000">Dark Red</option>
+          <option id="green" value="#00c62e">Light Green</option>
+          <option id="terminal-theme" value="terminal-theme">Terminal Theme</option>
+          </select>
+      </form>
+      <a href="Terminal/terminal.html"><i id="terminal-button" class="fas fa-terminal"></i></a>
     </footer>
+  </div>
     <script src="scripts.js"></script>
   </body>
 

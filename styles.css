@@ -1,3 +1,489 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
+:root {
+  --green: #00c62e;
+  --darkRed: #8c0000;
+  --borderColor: #EAEFF1;
+  --fontColor: #EAEFF1;
+  --themeColor: #333E48;
+  --liButtonColor: #333E48;
+  --progressBarColor: #333E48;
+  --enterButtonColor: #333E48;
+  --titleColor: #333E48;
+  --terminalColor: #32CD32;
+  --bodyColor: #EAEFF1;
+  --taskListColor: #8d8d8d;
+  --darkerBlueHighlightColor: #237FCA;
+  --darkestBlueColor: #1063a7;
+  --darkerBlueBorderColor: #0787d1;
+  --highLightColor: #586877;          /*#0092e7*/
+  --goldenHighlightColor: #ffbb00;
+  --shadowColor: #c2c2c2;
+  --bodyBackgroundImg: url("Assets/Phases\ of\ the\ Moon.jpg");
+  --mobileBodyBackgroundImg: url('Assets/Minimalist Planets Phone.jpg');
+}
+@font-face {
+  font-family: 'foxlite_scriptregular';
+  src:url('foxlite_script-webfont.woff2') format('woff2'),
+      url('foxlite_script-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face{
+  font-family: handWritten;
+  src: url('Handletterink.otf');
+}
+@font-face{
+  font-family: px-vga;
+  src: url("fonts/PxPlus_VGA_SquarePx.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+html{
+  width: 100%;
+  height: 100%;
+}
+body{
+  background-color: var(--bodyColor);
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  /* background-image: var(--bodyBackgroundImg); */
+  background-color: black;
+  background-size: cover;
+  transition-property: background-image;
+  transition-duration: 0.4s;
+}
 .password {
-  color: red;
+  color: rgb(192, 0, 0);
+}
+#headerbar{
+font-size: 5em;
+Position: sticky;
+text-align: center;
+background-color: var(--themeColor);
+top: 0;
+height: 12vh;
+border: 1px solid var(--themeColor);
+display: flex;
+flex-shrink: 0;
+align-items: center;
+justify-content: space-between;
+font-family: 'foxlite_scriptregular', normal;
+transition-property: background-color;
+transition-duration: 0.4s;
+}
+#ghost{
+  color: var(--fontColor);
+  padding: 10px 0 0 0;
+}
+#banner{
+font-size: 1.20em;
+height: 82px;
+align-self: flex-end;
+color: var(--fontColor);
+}
+#plus{
+  color: var(--fontColor);
+  padding-right: 10px;
+  animation: pressed 0.25s 2 alternate;
+}
+.darkRed{
+  background-color: var(--darkRed);
+}
+.lightBlue{
+  background-color: var(--highLightColor);
+}
+.green{
+  background-color: var(--green);
+}
+#colorPickerSelect{
+  color: var(--fontColor);
+  padding: 5px;
+  border-radius: 3px;
+  border: 1px solid var(--borderColor);
+  background-color: var(--themeColor);
+}
+ul{
+  padding-inline-start: 0;
+  list-style-type: none;
+}
+.column{
+  padding: 20px;
+}
+.taskList ul{
+  border-radius: 10px;
+  list-style-type: none;
+}
+li{
+  display: block;
+  flex-direction: row;
+  justify-content: space-between;
+background-color: var(--themeColor);
+font-size: 1.5em;
+color: var(--fontColor);
+font-family: 'Permanent Marker', cursive;
+padding: 5px 45px 5px 0px;
+border-bottom: 2px solid var(--borderColor);
+border-radius: 10px;
+border-bottom-right-radius: 5px;
+text-indent: 10px;
+text-align: left;
+transition: all 0.75s ease;
+position: relative;
+}
+#progress{
+  font-size: 2.5em;
+  padding: 0px;
+  color: var(--themeColor);
+  font-family: 'Permanent Marker', cursive;
+  transition-property: color;
+  transition-duration: 0.4s;
+}
+#footer{
+  text-align: center;
+  padding: 10px 0 20px 0;
+  background-color: var(--themeColor);
+  color: var(--fontColor);
+  transition-property: background-color;
+  transition-duration: 0.4s;
+  margin: 0;
+}
+#canvas{
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+}
+li > .taskContainer > button {
+  font-size: 1em;
+	font-weight: normal;
+  background-color: var(--themeColor);
+  border-radius: 4px;
+  border: none;
+	color: var(--fontColor);
+  font-weight: 800;
+  transition-property: all;
+  transition-duration: 0.4s;
+}
+.deleteButton{
+  position: absolute;
+  right: 5px;
+}
+.editButton{
+  float: right;
+  padding: 0 2px 2px 5px;
+}
+.taskContainer{
+display: block;
+justify-content: center;
+flex-direction: row;
+}
+#taskInput, #timeInput{
+  border-radius: 5px;
+}
+#taskInput, #timeInput, #dateInput{
+  margin-right: 10px;
+  border-style: solid;
+  transition: all;
+  transition-duration: 0.4s;
+}
+
+.taskInputValue{
+float: left;
+}
+
+#notifications{
+  list-style-type: none;
+  color: var(--fontColor);
+  font-family: 'Courier New', Courier, monospace;
+}
+#dateInput{
+  border-radius: 5px;
+	padding: 4px;
+  border: 1px solid var(--highLightColor);
+  max-width: 1.5in;
+}
+input:hover{
+  border-color: var(--darkerBlueBorderColor);
+}
+.helperInput:focus{
+border-color: var(--terminalColor);
+font-family: "px-vga", sans-serif;
+font-size: 1.5rem;
+background-color: black;
+color: var(--terminalColor);
+border: 1px solid var(--terminalColor);
+}
+.terminal-input{
+  border-color: var(--terminalColor);
+  font-family: "px-vga", sans-serif;
+  font-size: 1.5rem;
+  background-color: black;
+  color: var(--terminalColor);
+  border: 1px solid var(--terminalColor);
+}
+.enterButtonHelperFocus:focus{
+  border-color: var(--terminalColor);
+  background-color: black;
+  color: var(--terminalColor);
+  border: 1px solid var(--terminalColor);
+}
+#enter{
+  border-radius: 5px;
+  border: 1px solid var(--themeColor);
+  background-color: var(--themeColor);
+  color: var(--fontColor);
+  padding: 10px;
+  transition: all;
+  transition-duration: 0.4s;
+}
+#enter:hover{
+  color: var(--goldenHighlightColor) !important;
+  background-color: var(--highLightColor) !important;
+  border-color: var(--highLightColor);
+}
+.done{
+  border-bottom-color: var(--goldenHighlightColor) !important;
+  background-color: var(--highLightColor) !important;
+}
+.done button{
+  background-color: var(--darkerBlueHighlightColor);
+}
+.done > button:hover{
+  background-color: var(--darkestBlueColor);
+}
+
+
+#topTitle{
+  transition: all 0.4s ease;
+  font-family: 'Permanent Marker', cursive;
+  color: var(--themeColor);
+  text-align: center;
+  margin: 5px 0 10px 0;
+  font-size: 3em;
+  border-bottom: 3px solid;
+  border-bottom-color: var(--themeColor);
+  display: inline-block;
+  animation: shadow 2s ease-in-out infinite alternate;
+}
+.timeInputValue{
+float: right;
+font-family: 'Permanent Marker', cursive;
+padding-right: 10px;
+}
+#progressBar{
+  text-align: center;
+  width: 100%;
+  background-color: var(--themeColor);
+  transition-property: background-color;
+  transition-duration: 0.4s;
+}
+#progressBarFill{
+  width: 0%;
+  height: 10px;
+  background-color: var(--goldenHighlightColor);
+  transition-property: width;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+}
+.terminal{
+  /* position: absolute;
+  bottom: 20vh; */
+}
+#terminal-button{
+position: absolute;
+right: 1px;
+bottom: 1px;
+color: var(--fontColor);
+}
+#helper-button{
+position: absolute;
+left: 0;
+font-size: 5.2rem;
+margin-left: 15px;
+color: var(--fontColor);
+}
+.helper-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#to-do-helper{
+  margin: 0 1vw 0 1vw;
+  visibility: hidden;
+}
+#welcome-message{
+  font-size: 3rem;
+  text-align: center;
+  color: var(--terminalColor);
+  display: inline;
+  font-family: "px-vga", cursive;
+}
+#blinking-cursor{
+  font-weight: 100;
+  font-size: 3rem;
+  animation: 1s blink step-end infinite;
+  visibility: hidden;
+}
+@keyframes blink{
+  from, to{
+    color: transparent;
+  }
+  50%{
+    color: var(--terminalColor);
+  }
+}
+.property-stamp{
+font-family: "Open Sans", sans-serif;
+}
+.trumpets{
+  padding: 0;
+  margin: 0;
+}
+#rightFacingTrumpet{
+  position: fixed;
+  left: 0;
+  bottom: 20%;
+  max-width: 40%;
+  visibility: hidden;
+}
+#leftFacingTrumpet{
+  position: fixed;
+  right: 0;
+  bottom: 20%;
+  max-width: 40%;
+  visibility: hidden;
+}
+@keyframes fanfareLeft{
+  0% {visibility: visible; width: 0%;}
+  5% {width: 25%;}
+  7% {width: 15%;}
+  10% {width: 25%;}
+  12% {width: 15%;}
+  14% {width: 25%;}
+  16% {width: 15%;}
+  17% {width: 25%;}
+  90% {width: 0%;}
+  100% {visibility: hidden; width: 0%;}
+}
+@keyframes fanfareRight{
+  0% {visibility: visible; width: 0%;}
+  5% {width: 25%;}
+  7% {width: 15%;}
+  10% {width: 25%;}
+  12% {width: 15%;}
+  14% {width: 25%;}
+  16% {width: 15%;}
+  17% {width: 25%;}
+  90% {width: 0%;}
+  100% {visibility: hidden; width: 0%;}
+}
+
+.rightTrumpet{
+  visibility: visible;
+  animation-name: fanfareRight;
+  animation-duration: 4s;
+}
+.leftTrumpet{
+  visibility: visible;
+  animation-name: fanfareLeft;
+  animation-duration: 4s;
+}
+.container{
+  display: inline-block;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.inputContainer{
+  justify-content: center;
+}
+@keyframes shadow{
+  from
+  {
+    text-shadow: 0 0 5px var(--fontColor), 0 0 10px var(--fontColor), 0 0 15px var(--fontColor), 0 0 20px var(--fontColor), 0 0 25px var(--fontColor);
+  }
+  to
+  {
+    text-shadow: 0 0 10px var(--fontColor), 0 0 15px var(--fontColor), 0 0 20px var(--fontColor), 0 0 25px var(--fontColor), 0 0 30px var(--fontColor), 0 0 35px var(--fontColor);
+  }
+
+}
+@keyframes pressed{
+  from{text-shadow: 0 0 0.5em transparent, 0 0 1em transparent, 0 0 1.5em transparent;}
+  to{text-shadow: 0 0 0.5em var(--fontColor), 0 0 1em transparent, 0 0 1.5em transparent;}
+  to{text-shadow: 0 0 0.5em var(--fontColor), 0 0 1em var(--fontColor), 0 0 1.5em transparent;}
+  to{text-shadow: 0 0 0.5em var(--fontColor), 0 0 1em var(--fontColor), 0 0 1.5em var(--fontColor);}
+}
+@media screen and (max-width: 600px){
+  body{
+    background-image: var(--mobileBodyBackgroundImg);
+  }
+  .headerbar{
+    font-size: 5vw;
+  }
+  .column{
+    margin: 0;
+    padding: 0;
+    font-size: .9em
+  }
+  .column .task-box ul{
+    margin: 0;
+    padding: 0;
+  }
+  .taskContainer input{
+    max-width: 1in;
+    margin: 5px 0 0 0;
+  }
+  #dateInput{
+    max-width: 1in;
+    margin: 5px 0 0 0;
+  }
+  #title{
+    display: block;
+    font-size: 2em;
+  }
+  #progress{
+    font-size: 2em;
+  }
+  #rightFacingTrumpet{
+    position: fixed;
+    left: 0;
+    bottom: 20%;
+    max-width: 40%;
+    visibility: hidden;
+  }
+  #leftFacingTrumpet{
+    position: fixed;
+    right: 0;
+    bottom: 20%;
+    max-width: 40%;
+    visibility: hidden;
+  }
+  @keyframes fanfareLeft{
+    0% {visibility: visible; width: 0%;}
+    5% {width: 40%;}
+    7% {width: 25%;}
+    10% {width: 40%;}
+    12% {width: 25%;}
+    14% {width: 40%;}
+    16% {width: 25%;}
+    17% {width: 40%;}
+    90% {width: 0%;}
+    100% {visibility: hidden; width: 0%;}
+  }
+  @keyframes fanfareRight{
+    0% {visibility: visible; width: 0%;}
+    5% {width: 40%;}
+    7% {width: 25%;}
+    10% {width: 40%;}
+    12% {width: 25%;}
+    14% {width: 40%;}
+    16% {width: 25%;}
+    17% {width: 40%;}
+    90% {width: 0%;}
+    100% {visibility: hidden; width: 0%;}
+  }
 }

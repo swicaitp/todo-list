@@ -1,0 +1,130 @@
+:root{
+  --terminalColor: black;
+  --terminalFontColor: #32CD32;
+  box-sizing: border-box;
+}
+@font-face{
+  font-family: px-vga;
+  src: url("../fonts/PxPlus_VGA_SquarePx.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+html{
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-size: 16px;
+  background-color: var(--terminalColor);
+  color: var(--terminalFontColor);
+  font-family: "px-vga", Arial, Helvetica, sans-serif;
+}
+body{
+  box-sizing: border-box;
+  margin: 0;
+  height: 100%;
+  font-size: 16px;
+  background-color: var(--terminalColor);
+  color: var(--terminalFontColor);
+}
+.terminal-container{
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template:
+    "helper helper helper" auto
+    "helper helper helper" auto
+    "helper-terminal helper-terminal helper-terminal" 20%
+    /* "output output output" 20% */
+    /* "terminal-header terminal-header terminal-header" 3.5% */
+    "terminal terminal terminal" 30%
+    / auto auto;
+}
+.helper-container{
+  grid-area: helper;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+}
+#helper{
+  display: block;
+  height: 90%;
+}
+.helper-terminal{
+  grid-area: helper-terminal;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.helper-message{
+  text-align: center;
+  font-size: 2rem;
+}
+#console-helper{
+  height: 20px;
+  width: auto;
+}
+.terminal-header{
+  grid-area: terminal-header;
+  margin: 0;
+  padding-left: 5px;
+}
+.terminal{
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  font-size: 2rem;
+  display: block;
+  grid-area: terminal;
+}
+.terminal-message{
+  text-align: center;
+  font-size: 2rem;
+  width: 100%;
+  height: 100%;
+}
+.terminal-input-form{
+height: 100%;
+}
+#terminal-input{
+  box-sizing: border-box;
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  height: 100%;;
+  caret-color: var(--terminalFontColor);
+  color: var(--terminalFontColor);
+  font-size: 2rem;
+  font-family: "px-vga", Arial, Helvetica, sans-serif;
+  display: block;
+  overflow-wrap: break-word;
+}
+#terminal-input:focus{
+  outline: none;
+}
+#terminal-input::-webkit-scrollbar{
+background-color: transparent;
+width: 0;
+}
+.terminal-output{
+  grid-area: output;
+  height: 100%;
+  font-size: 1.3rem;
+  padding-left: 5px;
+}
+#blinking-cursor{
+  font-weight: 100;
+  font-size: 3rem;
+  animation: 1s blink step-end infinite;
+}
+@keyframes blink{
+  from, to{
+    color: transparent;
+  }
+  50%{
+    color: var(--terminalFontColor);
+  }
+}
